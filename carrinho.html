@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrinho | Meu FIFO Virtual</title>
+
+    <!-- Fonte -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/loja.css">
+
+    <!-- Ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+<!-- HEADER (o mesmo da loja virtual) -->
+<header class="header">
+    <h1 class="logo">MEU <span>FIFO</span> VIRTUAL</h1>
+
+    <nav>
+        <ul class="menu">
+            <li><a href="../index.html">Início</a></li>
+            <li><a href="./hortifruti.html">Loja</a></li>
+        </ul>
+    </nav>
+
+    <a href="carrinho.html" class="cart-icon">
+        <i class="fa-solid fa-cart-shopping"></i>
+        <span class="cart-count">0</span>
+    </a>
+</header>
+
+<main class="carrinho-container">
+
+    <h2>Meu Carrinho</h2>
+
+    <!-- LISTA DE PRODUTOS -->
+    <div class="carrinho-lista">
+        <!-- JS vai inserir os itens aqui -->
+        <p class="carrinho-vazio">Seu carrinho está vazio.</p>
+    </div>
+
+    <!-- RESUMO -->
+    <div class="carrinho-resumo">
+        <p>Total:</p>
+        <h3 id="total">R$ 0,00</h3>
+    </div>
+
+    <!-- FORMA DE PAGAMENTO -->
+    <div class="pagamento">
+        <h3>Forma de pagamento</h3>
+
+        <label>
+            <input type="radio" name="pagamento" value="Pix">
+            Pix
+        </label>
+
+        <label>
+            <input type="radio" name="pagamento" value="Débito">
+            Cartão de Débito
+        </label>
+
+        <label>
+            <input type="radio" name="pagamento" value="Crédito">
+            Cartão de Crédito
+        </label>
+
+        <label>
+            <input type="radio" name="pagamento" value="Dinheiro">
+            Dinheiro
+        </label>
+    </div>
+
+    <!-- ENDEREÇO -->
+    <div class="endereco">
+        <h3>Endereço para entrega</h3>
+        <textarea placeholder="Rua, número, bairro, ponto de referência..."></textarea>
+    </div>
+
+    <!-- BOTÕES -->
+    <div class="carrinho-botoes">
+        <button class="btn-esvaziar">
+            <i class="fa-solid fa-trash"></i>
+            Esvaziar carrinho
+        </button>
+
+        <button class="btn-finalizar">
+            <i class="fa-brands fa-whatsapp"></i>
+            Finalizar pedido
+        </button>
+    </div>
+
+</main>
+
+<footer class="footer">
+    <p>© 2026 Meu FIFO Virtual — Todos os direitos reservados</p>
+</footer>
+
+<!-- JS (amanhã a gente faz) -->
+<script src="../js/carrinho.js"></script>
+
+</body>
+</html>

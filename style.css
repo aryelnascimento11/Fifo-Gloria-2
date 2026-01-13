@@ -303,3 +303,144 @@ body {
     .menu a { font-size: 12px; }
     .hero-text h2 { font-size: 32px; }
 }
+/* ================= PÁGINA SOBRE (VERSÃO NEON PREMIUM) ================= */
+
+.sobre-page {
+    background-color: #05140d; /* Verde quase preto, muito elegante */
+    background-image: radial-gradient(circle at center, #0b2e1f 0%, #05140d 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+}
+
+.about-container {
+    background: #fdfcf0; /* Creme acetinado */
+    max-width: 1000px;
+    width: 100%;
+    border-radius: 40px;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    padding: 60px;
+    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.6);
+    position: relative;
+    border: 1px solid rgba(158, 255, 200, 0.1);
+}
+
+.about-image {
+    flex: 1;
+    text-align: center;
+}
+
+.about-image img {
+    max-width: 250px;
+    filter: drop-shadow(0 15px 15px rgba(0,0,0,0.1));
+}
+
+.about-content {
+    flex: 1.5;
+}
+
+.text-block h1 {
+    font-size: 42px;
+    color: #0f5132;
+    margin-bottom: 15px;
+    letter-spacing: -1px;
+}
+
+.text-block h1 span {
+    color: #1b8a5a;
+    font-weight: 300;
+}
+
+.text-block p {
+    color: #2d3748;
+    margin-bottom: 18px;
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+.contact-block {
+    margin-top: 30px;
+    padding: 25px;
+    background: #f0f4f0;
+    border-radius: 20px;
+    border-left: 6px solid #1b8a5a;
+}
+
+.contact-block h2 {
+    font-size: 22px;
+    color: #0f5132;
+    margin-bottom: 8px;
+}
+
+.whatsapp-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: #25D366;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 14px;
+    text-decoration: none;
+    font-weight: 700;
+    margin-top: 10px;
+    transition: 0.3s;
+}
+
+.whatsapp-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(37, 211, 102, 0.4);
+}
+
+/* ================= BOTÃO VOLTAR NEON ================= */
+.nav-footer {
+    margin-top: 40px;
+}
+
+.back-btn-neon {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 14px 30px;
+    background: #0f5132;
+    color: #9effc8; /* Cor Neon */
+    text-decoration: none;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 13px;
+    letter-spacing: 1px;
+    border-radius: 50px;
+    border: 2px solid #9effc8;
+    transition: all 0.4s ease;
+    /* Efeito de brilho neon suave */
+    box-shadow: 0 0 15px rgba(158, 255, 200, 0.2), inset 0 0 10px rgba(158, 255, 200, 0.1);
+}
+
+.back-btn-neon:hover {
+    background: #9effc8;
+    color: #0f5132;
+    transform: scale(1.05);
+    /* Neon forte no hover */
+    box-shadow: 0 0 25px rgba(158, 255, 200, 0.6), 0 0 45px rgba(158, 255, 200, 0.4);
+    text-shadow: none;
+}
+
+.back-btn-neon i {
+    font-size: 16px;
+}
+
+/* Ajuste Mobile */
+@media (max-width: 850px) {
+    .about-container {
+        flex-direction: column;
+        padding: 40px 25px;
+        text-align: center;
+    }
+    .back-btn-neon {
+        width: 100%;
+        justify-content: center;
+    }
+}
