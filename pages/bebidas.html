@@ -1,115 +1,109 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bebidas</title>
+    <title>Bebidas | Meu FIFO Virtual</title>
+
+    <link rel="stylesheet" href="loja.css">
 </head>
 <body>
-    <section>
-        <img src="" alt="imagem">
-        <h1>Bebidas</h1>
-        <p>Encontre aqui uma variedade de bebidas para todos os gostos, desde refrigerantes refrescantes até sucos naturais e energéticos revigorantes. Temos opções para todas as ocasiões!</p>
-        <div>
-            <img src="./img/pao 1.png" alt="Produto 1">
-                <h3>Produto 1</h3>
-                <div class="prices">
-                    <span class="old-price">R$ 13,00</span>
-                    <span class="new-price">R$ 9,50</span>
-                </div>
-                <input type="number" min="1" value="1">
-                <button>Adicionar Mais Um</button>
-                <button>Adicionar ao Carrinho</button>
+
+<header class="header">
+    <h1>Meu FIFO Virtual</h1>
+    <a href="carrinho.html" class="cart-icon">🛒 Carrinho</a>
+</header>
+
+<section class="category">
+    <h2>Bebidas</h2>
+    <p>Refrigerantes, sucos e bebidas para o dia a dia.</p>
+
+    <div class="products">
+
+        <!-- PRODUTO 1 -->
+        <div class="product-card" data-id="101" data-name="Coca-Cola Lata" data-price="4.50">
+            <img src="/img bebidas/coca 3.png">
+            <h3>Coca-Cola Lata</h3>
+            <span class="price">R$ 4,50</span>
+            <input type="number" min="1" value="1" class="quantity">
+            <button class="add-cart">Adicionar</button>
         </div>
-           <div>
-            <img src="./img/pao 1.png" alt="Produto 1">
-                <h3>Produto 1</h3>
-                <div class="prices">
-                    <span class="old-price">R$ 13,00</span>
-                    <span class="new-price">R$ 9,50</span>
-                </div>
-                <input type="number" min="1" value="1">
-                <button>Adicionar Mais Um</button>
-                <button>Adicionar ao Carrinho</button>
+
+        <!-- PRODUTO 2 -->
+        <div class="product-card" data-id="102" data-name="Guaraná Antártica 600mL" data-price="5,00">
+            <img src="/img bebidas/guaranaa.png">
+            <h3>Guaraná Antártica 600mL</h3>
+            <span class="price">R$ 5,00</span>
+            <input type="number" min="1" value="1" class="quantity">
+            <button class="add-cart">Adicionar</button>
         </div>
-           <div>
-            <img src="./img/pao 1.png" alt="Produto 1">
-                <h3>Produto 1</h3>
-                <div class="prices">
-                    <span class="old-price">R$ 13,00</span>
-                    <span class="new-price">R$ 9,50</span>
-                </div>
-                <input type="number" min="1" value="1">
-                <button>Adicionar Mais Um</button>
-                <button>Adicionar ao Carrinho</button>
+
+        <!-- PRODUTO 3 -->
+        <div class="product-card" data-id="103" data-name="Fanta Laranja 600ml" data-price="6.50">
+            <img src="/img bebidas/Fantaa.png">
+            <h3>Fanta Laranja 600ml</h3>
+            <span class="price">R$ 6,50</span>
+            <input type="number" min="1" value="1" class="quantity">
+            <button class="add-cart">Adicionar</button>
         </div>
-           <div>
-            <img src="./img/pao 1.png" alt="Produto 1">
-                <h3>Produto 1</h3>
-                <div class="prices">
-                    <span class="old-price">R$ 13,00</span>
-                    <span class="new-price">R$ 9,50</span>
-                </div>
-                <input type="number" min="1" value="1">
-                <button>Adicionar Mais Um</button>
-                <button>Adicionar ao Carrinho</button>
+
+        <!-- PRODUTO 4 -->
+        <div class="product-card" data-id="104" data-name="Suco Natural 1L" data-price="6.50">
+            <img src="/img bebidas/suco laranja.png">
+            <h3>Suco Natural 1L</h3>
+            <span class="price">R$ 6,50</span>
+            <input type="number" min="1" value="1" class="quantity">
+            <button class="add-cart">Adicionar</button>
         </div>
-           <div>
-            <img src="./img/pao 1.png" alt="Produto 1">
-                <h3>Produto 1</h3>
-                <div class="prices">
-                    <span class="old-price">R$ 13,00</span>
-                    <span class="new-price">R$ 9,50</span>
-                </div>
-                <input type="number" min="1" value="1">
-                <button>Adicionar Mais Um</button>
-                <button>Adicionar ao Carrinho</button>
+
+        <!-- PRODUTO 5 -->
+        <div class="product-card" data-id="105" data-name="Água Mineral 500ml" data-price="3.00">
+            <img src="/img bebidas/agua_minerall.png">
+            <h3>Água Mineral 500ml</h3>
+            <span class="price">R$ 3,00</span>
+            <input type="number" min="1" value="1" class="quantity">
+            <button class="add-cart">Adicionar</button>
         </div>
-           <div>
-            <img src="./img/pao 1.png" alt="Produto 1">
-                <h3>Produto 1</h3>
-                <div class="prices">
-                    <span class="old-price">R$ 13,00</span>
-                    <span class="new-price">R$ 9,50</span>
-                </div>
-                <input type="number" min="1" value="1">
-                <button>Adicionar Mais Um</button>
-                <button>Adicionar ao Carrinho</button>
+
+        <!-- PRODUTO 6 -->
+        <div class="product-card" data-id="106" data-name="Monster ENERGY 473ml" data-price="10,00">
+            <img src="/img bebidas/monsterr.png">
+            <h3>Monster ENERGY 473ml</h3>
+            <span class="price">R$ 10,00</span>
+            <input type="number" min="1" value="1" class="quantity">
+            <button class="add-cart">Adicionar</button>
         </div>
-           <div>
-            <img src="./img/pao 1.png" alt="Produto 1">
-                <h3>Produto 1</h3>
-                <div class="prices">
-                    <span class="old-price">R$ 13,00</span>
-                    <span class="new-price">R$ 9,50</span>
-                </div>
-                <input type="number" min="1" value="1">
-                <button>Adicionar Mais Um</button>
-                <button>Adicionar ao Carrinho</button>
+
+        <!-- PRODUTO 7 -->
+        <div class="product-card" data-id="107" data-name="Chá Matte Leao 500ml" data-price="5.99">
+            <img src="/img bebidas/cha_matte_leao.png">
+            <h3>Chá Matte Leao 500ml</h3>
+            <span class="price">R$ 5,99</span>
+            <input type="number" min="1" value="1" class="quantity">
+            <button class="add-cart">Adicionar</button>
         </div>
-           <div>
-            <img src="./img/pao 1.png" alt="Produto 1">
-                <h3>Produto 1</h3>
-                <div class="prices">
-                    <span class="old-price">R$ 13,00</span>
-                    <span class="new-price">R$ 9,50</span>
-                </div>
-                <input type="number" min="1" value="1">
-                <button>Adicionar Mais Um</button>
-                <button>Adicionar ao Carrinho</button>
+
+        <!-- PRODUTO 8 -->
+        <div class="product-card" data-id="108" data-name="Kaiser Lata 350ml" data-price="3.99">
+            <img src="/img bebidas/cerveja 5.png">
+            <h3>Kaiser Lata 350ml</h3>
+            <span class="price">R$ 3,99</span>
+            <input type="number" min="1" value="1" class="quantity">
+            <button class="add-cart">Adicionar</button>
         </div>
-           <div>
-            <img src="./img/pao 1.png" alt="Produto 1">
-                <h3>Produto 1</h3>
-                <div class="prices">
-                    <span class="old-price">R$ 13,00</span>
-                    <span class="new-price">R$ 9,50</span>
-                </div>
-                <input type="number" min="1" value="1">
-                <button>Adicionar Mais Um</button>
-                <button>Adicionar ao Carrinho</button>
+
+        <!-- PRODUTO 9 -->
+        <div class="product-card" data-id="109" data-name="Gatorade 500ml" data-price="6.00">
+            <img src="/img bebidas/gatoradee.png">
+            <h3>Gatorade 500ml</h3>
+            <span class="price">R$ 6,00</span>
+            <input type="number" min="1" value="1" class="quantity">
+            <button class="add-cart">Adicionar</button>
         </div>
-        
-    </section>
+
+    </div>
+</section>
+
+<script src="script.js"></script>
 </body>
 </html>
