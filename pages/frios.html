@@ -1,115 +1,230 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Frios</title>
+    <title>Frios | Meu FIFO Virtual</title>
+    <link rel="stylesheet" href="loja.css">
 </head>
 <body>
-    <section>
-        <img src="" alt="imagem">
-        <h1>Frios</h1>
-        <p>Encontre aqui uma variedade de frios para todos os gostos, desde carnes frescas até queijos e embutidos. Temos opções para todas as ocasiões!</p>
-        <div>
-            <img src="./img/pao 1.png" alt="Produto 1">
-                <h3>Produto 1</h3>
-                <div class="prices">
-                    <span class="old-price">R$ 13,00</span>
-                    <span class="new-price">R$ 9,50</span>
-                </div>
-                <input type="number" min="1" value="1">
-                <button>Adicionar Mais Um</button>
-                <button>Adicionar ao Carrinho</button>
+
+<header class="header">
+    <h1>Meu FIFO Virtual</h1>
+    <a href="carrinho.html" class="cart-icon">🛒 Carrinho <span class="cart-count">0</span></a>
+</header>
+
+<section class="category">
+    <h2>Frios</h2>
+    <p>Queijos, presuntos, mortadelas e embutidos de qualidade.</p>
+
+    <div class="products">
+        <div class="product-card" data-id="301" data-name="Queijo Mussarela 500g" data-price="18.50">
+            <img src="/img frios/mussarela.png" alt="Queijo Mussarela">
+            <h3>Queijo Mussarela 500g</h3>
+            <span class="price">R$ 18,50</span>
+            <input type="number" min="1" value="1" class="quantity">
+            <button class="add-cart">Adicionar</button>
         </div>
-           <div>
-            <img src="./img/pao 1.png" alt="Produto 1">
-                <h3>Produto 1</h3>
-                <div class="prices">
-                    <span class="old-price">R$ 13,00</span>
-                    <span class="new-price">R$ 9,50</span>
-                </div>
-                <input type="number" min="1" value="1">
-                <button>Adicionar Mais Um</button>
-                <button>Adicionar ao Carrinho</button>
+
+        <div class="product-card" data-id="302" data-name="Presunto Cozido 200g" data-price="10.00">
+            <img src="/img frios/presunto.png" alt="Presunto">
+            <h3>Presunto Cozido 200g</h3>
+            <span class="price">R$ 10,00</span>
+            <input type="number" min="1" value="1" class="quantity">
+            <button class="add-cart">Adicionar</button>
         </div>
-           <div>
-            <img src="./img/pao 1.png" alt="Produto 1">
-                <h3>Produto 1</h3>
-                <div class="prices">
-                    <span class="old-price">R$ 13,00</span>
-                    <span class="new-price">R$ 9,50</span>
-                </div>
-                <input type="number" min="1" value="1">
-                <button>Adicionar Mais Um</button>
-                <button>Adicionar ao Carrinho</button>
+
+        <div class="product-card" data-id="303" data-name="Mortadela 300g" data-price="8.50">
+            <img src="/img frios/mortadela.png" alt="Mortadela">
+            <h3>Mortadela 300g</h3>
+            <span class="price">R$ 8,50</span>
+            <input type="number" min="1" value="1" class="quantity">
+            <button class="add-cart">Adicionar</button>
         </div>
-           <div>
-            <img src="./img/pao 1.png" alt="Produto 1">
-                <h3>Produto 1</h3>
-                <div class="prices">
-                    <span class="old-price">R$ 13,00</span>
-                    <span class="new-price">R$ 9,50</span>
-                </div>
-                <input type="number" min="1" value="1">
-                <button>Adicionar Mais Um</button>
-                <button>Adicionar ao Carrinho</button>
+
+        <div class="product-card" data-id="304" data-name="Queijo Prato 500g" data-price="19.50">
+            <img src="/img frios/queijo_prato.png" alt="Queijo Prato">
+            <h3>Queijo Prato 500g</h3>
+            <span class="price">R$ 19,50</span>
+            <input type="number" min="1" value="1" class="quantity">
+            <button class="add-cart">Adicionar</button>
         </div>
-           <div>
-            <img src="./img/pao 1.png" alt="Produto 1">
-                <h3>Produto 1</h3>
-                <div class="prices">
-                    <span class="old-price">R$ 13,00</span>
-                    <span class="new-price">R$ 9,50</span>
-                </div>
-                <input type="number" min="1" value="1">
-                <button>Adicionar Mais Um</button>
-                <button>Adicionar ao Carrinho</button>
+
+        <div class="product-card" data-id="305" data-name="Requeijão 250g" data-price="7.50">
+            <img src="/img frios/requeijao.png" alt="Requeijão">
+            <h3>Requeijão 250g</h3>
+            <span class="price">R$ 7,50</span>
+            <input type="number" min="1" value="1" class="quantity">
+            <button class="add-cart">Adicionar</button>
         </div>
-           <div>
-            <img src="./img/pao 1.png" alt="Produto 1">
-                <h3>Produto 1</h3>
-                <div class="prices">
-                    <span class="old-price">R$ 13,00</span>
-                    <span class="new-price">R$ 9,50</span>
-                </div>
-                <input type="number" min="1" value="1">
-                <button>Adicionar Mais Um</button>
-                <button>Adicionar ao Carrinho</button>
+
+        <div class="product-card" data-id="306" data-name="Salame 200g" data-price="15.00">
+            <img src="/img frios/salame.png" alt="Salame">
+            <h3>Salame 200g</h3>
+            <span class="price">R$ 15,00</span>
+            <input type="number" min="1" value="1" class="quantity">
+            <button class="add-cart">Adicionar</button>
         </div>
-           <div>
-            <img src="./img/pao 1.png" alt="Produto 1">
-                <h3>Produto 1</h3>
-                <div class="prices">
-                    <span class="old-price">R$ 13,00</span>
-                    <span class="new-price">R$ 9,50</span>
-                </div>
-                <input type="number" min="1" value="1">
-                <button>Adicionar Mais Um</button>
-                <button>Adicionar ao Carrinho</button>
+
+        <div class="product-card" data-id="307" data-name="Queijo Coalho 400g" data-price="14.00">
+            <img src="/img frios/coalho.png" alt="Queijo Coalho">
+            <h3>Queijo Coalho 400g</h3>
+            <span class="price">R$ 14,00</span>
+            <input type="number" min="1" value="1" class="quantity">
+            <button class="add-cart">Adicionar</button>
         </div>
-           <div>
-            <img src="./img/pao 1.png" alt="Produto 1">
-                <h3>Produto 1</h3>
-                <div class="prices">
-                    <span class="old-price">R$ 13,00</span>
-                    <span class="new-price">R$ 9,50</span>
-                </div>
-                <input type="number" min="1" value="1">
-                <button>Adicionar Mais Um</button>
-                <button>Adicionar ao Carrinho</button>
+
+        <div class="product-card" data-id="308" data-name="Cream Cheese 200g" data-price="9.50">
+            <img src="/img frios/cream_cheese.png" alt="Cream Cheese">
+            <h3>Cream Cheese 200g</h3>
+            <span class="price">R$ 9,50</span>
+            <input type="number" min="1" value="1" class="quantity">
+            <button class="add-cart">Adicionar</button>
         </div>
-           <div>
-            <img src="./img/pao 1.png" alt="Produto 1">
-                <h3>Produto 1</h3>
-                <div class="prices">
-                    <span class="old-price">R$ 13,00</span>
-                    <span class="new-price">R$ 9,50</span>
-                </div>
-                <input type="number" min="1" value="1">
-                <button>Adicionar Mais Um</button>
-                <button>Adicionar ao Carrinho</button>
+
+        <div class="product-card" data-id="309" data-name="Queijo Parmesão 300g" data-price="22.00">
+            <img src="/img frios/parmesao.png" alt="Queijo Parmesão">
+            <h3>Queijo Parmesão 300g</h3>
+            <span class="price">R$ 22,00</span>
+            <input type="number" min="1" value="1" class="quantity">
+            <button class="add-cart">Adicionar</button>
         </div>
-        
-    </section>
+    </div>
+</section>
+
+<footer class="footer">
+    <div>
+        <h3>Meu FIFO Virtual</h3>
+        <p>Loja virtual de supermercado, oferecendo qualidade e economia.</p>
+    </div>
+    <div>
+        <h3>Links úteis</h3>
+        <a href="index.html">Início</a><br>
+        <a href="bebidas.html">Bebidas</a><br>
+        <a href="carnes.html">Carnes</a><br>
+        <a href="frios.html">Frios</a><br>
+    </div>
+    <div>
+        <h3>Contato</h3>
+        <p>Email: contato@meufifo.com</p>
+        <p>Tel: (47) 99999-9999</p>
+    </div>
+</footer>
+
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frios | Meu FIFO Virtual</title>
+    <link rel="stylesheet" href="loja.css">
+</head>
+<body>
+
+<header class="header">
+    <h1>Meu FIFO Virtual</h1>
+    <a href="carrinho.html" class="cart-icon">🛒 Carrinho <span class="cart-count">0</span></a>
+</header>
+
+<section class="category">
+    <h2>Frios</h2>
+    <p>Queijos, presuntos, mortadelas e embutidos de qualidade.</p>
+
+    <div class="products">
+        <div class="product-card" data-id="301" data-name="Queijo Mussarela 500g" data-price="18.50">
+            <img src="/img frios/mussarela.png" alt="Queijo Mussarela">
+            <h3>Queijo Mussarela 500g</h3>
+            <span class="price">R$ 18,50</span>
+            <input type="number" min="1" value="1" class="quantity">
+            <button class="add-cart">Adicionar</button>
+        </div>
+
+        <div class="product-card" data-id="302" data-name="Presunto Cozido 200g" data-price="10.00">
+            <img src="/img frios/presunto.png" alt="Presunto">
+            <h3>Presunto Cozido 200g</h3>
+            <span class="price">R$ 10,00</span>
+            <input type="number" min="1" value="1" class="quantity">
+            <button class="add-cart">Adicionar</button>
+        </div>
+
+        <div class="product-card" data-id="303" data-name="Mortadela 300g" data-price="8.50">
+            <img src="/img frios/mortadela.png" alt="Mortadela">
+            <h3>Mortadela 300g</h3>
+            <span class="price">R$ 8,50</span>
+            <input type="number" min="1" value="1" class="quantity">
+            <button class="add-cart">Adicionar</button>
+        </div>
+
+        <div class="product-card" data-id="304" data-name="Queijo Prato 500g" data-price="19.50">
+            <img src="/img frios/queijo_prato.png" alt="Queijo Prato">
+            <h3>Queijo Prato 500g</h3>
+            <span class="price">R$ 19,50</span>
+            <input type="number" min="1" value="1" class="quantity">
+            <button class="add-cart">Adicionar</button>
+        </div>
+
+        <div class="product-card" data-id="305" data-name="Requeijão 250g" data-price="7.50">
+            <img src="/img frios/requeijao.png" alt="Requeijão">
+            <h3>Requeijão 250g</h3>
+            <span class="price">R$ 7,50</span>
+            <input type="number" min="1" value="1" class="quantity">
+            <button class="add-cart">Adicionar</button>
+        </div>
+
+        <div class="product-card" data-id="306" data-name="Salame 200g" data-price="15.00">
+            <img src="/img frios/salame.png" alt="Salame">
+            <h3>Salame 200g</h3>
+            <span class="price">R$ 15,00</span>
+            <input type="number" min="1" value="1" class="quantity">
+            <button class="add-cart">Adicionar</button>
+        </div>
+
+        <div class="product-card" data-id="307" data-name="Queijo Coalho 400g" data-price="14.00">
+            <img src="/img frios/coalho.png" alt="Queijo Coalho">
+            <h3>Queijo Coalho 400g</h3>
+            <span class="price">R$ 14,00</span>
+            <input type="number" min="1" value="1" class="quantity">
+            <button class="add-cart">Adicionar</button>
+        </div>
+
+        <div class="product-card" data-id="308" data-name="Cream Cheese 200g" data-price="9.50">
+            <img src="/img frios/cream_cheese.png" alt="Cream Cheese">
+            <h3>Cream Cheese 200g</h3>
+            <span class="price">R$ 9,50</span>
+            <input type="number" min="1" value="1" class="quantity">
+            <button class="add-cart">Adicionar</button>
+        </div>
+
+        <div class="product-card" data-id="309" data-name="Queijo Parmesão 300g" data-price="22.00">
+            <img src="/img frios/parmesao.png" alt="Queijo Parmesão">
+            <h3>Queijo Parmesão 300g</h3>
+            <span class="price">R$ 22,00</span>
+            <input type="number" min="1" value="1" class="quantity">
+            <button class="add-cart">Adicionar</button>
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+    <div>
+        <h3>Meu FIFO Virtual</h3>
+        <p>Loja virtual de supermercado, oferecendo qualidade e economia.</p>
+    </div>
+    <div>
+        <h3>Links úteis</h3>
+        <a href="index.html">Início</a><br>
+        <a href="bebidas.html">Bebidas</a><br>
+        <a href="carnes.html">Carnes</a><br>
+        <a href="frios.html">Frios</a><br>
+    </div>
+    <div>
+        <h3>Contato</h3>
+        <p>Email: contato@meufifo.com</p>
+        <p>Tel: (47) 99999-9999</p>
+    </div>
+</footer>
+
 </body>
 </html>

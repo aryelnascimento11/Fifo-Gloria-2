@@ -1,115 +1,79 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Padaria</title>
+    <title>Padaria | Meu FIFO Virtual</title>
+    <link rel="stylesheet" href="loja.css">
 </head>
 <body>
-    <section>
-        <img src="" alt="imagem">
-        <h1>Padaria</h1>
-        <p>Encontre aqui uma variedade de produtos de padaria para todos os gostos, desde pães frescos até bolachas e doces. Temos opções para todas as ocasiões!</p>
-        <div>
-            <img src="./img/pao 1.png" alt="Produto 1">
-                <h3>Produto 1</h3>
-                <div class="prices">
-                    <span class="old-price">R$ 13,00</span>
-                    <span class="new-price">R$ 9,50</span>
-                </div>
-                <input type="number" min="1" value="1">
-                <button>Adicionar Mais Um</button>
-                <button>Adicionar ao Carrinho</button>
+
+<header class="header">
+    <h1>Meu FIFO Virtual</h1>
+    <a href="carrinho.html" class="cart-icon">🛒 Carrinho <span class="cart-count">0</span></a>
+</header>
+
+<section class="category">
+    <h2>Padaria</h2>
+    <p>Pães, bolos e doces fresquinhos todos os dias.</p>
+
+    <div class="products">
+        <div class="product-card" data-id="601" data-name="Pão Francês 500g" data-price="8.50">
+            <img src="/img padaria/pao_frances.png" alt="Pão Francês">
+            <h3>Pão Francês 500g</h3>
+            <span class="price">R$ 8,50</span>
+            <input type="number" min="1" value="1" class="quantity">
+            <button class="add-cart">Adicionar</button>
         </div>
-           <div>
-            <img src="./img/pao 1.png" alt="Produto 1">
-                <h3>Produto 1</h3>
-                <div class="prices">
-                    <span class="old-price">R$ 13,00</span>
-                    <span class="new-price">R$ 9,50</span>
-                </div>
-                <input type="number" min="1" value="1">
-                <button>Adicionar Mais Um</button>
-                <button>Adicionar ao Carrinho</button>
+
+        <div class="product-card" data-id="602" data-name="Bolo de Chocolate 1kg" data-price="28.00">
+            <img src="/img padaria/bolo_chocolate.png" alt="Bolo de Chocolate">
+            <h3>Bolo de Chocolate 1kg</h3>
+            <span class="price">R$ 28,00</span>
+            <input type="number" min="1" value="1" class="quantity">
+            <button class="add-cart">Adicionar</button>
         </div>
-           <div>
-            <img src="./img/pao 1.png" alt="Produto 1">
-                <h3>Produto 1</h3>
-                <div class="prices">
-                    <span class="old-price">R$ 13,00</span>
-                    <span class="new-price">R$ 9,50</span>
-                </div>
-                <input type="number" min="1" value="1">
-                <button>Adicionar Mais Um</button>
-                <button>Adicionar ao Carrinho</button>
+
+        <div class="product-card" data-id="603" data-name="Croissant 100g" data-price="6.00">
+            <img src="/img padaria/croissant.png" alt="Croissant">
+            <h3>Croissant 100g</h3>
+            <span class="price">R$ 6,00</span>
+            <input type="number" min="1" value="1" class="quantity">
+            <button class="add-cart">Adicionar</button>
         </div>
-           <div>
-            <img src="./img/pao 1.png" alt="Produto 1">
-                <h3>Produto 1</h3>
-                <div class="prices">
-                    <span class="old-price">R$ 13,00</span>
-                    <span class="new-price">R$ 9,50</span>
-                </div>
-                <input type="number" min="1" value="1">
-                <button>Adicionar Mais Um</button>
-                <button>Adicionar ao Carrinho</button>
+
+        <div class="product-card" data-id="604" data-name="Pão de Forma 500g" data-price="10.50">
+            <img src="/img padaria/pao_forma.png" alt="Pão de Forma">
+            <h3>Pão de Forma 500g</h3>
+            <span class="price">R$ 10,50</span>
+            <input type="number" min="1" value="1" class="quantity">
+            <button class="add-cart">Adicionar</button>
         </div>
-           <div>
-            <img src="./img/pao 1.png" alt="Produto 1">
-                <h3>Produto 1</h3>
-                <div class="prices">
-                    <span class="old-price">R$ 13,00</span>
-                    <span class="new-price">R$ 9,50</span>
-                </div>
-                <input type="number" min="1" value="1">
-                <button>Adicionar Mais Um</button>
-                <button>Adicionar ao Carrinho</button>
+
+        <div class="product-card" data-id="605" data-name="Bolo de Fubá 1kg" data-price="25.00">
+            <img src="/img padaria/bolo_fuba.png" alt="Bolo de Fubá">
+            <h3>Bolo de Fubá 1kg</h3>
+            <span class="price">R$ 25,00</span>
+            <input type="number" min="1" value="1" class="quantity">
+            <button class="add-cart">Adicionar</button>
         </div>
-           <div>
-            <img src="./img/pao 1.png" alt="Produto 1">
-                <h3>Produto 1</h3>
-                <div class="prices">
-                    <span class="old-price">R$ 13,00</span>
-                    <span class="new-price">R$ 9,50</span>
-                </div>
-                <input type="number" min="1" value="1">
-                <button>Adicionar Mais Um</button>
-                <button>Adicionar ao Carrinho</button>
+
+        <div class="product-card" data-id="606" data-name="Pão de Queijo 300g" data-price="15.00">
+            <img src="/img padaria/pao_queijo.png" alt="Pão de Queijo">
+            <h3>Pão de Queijo 300g</h3>
+            <span class="price">R$ 15,00</span>
+            <input type="number" min="1" value="1" class="quantity">
+            <button class="add-cart">Adicionar</button>
         </div>
-           <div>
-            <img src="./img/pao 1.png" alt="Produto 1">
-                <h3>Produto 1</h3>
-                <div class="prices">
-                    <span class="old-price">R$ 13,00</span>
-                    <span class="new-price">R$ 9,50</span>
-                </div>
-                <input type="number" min="1" value="1">
-                <button>Adicionar Mais Um</button>
-                <button>Adicionar ao Carrinho</button>
+
+        <div class="product-card" data-id="607" data-name="Rosquinha Doce 100g" data-price="4.50">
+            <img src="/img padaria/rosquinha.png" alt="Rosquinha Doce">
+            <h3>Rosquinha Doce 100g</h3>
+            <span class="price">R$ 4,50</span>
+            <input type="number" min="1" value="1" class="quantity">
+            <button class="add-cart">Adicionar</button>
         </div>
-           <div>
-            <img src="./img/pao 1.png" alt="Produto 1">
-                <h3>Produto 1</h3>
-                <div class="prices">
-                    <span class="old-price">R$ 13,00</span>
-                    <span class="new-price">R$ 9,50</span>
-                </div>
-                <input type="number" min="1" value="1">
-                <button>Adicionar Mais Um</button>
-                <button>Adicionar ao Carrinho</button>
-        </div>
-           <div>
-            <img src="./img/pao 1.png" alt="Produto 1">
-                <h3>Produto 1</h3>
-                <div class="prices">
-                    <span class="old-price">R$ 13,00</span>
-                    <span class="new-price">R$ 9,50</span>
-                </div>
-                <input type="number" min="1" value="1">
-                <button>Adicionar Mais Um</button>
-                <button>Adicionar ao Carrinho</button>
-        </div>
-        
-    </section>
-</body>
-</html>
+
+        <div class="product-card" data-id="608" data-name="Baguete 300g" data-price="7.50">
+            <img src="/img padaria/baguete.png" alt="Baguete">
+            <h3

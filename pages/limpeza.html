@@ -1,115 +1,117 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Limpeza</title>
+    <title>Limpeza | Meu FIFO Virtual</title>
+    <link rel="stylesheet" href="loja.css">
 </head>
 <body>
-    <section>
-        <img src="" alt="imagem">
-        <h1>Limpeza</h1>
-        <p>Encontre aqui uma variedade de produtos de limpeza para todos os gostos, desde produtos para a casa até itens para limpeza pessoal. Temos opções para todas as ocasiões!</p>
-        <div>
-            <img src="./img/pao 1.png" alt="Produto 1">
-                <h3>Produto 1</h3>
-                <div class="prices">
-                    <span class="old-price">R$ 13,00</span>
-                    <span class="new-price">R$ 9,50</span>
-                </div>
-                <input type="number" min="1" value="1">
-                <button>Adicionar Mais Um</button>
-                <button>Adicionar ao Carrinho</button>
+
+<header class="header">
+    <h1>Meu FIFO Virtual</h1>
+    <a href="carrinho.html" class="cart-icon">🛒 Carrinho <span class="cart-count">0</span></a>
+</header>
+
+<section class="category">
+    <h2>Limpeza</h2>
+    <p>Produtos de limpeza doméstica para manter sua casa impecável.</p>
+
+    <div class="products">
+        <div class="product-card" data-id="501" data-name="Detergente Líquido 500ml" data-price="4.50">
+            <img src="/img limpeza/detergente.png" alt="Detergente">
+            <h3>Detergente Líquido 500ml</h3>
+            <span class="price">R$ 4,50</span>
+            <input type="number" min="1" value="1" class="quantity">
+            <button class="add-cart">Adicionar</button>
         </div>
-           <div>
-            <img src="./img/pao 1.png" alt="Produto 1">
-                <h3>Produto 1</h3>
-                <div class="prices">
-                    <span class="old-price">R$ 13,00</span>
-                    <span class="new-price">R$ 9,50</span>
-                </div>
-                <input type="number" min="1" value="1">
-                <button>Adicionar Mais Um</button>
-                <button>Adicionar ao Carrinho</button>
+
+        <div class="product-card" data-id="502" data-name="Sabão em Pó 1kg" data-price="12.00">
+            <img src="/img limpeza/sabao_po.png" alt="Sabão em Pó">
+            <h3>Sabão em Pó 1kg</h3>
+            <span class="price">R$ 12,00</span>
+            <input type="number" min="1" value="1" class="quantity">
+            <button class="add-cart">Adicionar</button>
         </div>
-           <div>
-            <img src="./img/pao 1.png" alt="Produto 1">
-                <h3>Produto 1</h3>
-                <div class="prices">
-                    <span class="old-price">R$ 13,00</span>
-                    <span class="new-price">R$ 9,50</span>
-                </div>
-                <input type="number" min="1" value="1">
-                <button>Adicionar Mais Um</button>
-                <button>Adicionar ao Carrinho</button>
+
+        <div class="product-card" data-id="503" data-name="Água Sanitária 1L" data-price="6.00">
+            <img src="/img limpeza/agua_sanitaria.png" alt="Água Sanitária">
+            <h3>Água Sanitária 1L</h3>
+            <span class="price">R$ 6,00</span>
+            <input type="number" min="1" value="1" class="quantity">
+            <button class="add-cart">Adicionar</button>
         </div>
-           <div>
-            <img src="./img/pao 1.png" alt="Produto 1">
-                <h3>Produto 1</h3>
-                <div class="prices">
-                    <span class="old-price">R$ 13,00</span>
-                    <span class="new-price">R$ 9,50</span>
-                </div>
-                <input type="number" min="1" value="1">
-                <button>Adicionar Mais Um</button>
-                <button>Adicionar ao Carrinho</button>
+
+        <div class="product-card" data-id="504" data-name="Desinfetante 500ml" data-price="5.50">
+            <img src="/img limpeza/desinfetante.png" alt="Desinfetante">
+            <h3>Desinfetante 500ml</h3>
+            <span class="price">R$ 5,50</span>
+            <input type="number" min="1" value="1" class="quantity">
+            <button class="add-cart">Adicionar</button>
         </div>
-           <div>
-            <img src="./img/pao 1.png" alt="Produto 1">
-                <h3>Produto 1</h3>
-                <div class="prices">
-                    <span class="old-price">R$ 13,00</span>
-                    <span class="new-price">R$ 9,50</span>
-                </div>
-                <input type="number" min="1" value="1">
-                <button>Adicionar Mais Um</button>
-                <button>Adicionar ao Carrinho</button>
+
+        <div class="product-card" data-id="505" data-name="Esponja Multiuso" data-price="3.50">
+            <img src="/img limpeza/esponja.png" alt="Esponja">
+            <h3>Esponja Multiuso</h3>
+            <span class="price">R$ 3,50</span>
+            <input type="number" min="1" value="1" class="quantity">
+            <button class="add-cart">Adicionar</button>
         </div>
-           <div>
-            <img src="./img/pao 1.png" alt="Produto 1">
-                <h3>Produto 1</h3>
-                <div class="prices">
-                    <span class="old-price">R$ 13,00</span>
-                    <span class="new-price">R$ 9,50</span>
-                </div>
-                <input type="number" min="1" value="1">
-                <button>Adicionar Mais Um</button>
-                <button>Adicionar ao Carrinho</button>
+
+        <div class="product-card" data-id="506" data-name="Lustra Móveis 250ml" data-price="14.00">
+            <img src="/img limpeza/lustra_moveis.png" alt="Lustra Móveis">
+            <h3>Lustra Móveis 250ml</h3>
+            <span class="price">R$ 14,00</span>
+            <input type="number" min="1" value="1" class="quantity">
+            <button class="add-cart">Adicionar</button>
         </div>
-           <div>
-            <img src="./img/pao 1.png" alt="Produto 1">
-                <h3>Produto 1</h3>
-                <div class="prices">
-                    <span class="old-price">R$ 13,00</span>
-                    <span class="new-price">R$ 9,50</span>
-                </div>
-                <input type="number" min="1" value="1">
-                <button>Adicionar Mais Um</button>
-                <button>Adicionar ao Carrinho</button>
+
+        <div class="product-card" data-id="507" data-name="Pano de Chão" data-price="7.00">
+            <img src="/img limpeza/pano_chao.png" alt="Pano de Chão">
+            <h3>Pano de Chão</h3>
+            <span class="price">R$ 7,00</span>
+            <input type="number" min="1" value="1" class="quantity">
+            <button class="add-cart">Adicionar</button>
         </div>
-           <div>
-            <img src="./img/pao 1.png" alt="Produto 1">
-                <h3>Produto 1</h3>
-                <div class="prices">
-                    <span class="old-price">R$ 13,00</span>
-                    <span class="new-price">R$ 9,50</span>
-                </div>
-                <input type="number" min="1" value="1">
-                <button>Adicionar Mais Um</button>
-                <button>Adicionar ao Carrinho</button>
+
+        <div class="product-card" data-id="508" data-name="Vassoura" data-price="25.00">
+            <img src="/img limpeza/vassoura.png" alt="Vassoura">
+            <h3>Vassoura</h3>
+            <span class="price">R$ 25,00</span>
+            <input type="number" min="1" value="1" class="quantity">
+            <button class="add-cart">Adicionar</button>
         </div>
-           <div>
-            <img src="./img/pao 1.png" alt="Produto 1">
-                <h3>Produto 1</h3>
-                <div class="prices">
-                    <span class="old-price">R$ 13,00</span>
-                    <span class="new-price">R$ 9,50</span>
-                </div>
-                <input type="number" min="1" value="1">
-                <button>Adicionar Mais Um</button>
-                <button>Adicionar ao Carrinho</button>
+
+        <div class="product-card" data-id="509" data-name="Rodo" data-price="12.00">
+            <img src="/img limpeza/rodo.png" alt="Rodo">
+            <h3>Rodo</h3>
+            <span class="price">R$ 12,00</span>
+            <input type="number" min="1" value="1" class="quantity">
+            <button class="add-cart">Adicionar</button>
         </div>
-        
-    </section>
+    </div>
+</section>
+
+<footer class="footer">
+    <div>
+        <h3>Meu FIFO Virtual</h3>
+        <p>Loja virtual de supermercado, oferecendo qualidade e economia.</p>
+    </div>
+    <div>
+        <h3>Links úteis</h3>
+        <a href="index.html">Início</a><br>
+        <a href="bebidas.html">Bebidas</a><br>
+        <a href="carnes.html">Carnes</a><br>
+        <a href="frios.html">Frios</a><br>
+        <a href="higiene.html">Higiene</a><br>
+        <a href="limpeza.html">Limpeza</a><br>
+    </div>
+    <div>
+        <h3>Contato</h3>
+        <p>Email: contato@meufifo.com</p>
+        <p>Tel: (47) 99999-9999</p>
+    </div>
+</footer>
+
 </body>
 </html>

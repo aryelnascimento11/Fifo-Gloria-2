@@ -1,115 +1,114 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Carnes</title>
+    <title>Carnes | Meu FIFO Virtual</title>
+    <link rel="stylesheet" href="loja.css">
 </head>
 <body>
-    <section>
-        <img src="" alt="imagem">
-        <h1>Carnes</h1>
-        <p>Encontre aqui uma variedade de carnes para todos os gostos, desde cortes magros até carnes suculentas e temperadas. Temos opções para todas as ocasiões!</p>
-        <div>
-            <img src="./img/pao 1.png" alt="Produto 1">
-                <h3>Produto 1</h3>
-                <div class="prices">
-                    <span class="old-price">R$ 13,00</span>
-                    <span class="new-price">R$ 9,50</span>
-                </div>
-                <input type="number" min="1" value="1">
-                <button>Adicionar Mais Um</button>
-                <button>Adicionar ao Carrinho</button>
+
+<header class="header">
+    <h1>Meu FIFO Virtual</h1>
+    <a href="carrinho.html" class="cart-icon">🛒 Carrinho <span class="cart-count">0</span></a>
+</header>
+
+<section class="category">
+    <h2>Carnes</h2>
+    <p>Seleção de carnes frescas e de qualidade para sua família.</p>
+
+    <div class="products">
+        <div class="product-card" data-id="201" data-name="Frango Congelado 1kg" data-price="12.50">
+            <img src="/img carnes/frango.png" alt="Frango Congelado">
+            <h3>Frango Congelado 1kg</h3>
+            <span class="price">R$ 12,50</span>
+            <input type="number" min="1" value="1" class="quantity">
+            <button class="add-cart">Adicionar</button>
         </div>
-           <div>
-            <img src="./img/pao 1.png" alt="Produto 1">
-                <h3>Produto 1</h3>
-                <div class="prices">
-                    <span class="old-price">R$ 13,00</span>
-                    <span class="new-price">R$ 9,50</span>
-                </div>
-                <input type="number" min="1" value="1">
-                <button>Adicionar Mais Um</button>
-                <button>Adicionar ao Carrinho</button>
+
+        <div class="product-card" data-id="202" data-name="Carne Bovina Patinho 1kg" data-price="35.00">
+            <img src="/img carnes/patinho.png" alt="Carne Patinho">
+            <h3>Carne Bovina Patinho 1kg</h3>
+            <span class="price">R$ 35,00</span>
+            <input type="number" min="1" value="1" class="quantity">
+            <button class="add-cart">Adicionar</button>
         </div>
-           <div>
-            <img src="./img/pao 1.png" alt="Produto 1">
-                <h3>Produto 1</h3>
-                <div class="prices">
-                    <span class="old-price">R$ 13,00</span>
-                    <span class="new-price">R$ 9,50</span>
-                </div>
-                <input type="number" min="1" value="1">
-                <button>Adicionar Mais Um</button>
-                <button>Adicionar ao Carrinho</button>
+
+        <div class="product-card" data-id="203" data-name="Carne Suína Lombo 1kg" data-price="28.00">
+            <img src="/img carnes/lombo.png" alt="Lombo Suíno">
+            <h3>Carne Suína Lombo 1kg</h3>
+            <span class="price">R$ 28,00</span>
+            <input type="number" min="1" value="1" class="quantity">
+            <button class="add-cart">Adicionar</button>
         </div>
-           <div>
-            <img src="./img/pao 1.png" alt="Produto 1">
-                <h3>Produto 1</h3>
-                <div class="prices">
-                    <span class="old-price">R$ 13,00</span>
-                    <span class="new-price">R$ 9,50</span>
-                </div>
-                <input type="number" min="1" value="1">
-                <button>Adicionar Mais Um</button>
-                <button>Adicionar ao Carrinho</button>
+
+        <div class="product-card" data-id="204" data-name="Linguiça Toscana 500g" data-price="15.50">
+            <img src="/img carnes/linguica.png" alt="Linguiça Toscana">
+            <h3>Linguiça Toscana 500g</h3>
+            <span class="price">R$ 15,50</span>
+            <input type="number" min="1" value="1" class="quantity">
+            <button class="add-cart">Adicionar</button>
         </div>
-           <div>
-            <img src="./img/pao 1.png" alt="Produto 1">
-                <h3>Produto 1</h3>
-                <div class="prices">
-                    <span class="old-price">R$ 13,00</span>
-                    <span class="new-price">R$ 9,50</span>
-                </div>
-                <input type="number" min="1" value="1">
-                <button>Adicionar Mais Um</button>
-                <button>Adicionar ao Carrinho</button>
+
+        <div class="product-card" data-id="205" data-name="Carne Moída 1kg" data-price="32.00">
+            <img src="/img carnes/carne_moida.png" alt="Carne Moída">
+            <h3>Carne Moída 1kg</h3>
+            <span class="price">R$ 32,00</span>
+            <input type="number" min="1" value="1" class="quantity">
+            <button class="add-cart">Adicionar</button>
         </div>
-           <div>
-            <img src="./img/pao 1.png" alt="Produto 1">
-                <h3>Produto 1</h3>
-                <div class="prices">
-                    <span class="old-price">R$ 13,00</span>
-                    <span class="new-price">R$ 9,50</span>
-                </div>
-                <input type="number" min="1" value="1">
-                <button>Adicionar Mais Um</button>
-                <button>Adicionar ao Carrinho</button>
+
+        <div class="product-card" data-id="206" data-name="Filé de Peito de Frango 1kg" data-price="18.50">
+            <img src="/img carnes/file_frango.png" alt="Filé de Frango">
+            <h3>Filé de Peito de Frango 1kg</h3>
+            <span class="price">R$ 18,50</span>
+            <input type="number" min="1" value="1" class="quantity">
+            <button class="add-cart">Adicionar</button>
         </div>
-           <div>
-            <img src="./img/pao 1.png" alt="Produto 1">
-                <h3>Produto 1</h3>
-                <div class="prices">
-                    <span class="old-price">R$ 13,00</span>
-                    <span class="new-price">R$ 9,50</span>
-                </div>
-                <input type="number" min="1" value="1">
-                <button>Adicionar Mais Um</button>
-                <button>Adicionar ao Carrinho</button>
+
+        <div class="product-card" data-id="207" data-name="Costela Bovina 1kg" data-price="38.00">
+            <img src="/img carnes/costela.png" alt="Costela Bovina">
+            <h3>Costela Bovina 1kg</h3>
+            <span class="price">R$ 38,00</span>
+            <input type="number" min="1" value="1" class="quantity">
+            <button class="add-cart">Adicionar</button>
         </div>
-           <div>
-            <img src="./img/pao 1.png" alt="Produto 1">
-                <h3>Produto 1</h3>
-                <div class="prices">
-                    <span class="old-price">R$ 13,00</span>
-                    <span class="new-price">R$ 9,50</span>
-                </div>
-                <input type="number" min="1" value="1">
-                <button>Adicionar Mais Um</button>
-                <button>Adicionar ao Carrinho</button>
+
+        <div class="product-card" data-id="208" data-name="Carne de Porco Pernil 1kg" data-price="29.50">
+            <img src="/img carnes/pernil.png" alt="Pernil Suíno">
+            <h3>Carne de Porco Pernil 1kg</h3>
+            <span class="price">R$ 29,50</span>
+            <input type="number" min="1" value="1" class="quantity">
+            <button class="add-cart">Adicionar</button>
         </div>
-           <div>
-            <img src="./img/pao 1.png" alt="Produto 1">
-                <h3>Produto 1</h3>
-                <div class="prices">
-                    <span class="old-price">R$ 13,00</span>
-                    <span class="new-price">R$ 9,50</span>
-                </div>
-                <input type="number" min="1" value="1">
-                <button>Adicionar Mais Um</button>
-                <button>Adicionar ao Carrinho</button>
+
+        <div class="product-card" data-id="209" data-name="Bisteca Suína 1kg" data-price="31.00">
+            <img src="/img carnes/bisteca.png" alt="Bisteca Suína">
+            <h3>Bisteca Suína 1kg</h3>
+            <span class="price">R$ 31,00</span>
+            <input type="number" min="1" value="1" class="quantity">
+            <button class="add-cart">Adicionar</button>
         </div>
-        
-    </section>
+    </div>
+</section>
+
+<footer class="footer">
+    <div>
+        <h3>Meu FIFO Virtual</h3>
+        <p>Loja virtual de supermercado, oferecendo qualidade e economia.</p>
+    </div>
+    <div>
+        <h3>Links úteis</h3>
+        <a href="index.html">Início</a><br>
+        <a href="bebidas.html">Bebidas</a><br>
+        <a href="carnes.html">Carnes</a><br>
+    </div>
+    <div>
+        <h3>Contato</h3>
+        <p>Email: contato@meufifo.com</p>
+        <p>Tel: (47) 99999-9999</p>
+    </div>
+</footer>
+
 </body>
 </html>

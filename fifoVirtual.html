@@ -1,173 +1,150 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meu FIFO Virtual</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- CSS -->
     <link rel="stylesheet" href="loja.css">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
-
 <body>
-    <header>
-        <h1>Bem-vindo ao Meu FIFO Virtual</h1>
-        <input placeholder="oque voce procura" type="text">
-        <button>carrinho</button>
-    </header>
-    <main>
-        <section>
-            <h2>ofertas da semana</h2>
-            <div>
-                <img src="./img/pao 1.png" alt="Produto 1">
-                <h3>Produto 1</h3>
-                <div class="prices">
-                    <span class="old-price">R$ 13,00</span>
-                    <span class="new-price">R$ 9,50</span>
-                </div>
-                <input type="number" min="1" value="1">
-                <button>Adicionar Mais Um</button>
-                <button>Adicionar ao Carrinho</button>
-            </div>
-            <div>
-                <img src="./img/pao 1.png" alt="Produto 1">
-                <h3>Produto 1</h3>
-                <div class="prices">
-                    <span class="old-price">R$ 13,00</span>
-                    <span class="new-price">R$ 9,50</span>
-                </div>
-                <input type="number" min="1" value="1">
-                <button>Adicionar Mais Um</button>
-                <button>Adicionar ao Carrinho</button>
-            </div>
-            <div>
-                <img src="./img/pao 1.png" alt="Produto 1">
-                <h3>Produto 1</h3>
-                <div class="prices">
-                    <span class="old-price">R$ 13,00</span>
-                    <span class="new-price">R$ 9,50</span>
-                </div>
-                <input type="number" min="1" value="1">
-                <button>Adicionar Mais Um</button>
-                <button>Adicionar ao Carrinho</button>
-            </div>
-            <div class="product">
-                <img src="./img/pao 1.png" alt="Produto 1">
-                <h3>Produto 1</h3>
-                <div class="prices">
-                    <span class="old-price">R$ 13,00</span>
-                    <span class="new-price">R$ 9,50</span>
-                </div>
-                <input type="number" min="1" value="1">
-                <button>Adicionar Mais Um</button>
-                <button>Adicionar ao Carrinho</button>
-            </div>
-            <div>
-                <img src="./img/pao 1.png" alt="Produto 1">
-                <h3>Produto 1</h3>
-                <div class="prices">
-                    <span class="old-price">R$ 13,00</span>
-                    <span class="new-price">R$ 9,50</span>
-                </div>
-                <input type="number" min="1" value="1">
-                <button>Adicionar Mais Um</button>
-                <button>Adicionar ao Carrinho</button>
-            </div>
-            <div>
-                <img src="./img/pao 1.png" alt="Produto 1">
-                <h3>Produto 1</h3>
-                <div class="prices">
-                    <span class="old-price">R$ 13,00</span>
-                    <span class="new-price">R$ 9,50</span>
-                </div>
-                <input type="number" min="1" value="1">
-                <button>Adicionar Mais Um</button>
-                <button>Adicionar ao Carrinho</button>
-            </div>
-        </section>
-        <section>
-            <h2>ofertas exclusivas fifo virtual</h2>
-            <div>
-                <img src="./img/pao 1.png" alt="Produto 1">
-                <h3>Produto 1</h3>
-                <div class="prices">
-                    <span class="old-price">R$ 13,00</span>
-                    <span class="new-price">R$ 9,50</span>
-                </div>
-                <input type="number" min="1" value="1">
-                <button>Adicionar Mais Um</button>
-                <button>Adicionar ao Carrinho</button>
-            </div>
-            <div>
-                <img src="./img/pao 1.png" alt="Produto 1">
-                <h3>Produto 1</h3>
-                <div class="prices">
-                    <span class="old-price">R$ 13,00</span>
-                    <span class="new-price">R$ 9,50</span>
-                </div>
-                <input type="number" min="1" value="1">
-                <button>Adicionar Mais Um</button>
-                <button>Adicionar ao Carrinho</button>
-            </div>
-            <div>
-                <img src="./img/pao 1.png" alt="Produto 1">
-                <h3>Produto 1</h3>
-                <div class="prices">
-                    <span class="old-price">R$ 13,00</span>
-                    <span class="new-price">R$ 9,50</span>
-                </div>
-                <input type="number" min="1" value="1">
-                <button>Adicionar Mais Um</button>
-                <button>Adicionar ao Carrinho</button>
-            </div>
-            <div class="product">
-                <img src="./img/pao 1.png" alt="Produto 1">
-                <h3>Produto 1</h3>
-                <div class="prices">
-                    <span class="old-price">R$ 13,00</span>
-                    <span class="new-price">R$ 9,50</span>
-                </div>
-                <input type="number" min="1" value="1">
-                <button>Adicionar Mais Um</button>
-                <button>Adicionar ao Carrinho</button>
-            </div>
-            <div>
-                <img src="./img/pao 1.png" alt="Produto 1">
-                <h3>Produto 1</h3>
-                <div class="prices">
-                    <span class="old-price">R$ 13,00</span>
-                    <span class="new-price">R$ 9,50</span>
-                </div>
-                <input type="number" min="1" value="1">
-                <button>Adicionar Mais Um</button>
-                <button>Adicionar ao Carrinho</button>
-            </div>
-            <div>
-                <img src="./img/pao 1.png" alt="Produto 1">
-                <h3>Produto 1</h3>
-                <div class="prices">
-                    <span class="old-price">R$ 13,00</span>
-                    <span class="new-price">R$ 9,50</span>
-                </div>
-                <input type="number" min="1" value="1">
-                <button>Adicionar Mais Um</button>
-                <button>Adicionar ao Carrinho</button>
-            </div>
-        </section>
-    </main>
-    <div>
-        <h1>Aceitamos</h1>
-        <h2>pix</h2>
-        <h2>cartoes</h2>
-        <h2>dinheiro</h2>
-    </div>
-    <footer>
-        <p>© 2026 Fifo Gloria — Todos os direitos reservados</p>
-        <div>
-            <a href="#"><i class="fa-brands fa-instagram"></i></a>
-            <a href="#"><i class="fa-brands fa-facebook"></i></a>
-            <a href="#"><i class="fa-solid fa-location-dot"></i></a>
-        </div>
-    </footer>
-</body>
 
+<!-- ================= HEADER ================= -->
+<header class="header">
+    <div class="header-top">
+        <h1>Meu FIFO Virtual</h1>
+
+        <div class="search-cart">
+            <input type="text" placeholder="O que você procura?">
+            <a href="carrinho.html" class="cart-btn">
+                <i class="fa-solid fa-cart-shopping"></i>
+                <span class="cart-count">0</span>
+            </a>
+        </div>
+    </div>
+</header>
+
+<!-- ================= MAIN ================= -->
+<main>
+
+    <!-- ===== OFERTAS DA SEMANA ===== -->
+    <section class="offers">
+        <div class="section-title">
+            <h2>Ofertas da Semana</h2>
+            <div class="arrows">
+                <button class="arrow left" onclick="scrollOffers(-1)">❮</button>
+                <button class="arrow right" onclick="scrollOffers(1)">❯</button>
+            </div>
+        </div>
+
+        <div class="offers-container" id="offersContainer">
+
+            <!-- PRODUTO -->
+            <div class="product-card">
+                <img src="./img/pao 1.png">
+                <h3>Produto 1</h3>
+
+                <div class="prices">
+                    <span class="old">R$ 13,00</span>
+                    <span class="new">R$ 9,50</span>
+                </div>
+
+                <div class="product-actions">
+                    <input type="number" min="1" value="1">
+                    <button class="add-cart">Adicionar</button>
+                </div>
+            </div>
+
+            <!-- DUPLICA OS PRODUTOS -->
+            <div class="product-card">
+                <img src="./img/pao 1.png">
+                <h3>Produto 2</h3>
+                <div class="prices">
+                    <span class="old">R$ 10,00</span>
+                    <span class="new">R$ 7,90</span>
+                </div>
+                <div class="product-actions">
+                    <input type="number" min="1" value="1">
+                    <button class="add-cart">Adicionar</button>
+                </div>
+            </div>
+
+            <!-- etc -->
+        </div>
+    </section>
+
+    <!-- ===== OFERTAS EXCLUSIVAS ===== -->
+    <section class="offers exclusive">
+        <h2>Ofertas Exclusivas FIFO</h2>
+
+        <div class="offers-container">
+            <div class="product-card">
+                <img src="./img/pao 1.png">
+                <h3>Produto Especial</h3>
+                <div class="prices">
+                    <span class="old">R$ 15,00</span>
+                    <span class="new">R$ 11,00</span>
+                </div>
+                <div class="product-actions">
+                    <input type="number" min="1" value="1">
+                    <button class="add-cart">Adicionar</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CATEGORIAS ===== -->
+    <section class="categories">
+        <a href="hortifruti.html"><i class="fa-solid fa-apple-whole"></i><span>Hortifruti</span></a>
+        <a href="bebidas.html"><i class="fa-solid fa-bottle-water"></i><span>Bebidas</span></a>
+        <a href="higiene.html"><i class="fa-solid fa-soap"></i><span>Higiene</span></a>
+        <a href="limpeza.html"><i class="fa-solid fa-broom"></i><span>Limpeza</span></a>
+        <a href="carnes.html"><i class="fa-solid fa-drumstick-bite"></i><span>Carnes</span></a>
+        <a href="frios.html"><i class="fa-solid fa-cheese"></i><span>Frios</span></a>
+        <a href="padaria.html"><i class="fa-solid fa-bread-slice"></i><span>Padaria</span></a>
+    </section>
+
+    <!-- ===== PAGAMENTOS ===== -->
+    <section class="payments">
+        <h2>Aceitamos</h2>
+        <div class="payment-icons">
+            <i class="fa-brands fa-pix"></i>
+            <i class="fa-solid fa-credit-card"></i>
+            <i class="fa-solid fa-money-bill-wave"></i>
+        </div>
+    </section>
+
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+    <p>© 2026 FIFO Glória — Todos os direitos reservados</p>
+
+    <div class="footer-info">
+        <span>🕒 Entregas e retiradas: 08h às 20h</span>
+    </div>
+
+    <div class="socials">
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+        <a href="#"><i class="fa-solid fa-location-dot"></i></a>
+    </div>
+</footer>
+
+<!-- JS -->
+<script>
+function scrollOffers(direction){
+    const container = document.getElementById("offersContainer");
+    container.scrollBy({
+        left: direction * 300,
+        behavior: 'smooth'
+    });
+}
+</script>
+
+</body>
 </html>

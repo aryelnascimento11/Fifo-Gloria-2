@@ -1,115 +1,139 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hortifrut</title>
+  <meta charset="UTF-8">
+  <title>Hortifruti</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- CSS GLOBAL -->
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <section>
-        <img src="" alt="imagem">
-        <h1>Hortifrut</h1>
-        <p>Encontre aqui uma variedade de hortifrut para todos os gostos, desde frutas frescas até legumes e verduras. Temos opções para todas as ocasiões!</p>
-        <div>
-            <img src="./img/pao 1.png" alt="Produto 1">
-                <h3>Produto 1</h3>
-                <div class="prices">
-                    <span class="old-price">R$ 13,00</span>
-                    <span class="new-price">R$ 9,50</span>
-                </div>
-                <input type="number" min="1" value="1">
-                <button>Adicionar Mais Um</button>
-                <button>Adicionar ao Carrinho</button>
-        </div>
-           <div>
-            <img src="./img/pao 1.png" alt="Produto 1">
-                <h3>Produto 1</h3>
-                <div class="prices">
-                    <span class="old-price">R$ 13,00</span>
-                    <span class="new-price">R$ 9,50</span>
-                </div>
-                <input type="number" min="1" value="1">
-                <button>Adicionar Mais Um</button>
-                <button>Adicionar ao Carrinho</button>
-        </div>
-           <div>
-            <img src="./img/pao 1.png" alt="Produto 1">
-                <h3>Produto 1</h3>
-                <div class="prices">
-                    <span class="old-price">R$ 13,00</span>
-                    <span class="new-price">R$ 9,50</span>
-                </div>
-                <input type="number" min="1" value="1">
-                <button>Adicionar Mais Um</button>
-                <button>Adicionar ao Carrinho</button>
-        </div>
-           <div>
-            <img src="./img/pao 1.png" alt="Produto 1">
-                <h3>Produto 1</h3>
-                <div class="prices">
-                    <span class="old-price">R$ 13,00</span>
-                    <span class="new-price">R$ 9,50</span>
-                </div>
-                <input type="number" min="1" value="1">
-                <button>Adicionar Mais Um</button>
-                <button>Adicionar ao Carrinho</button>
-        </div>
-           <div>
-            <img src="./img/pao 1.png" alt="Produto 1">
-                <h3>Produto 1</h3>
-                <div class="prices">
-                    <span class="old-price">R$ 13,00</span>
-                    <span class="new-price">R$ 9,50</span>
-                </div>
-                <input type="number" min="1" value="1">
-                <button>Adicionar Mais Um</button>
-                <button>Adicionar ao Carrinho</button>
-        </div>
-           <div>
-            <img src="./img/pao 1.png" alt="Produto 1">
-                <h3>Produto 1</h3>
-                <div class="prices">
-                    <span class="old-price">R$ 13,00</span>
-                    <span class="new-price">R$ 9,50</span>
-                </div>
-                <input type="number" min="1" value="1">
-                <button>Adicionar Mais Um</button>
-                <button>Adicionar ao Carrinho</button>
-        </div>
-           <div>
-            <img src="./img/pao 1.png" alt="Produto 1">
-                <h3>Produto 1</h3>
-                <div class="prices">
-                    <span class="old-price">R$ 13,00</span>
-                    <span class="new-price">R$ 9,50</span>
-                </div>
-                <input type="number" min="1" value="1">
-                <button>Adicionar Mais Um</button>
-                <button>Adicionar ao Carrinho</button>
-        </div>
-           <div>
-            <img src="./img/pao 1.png" alt="Produto 1">
-                <h3>Produto 1</h3>
-                <div class="prices">
-                    <span class="old-price">R$ 13,00</span>
-                    <span class="new-price">R$ 9,50</span>
-                </div>
-                <input type="number" min="1" value="1">
-                <button>Adicionar Mais Um</button>
-                <button>Adicionar ao Carrinho</button>
-        </div>
-           <div>
-            <img src="./img/pao 1.png" alt="Produto 1">
-                <h3>Produto 1</h3>
-                <div class="prices">
-                    <span class="old-price">R$ 13,00</span>
-                    <span class="new-price">R$ 9,50</span>
-                </div>
-                <input type="number" min="1" value="1">
-                <button>Adicionar Mais Um</button>
-                <button>Adicionar ao Carrinho</button>
-        </div>
-        
-    </section>
+
+  <!-- HEADER PADRÃO -->
+  <header class="header">
+    <h2>FIFO Glória</h2>
+    <a href="carrinho.html" class="cart-btn">🛒 Carrinho</a>
+  </header>
+
+  <!-- CATEGORIA -->
+  <section class="category">
+    <div class="category-header">
+      <h1>Hortifruti</h1>
+      <p>Frutas, legumes e verduras sempre fresquinhos pra você</p>
+    </div>
+
+    <!-- PRODUTOS (3 por linha automático pelo CSS) -->
+    <div class="products">
+
+      <div class="product-card"
+        data-id="201"
+        data-name="Banana Prata"
+        data-price="4.99">
+        <img src="img/banana.png" alt="Banana Prata">
+        <h3>Banana Prata</h3>
+        <span class="price">R$ 4,99</span>
+        <input type="number" min="1" value="1">
+        <button class="add-cart">Adicionar ao Carrinho</button>
+      </div>
+
+      <div class="product-card"
+        data-id="202"
+        data-name="Maçã Gala"
+        data-price="6.50">
+        <img src="img/maca.png" alt="Maçã Gala">
+        <h3>Maçã Gala</h3>
+        <span class="price">R$ 6,50</span>
+        <input type="number" min="1" value="1">
+        <button class="add-cart">Adicionar ao Carrinho</button>
+      </div>
+
+      <div class="product-card"
+        data-id="203"
+        data-name="Tomate"
+        data-price="5.99">
+        <img src="img/tomate.png" alt="Tomate">
+        <h3>Tomate</h3>
+        <span class="price">R$ 5,99</span>
+        <input type="number" min="1" value="1">
+        <button class="add-cart">Adicionar ao Carrinho</button>
+      </div>
+
+      <div class="product-card"
+        data-id="204"
+        data-name="Batata"
+        data-price="4.50">
+        <img src="img/batata.png" alt="Batata">
+        <h3>Batata</h3>
+        <span class="price">R$ 4,50</span>
+        <input type="number" min="1" value="1">
+        <button class="add-cart">Adicionar ao Carrinho</button>
+      </div>
+
+      <div class="product-card"
+        data-id="205"
+        data-name="Cenoura"
+        data-price="3.99">
+        <img src="img/cenoura.png" alt="Cenoura">
+        <h3>Cenoura</h3>
+        <span class="price">R$ 3,99</span>
+        <input type="number" min="1" value="1">
+        <button class="add-cart">Adicionar ao Carrinho</button>
+      </div>
+
+      <div class="product-card"
+        data-id="206"
+        data-name="Alface"
+        data-price="2.99">
+        <img src="img/alface.png" alt="Alface">
+        <h3>Alface</h3>
+        <span class="price">R$ 2,99</span>
+        <input type="number" min="1" value="1">
+        <button class="add-cart">Adicionar ao Carrinho</button>
+      </div>
+
+      <div class="product-card"
+        data-id="207"
+        data-name="Laranja"
+        data-price="3.50">
+        <img src="img/laranja.png" alt="Laranja">
+        <h3>Laranja</h3>
+        <span class="price">R$ 3,50</span>
+        <input type="number" min="1" value="1">
+        <button class="add-cart">Adicionar ao Carrinho</button>
+      </div>
+
+      <div class="product-card"
+        data-id="208"
+        data-name="Cebola"
+        data-price="4.20">
+        <img src="img/cebola.png" alt="Cebola">
+        <h3>Cebola</h3>
+        <span class="price">R$ 4,20</span>
+        <input type="number" min="1" value="1">
+        <button class="add-cart">Adicionar ao Carrinho</button>
+      </div>
+
+      <div class="product-card"
+        data-id="209"
+        data-name="Maço de Couve"
+        data-price="3.00">
+        <img src="img/couve.png" alt="Couve">
+        <h3>Maço de Couve</h3>
+        <span class="price">R$ 3,00</span>
+        <input type="number" min="1" value="1">
+        <button class="add-cart">Adicionar ao Carrinho</button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© FIFO Glória — Qualidade e economia no lugar certo</p>
+  </footer>
+
+  <!-- JS GLOBAL -->
+  <script src="js/script.js"></script>
 </body>
 </html>
