@@ -1,8 +1,9 @@
+
 /* ================= CONFIGURAÇÕES GERAIS ================= */
 :root {
-    --primary: #059669; /* Esmeralda Profissional */
+    --primary: #059669;
     --primary-dark: #065f46;
-    --accent: #fbbf24; /* Dourado para detalhes de oferta */
+    --accent: #fbbf24;
     --bg-light: #f8fafc;
     --text-main: #1e293b;
     --text-muted: #64748b;
@@ -26,7 +27,40 @@ body {
     line-height: 1.6;
 }
 
-/* ================= HEADER MODERNO ================= */
+/* ================= TÍTULO GLORIA (HOVER PREMIUM) ================= */
+.gloria-hover {
+    position: relative;
+    display: inline-block;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    color: var(--primary);
+    cursor: pointer;
+}
+
+/* underline animado */
+.gloria-hover::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(
+        to right,
+        var(--primary),
+        #34d399
+    );
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.35s ease;
+    box-shadow: 0 0 10px rgba(5,150,105,0.6);
+}
+
+.gloria-hover:hover::after {
+    transform: scaleX(1);
+}
+
+/* ================= HEADER ================= */
 .header {
     background: var(--primary-dark);
     padding: 1.5rem 0;
@@ -54,6 +88,7 @@ body {
     -webkit-text-fill-color: transparent;
 }
 
+/* ================= BUSCA / CARRINHO ================= */
 .search-cart {
     display: flex;
     align-items: center;
@@ -70,7 +105,10 @@ body {
     transition: var(--transition);
 }
 
-.search-cart input::placeholder { color: #d1fae5; }
+.search-cart input::placeholder {
+    color: #d1fae5;
+}
+
 .search-cart input:focus {
     background: white;
     color: var(--text-main);
@@ -86,7 +124,6 @@ body {
     position: relative;
     cursor: pointer;
     transition: var(--transition);
-    border: none;
     display: flex;
     align-items: center;
 }
@@ -122,33 +159,37 @@ main {
 
 .section-title {
     margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .section-title h2 {
     font-size: 1.5rem;
     position: relative;
-    padding-left: 15px;
+    padding-left: 18px;
 }
 
+/* barra lateral */
 .section-title h2::before {
-    content: '';
+    content: "";
     position: absolute;
     left: 0;
     top: 50%;
     transform: translateY(-50%);
     width: 5px;
-    height: 25px;
+    height: 26px;
     background: var(--primary);
     border-radius: 10px;
 }
 
-/* ================= CARDS DE PRODUTO ================= */
+/* ================= CARDS ================= */
 .offers-container {
     display: flex;
     gap: 24px;
     overflow-x: auto;
     padding: 10px 5px 30px;
-    scrollbar-width: none; /* Firefox */
+    scrollbar-width: none;
 }
 
 .product-card {
@@ -178,18 +219,15 @@ main {
     font-size: 1.1rem;
     font-weight: 600;
     margin-bottom: 0.5rem;
-    color: var(--text-main);
 }
 
 .prices {
     display: flex;
-    align-items: baseline;
     gap: 10px;
     margin-bottom: 1.25rem;
 }
 
 .prices .old {
-    font-size: 0.9rem;
     color: var(--text-muted);
     text-decoration: line-through;
 }
@@ -211,7 +249,6 @@ main {
     border-radius: 8px;
     padding: 8px;
     text-align: center;
-    font-weight: 600;
 }
 
 .add-cart {
@@ -227,8 +264,35 @@ main {
 
 .add-cart:hover {
     background: var(--primary-dark);
-    box-shadow: 0 4px 12px rgba(5, 150, 105, 0.3);
+    box-shadow: 0 4px 12px rgba(5,150,105,0.3);
 }
+
+/* ================= FOOTER ================= */
+.footer {
+    background: #0f172a;
+    color: #94a3b8;
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.socials a {
+    display: inline-flex;
+    width: 45px;
+    height: 45px;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255,255,255,0.05);
+    border-radius: 50%;
+    color: white;
+    margin: 0 10px;
+    transition: var(--transition);
+}
+
+.socials a:hover {
+    background: var(--primary);
+    transform: rotate(360deg);
+}
+
 
 /* ================= CATEGORIAS ================= */
 .categories {
@@ -261,6 +325,14 @@ main {
     font-size: 2.5rem;
     display: block;
     margin-bottom: 12px;
+}
+
+.offers-exclusive{
+    display: flex;   
+    gap: 24px;
+    overflow-x: auto;
+    padding: 10px 5px 30px;
+    scrollbar-width: none; /* Firefox */
 }
 
 /* ================= PAGAMENTOS ================= */
