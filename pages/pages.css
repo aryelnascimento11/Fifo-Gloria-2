@@ -1,0 +1,381 @@
+/* =========================
+   PAGES.CSS — MEU FIFO VIRTUAL
+   Tema claro (igual HOME)
+   ========================= */
+
+:root{
+  --primary:#0f5132;
+  --secondary:#1b8a5a;
+  --accent:#9effc8;
+
+  --bg:#f4f6f8;
+  --text:#1e1e1e;
+  --muted:#6b7280;
+
+  --card:#ffffff;
+  --card-soft:#f1f5f9;
+
+  --border:rgba(15,81,50,.15);
+  --shadow:0 16px 40px rgba(0,0,0,.12);
+  --shadow-soft:0 10px 28px rgba(0,0,0,.10);
+
+  --radius-xl:26px;
+  --radius-lg:18px;
+  --radius-md:14px;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+
+body{
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.6;
+}
+
+/* ================= HEADER ================= */
+.navbar-pro{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  padding:14px 18px;
+  background:rgba(244,246,248,.85);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid rgba(0,0,0,.06);
+}
+
+.header-content{
+  max-width:1200px;
+  margin:0 auto;
+  background:linear-gradient(135deg,var(--primary),var(--secondary));
+  border-radius:999px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:14px;
+  padding:10px 18px;
+  box-shadow:0 12px 35px rgba(0,0,0,.18);
+}
+
+.logo-area{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  min-width:0;
+}
+
+.led-dot{
+  width:10px;
+  height:10px;
+  border-radius:50%;
+  background:var(--accent);
+  box-shadow:0 0 12px rgba(158,255,200,.9);
+  flex-shrink:0;
+}
+
+.logo-text{
+  color:#fff;
+  font-weight:800;
+  font-size:16px;
+  letter-spacing:.5px;
+  white-space:nowrap;
+}
+
+.logo-text span{ color:var(--accent); }
+
+.nav-minimal{
+  display:flex;
+  gap:10px;
+  flex-shrink:0;
+}
+
+.nav-minimal a{
+  color:#fff;
+  text-decoration:none;
+  font-size:13px;
+  padding:8px 12px;
+  border-radius:999px;
+  transition:.25s;
+  white-space:nowrap;
+}
+
+.nav-minimal a:hover{ background:rgba(255,255,255,.12); }
+
+.nav-minimal a.active{
+  background:rgba(255,255,255,.22);
+  font-weight:700;
+}
+
+/* ================= CONTAINER ================= */
+.category{
+  max-width:1200px;
+  margin:26px auto 60px;
+  padding:0 18px;
+}
+
+/* ================= BANNER ================= */
+.category-hero{
+  position:relative;
+  border-radius:var(--radius-xl);
+  overflow:hidden;
+  min-height:240px;
+  padding:60px 20px 60px;
+  background-size:cover;
+  background-position:center;
+  box-shadow:var(--shadow);
+  border:1px solid rgba(0,0,0,.06);
+}
+
+.category-hero-overlay{
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(120deg, rgba(15,81,50,.35), rgba(27,138,90,.25)),
+    linear-gradient(180deg, rgba(0,0,0,.12), rgba(0,0,0,.42));
+}
+
+.category-header{
+  position:relative;
+  z-index:2;
+  text-align:center;
+  color:#fff;
+}
+
+.category-header h1{
+  font-size:clamp(28px,4vw,46px);
+  font-weight:800;
+  letter-spacing:1px;
+  text-transform:uppercase;
+  text-shadow:0 12px 26px rgba(0,0,0,.25);
+}
+
+.category-header p{
+  margin-top:10px;
+  font-size:clamp(14px,2vw,16px);
+  opacity:.95;
+}
+
+/* ================= BUSCA (ESPAÇAMENTO ARRUMADO) ================= */
+.search-wrap{
+  display:flex;
+  justify-content:center;
+
+  /* MAIS ESPAÇO do banner */
+  margin-top:26px;
+
+  /* MAIS ESPAÇO pros cards */
+  margin-bottom:34px;
+}
+
+.search-input{
+  width:100%;
+  max-width:560px;
+  padding:14px 20px;
+  border-radius:999px;
+  border:1px solid rgba(0,0,0,.10);
+  background:#fff;
+  box-shadow:0 12px 30px rgba(0,0,0,.12);
+  outline:none;
+  font-size:14px;
+}
+
+.search-input::placeholder{ color:#9ca3af; }
+
+.search-input:focus{
+  border-color:rgba(15,81,50,.4);
+  box-shadow:0 14px 34px rgba(0,0,0,.14);
+}
+
+/* ================= GRID PRODUTOS ================= */
+.products{
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap:22px;
+
+  /* garante espaço mesmo se alguém remover o search-wrap sem querer */
+  padding-top:2px;
+}
+
+.product-card{
+  background:var(--card);
+  border-radius:var(--radius-lg);
+  padding:18px;
+  text-align:center;
+  border:1px solid rgba(0,0,0,.08);
+  box-shadow:var(--shadow-soft);
+  transition:.25s;
+}
+
+.product-card:hover{
+  transform:translateY(-6px);
+  box-shadow:var(--shadow);
+}
+
+.product-card img{
+  width:150px;
+  height:150px;
+  object-fit:contain;
+  margin:8px auto 10px;
+  display:block;
+}
+
+.product-card h3{
+  font-size:16px;
+  font-weight:700;
+  margin-bottom:6px;
+}
+
+.price{
+  font-size:18px;
+  font-weight:800;
+  color:var(--primary);
+  margin-bottom:12px;
+  display:block;
+}
+
+.product-card input{
+  width:80px;
+  padding:10px;
+  border-radius:12px;
+  border:1px solid rgba(0,0,0,.12);
+  background:var(--card-soft);
+  margin-bottom:10px;
+  text-align:center;
+}
+
+.add-cart{
+  width:100%;
+  border:none;
+  cursor:pointer;
+  padding:12px;
+  border-radius:14px;
+  background:linear-gradient(135deg,var(--primary),var(--secondary));
+  color:#fff;
+  font-weight:800;
+  font-size:12px;
+  transition:.25s;
+}
+
+.add-cart:hover{
+  transform:translateY(-2px);
+  box-shadow:0 10px 22px rgba(15,81,50,.25);
+}
+
+/* ================= FOOTER ================= */
+footer{
+  margin-top:60px;
+  padding:34px 18px;
+  text-align:center;
+  background:linear-gradient(135deg,#102c1d,#0b1f15);
+  color:#fff;
+  font-size:13px;
+}
+
+/* ================= BANNERS POR PÁGINA ================= */
+.category-hero--hortifruti{ background-image:url("/img/horta.png"); }
+.category-hero--bebidas{ background-image:url("/img/bebidas.png"); }
+.category-hero--carnes{ background-image:url("/img/banner\ carnes\ \(1\).jpg"); }
+.category-hero--higiene{ background-image:url("/img/image.png"); }
+.category-hero--limpeza{ background-image:url("/img/limpeza.png"); }
+.category-hero--frios{ background-image:url("/img/banner\ frios.jpg"); }
+.category-hero--padaria{ background-image:url("/img/padaria.png"); }
+
+/* ================= RESPONSIVO ================= */
+
+/* Tablet */
+@media (max-width: 900px){
+  .products{ grid-template-columns:repeat(2,1fr); }
+  .category-hero{ min-height:210px; padding:52px 16px 42px; }
+
+  .search-wrap{
+    margin-top:20px;
+    margin-bottom:26px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px){
+  .products{ grid-template-columns:1fr; }
+
+  .category-hero{
+    min-height:190px;
+    padding:46px 14px 34px;
+  }
+
+  .search-wrap{
+    margin-top:16px;
+    margin-bottom:22px;
+  }
+
+  .search-input{
+    padding:12px 16px;
+  }
+
+  .logo-text{ font-size:14px; }
+
+  .nav-minimal a{
+    font-size:12px;
+    padding:6px 10px;
+  }
+}
+
+/* Mobile pequeno */
+@media (max-width: 360px){
+  .search-wrap{ margin-top:14px; margin-bottom:18px; }
+  .search-input{ font-size:13px; }
+}
+
+/* ================= BOTÃO VOLTAR ================= */
+.btn-back{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  margin: 30px auto 10px;
+  padding: 12px 26px;
+
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: #fff;
+  text-decoration: none;
+
+  font-weight: 800;
+  font-size: 13px;
+  letter-spacing: .4px;
+
+  border-radius: 999px;
+  box-shadow: 0 12px 28px rgba(15,81,50,.25);
+
+  transition: all .25s ease;
+}
+
+/* hover */
+.btn-back:hover{
+  transform: translateY(-3px);
+  box-shadow: 0 16px 36px rgba(15,81,50,.35);
+  filter: brightness(1.05);
+}
+
+/* clique */
+.btn-back:active{
+  transform: translateY(0);
+  box-shadow: 0 8px 18px rgba(15,81,50,.25);
+}
+
+/* centralizar sozinho */
+.btn-back{
+  display: block;
+  width: fit-content;
+}
+
+/* mobile */
+@media (max-width: 600px){
+  .btn-back{
+    font-size: 12px;
+    padding: 11px 22px;
+  }
+}

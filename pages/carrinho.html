@@ -1,108 +1,95 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="carrinho.css">
-    <title>Carrinho | Meu FIFO Virtual</title>
-
-    <!-- Fonte -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-    <!-- CSS -->
-    <link rel="stylesheet" href="../css/base.css">
-    <link rel="stylesheet" href="../css/loja.css">
-
-    <!-- Ícones -->
+    <title>Checkout Pro | Meu FIFO Virtual</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="carrinho.css">
 </head>
+
 <body>
 
-<!-- HEADER (o mesmo da loja virtual) -->
-<header class="header">
-    <h1 class="logo">MEU <span>FIFO</span> VIRTUAL</h1>
+    <header class="navbar-pro">
+        <div class="header-content">
+            <div class="logo-area">
+                <div class="led-dot"></div>
+                <h1 class="logo-text">MEU <span>FIFO</span> VIRTUAL</h1>
+            </div>
+            <nav class="nav-minimal">
+                <a href="../index.html">Início</a>
+                <a href="./hortifruti.html" class="active">Catálogo</a>
+            </nav>
+        </div>
+    </header>
 
-    <nav>
-        <ul class="menu">
-            <li><a href="../index.html">Início</a></li>
-            <li><a href="./hortifruti.html">Loja</a></li>
-        </ul>
-    </nav>
+    <main class="app-container">
+        <div class="glass-grid">
+            <section class="items-section">
+                <div class="section-title">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <h2>Itens Selecionados</h2>
+                </div>
 
-    <a href="carrinho.html" class="cart-icon">
-        <i class="fa-solid fa-cart-shopping"></i>
-        <span class="cart-count">0</span>
-    </a>
-</header>
+                <div id="lista-itens" class="items-list">
+                    <div class="carrinho-vazio">
+                        <div class="pulse-icon"><i class="fa-solid fa-basket-shopping"></i></div>
+                        <p>Aguardando suas escolhas...</p>
+                    </div>
+                </div>
+            </section>
 
-<main class="carrinho-container">
+            <aside class="checkout-section">
+                <div class="glass-card">
+                    <h3>Resumo do Pedido</h3>
 
-    <h2>Meu Carrinho</h2>
+                    <div class="price-display">
+                        <span class="label">Total a pagar</span>
+                        <h2 id="total">R$ 0,00</h2>
+                    </div>
 
-    <!-- LISTA DE PRODUTOS -->
-    <div class="carrinho-lista">
-        <!-- JS vai inserir os itens aqui -->
-        <p class="carrinho-vazio">Seu carrinho está vazio.</p>
-    </div>
+                    <div class="input-group">
+                        <label><i class="fa-solid fa-wallet"></i> Forma de Pagamento</label>
+                        <div class="payment-grid">
+                            <label class="pay-option">
+                                <input type="radio" name="pagamento" checked>
+                                <div class="pay-card">Pix</div>
+                            </label>
+                            <label class="pay-option">
+                                <input type="radio" name="pagamento">
+                                <div class="pay-card">Cartão</div>
+                            </label>
+                            <label class="pay-option">
+                                <input type="radio" name="pagamento">
+                                <div class="pay-card">Dinheiro</div>
+                            </label>
+                        </div>
+                    </div>
 
-    <!-- RESUMO -->
-    <div class="carrinho-resumo">
-        <p>Total:</p>
-        <h3 id="total">R$ 0,00</h3>
-    </div>
+                    <div class="input-group">
+                        <label><i class="fa-solid fa-map-location-dot"></i> Local de Entrega</label>
+                        <textarea placeholder="Digite seu endereço completo..."></textarea>
+                    </div>
 
-    <!-- FORMA DE PAGAMENTO -->
-    <div class="pagamento">
-        <h3>Forma de pagamento</h3>
+                    <div class="action-area">
+                        <button class="btn-main">
+                            <span>Finalizar via WhatsApp</span>
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </button>
+                        <button class="btn-secondary">Esvaziar Carrinho</button>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </main>
 
-        <label>
-            <input type="radio" name="pagamento" value="Pix">
-            Pix
-        </label>
-
-        <label>
-            <input type="radio" name="pagamento" value="Débito">
-            Cartão de Débito
-        </label>
-
-        <label>
-            <input type="radio" name="pagamento" value="Crédito">
-            Cartão de Crédito
-        </label>
-
-        <label>
-            <input type="radio" name="pagamento" value="Dinheiro">
-            Dinheiro
-        </label>
-    </div>
-
-    <!-- ENDEREÇO -->
-    <div class="endereco">
-        <h3>Endereço para entrega</h3>
-        <textarea placeholder="Rua, número, bairro, ponto de referência..."></textarea>
-    </div>
-
-    <!-- BOTÕES -->
-    <div class="carrinho-botoes">
-        <button class="btn-esvaziar">
-            <i class="fa-solid fa-trash"></i>
-            Esvaziar carrinho
-        </button>
-
-        <button class="btn-finalizar">
-            <i class="fa-brands fa-whatsapp"></i>
-            Finalizar pedido
-        </button>
-    </div>
-
-</main>
-
-<footer class="footer">
-    <p>© 2026 Meu FIFO Virtual — Todos os direitos reservados</p>
-</footer>
-
-<!-- JS (amanhã a gente faz) -->
-<script src="../js/carrinho.js"></script>
+    <footer class="footer-simple">
+        <p>Tecnologia <span>FIFO</span> &copy; 2026</p>
+    </footer>
 
 </body>
+
 </html>

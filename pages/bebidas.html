@@ -1,115 +1,135 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bebidas | Meu FIFO Virtual</title>
+
+    <!-- CSS (MESMO do Hortifruti) -->
     <link rel="stylesheet" href="pages.css">
 </head>
+
 <body>
 
-<header class="header">
-    <h1>Meu FIFO Virtual</h1>
-    <a href="carrinho.html" class="cart-icon">🛒 Carrinho <span class="cart-count">0</span></a>
-</header>
+    <!-- HEADER PADRÃO (igual Hortifruti) -->
+    <header class="navbar-pro">
+        <div class="header-content">
+            <div class="logo-area">
+                <div class="led-dot"></div>
+                <h1 class="logo-text">MEU <span>FIFO</span> VIRTUAL</h1>
+            </div>
 
-<section class="category">
-    <h2>Bebidas</h2>
-    <p>Refrigerantes, sucos e bebidas para o dia a dia.</p>
+            <nav class="nav-minimal">
+                <a href="../index.html">Início</a>
+                <a href="carrinho.html" class="active">Ver Carrinho 🛒</a>
+            </nav>
+        </div>
+    </header>
 
-    <div class="products">
-        <!-- PRODUTOS 3x3 -->
-        <div class="product-card" data-id="101" data-name="Coca-Cola Lata" data-price="4.50">
-            <img src="/img bebidas/coca 3.png" alt="Coca-Cola Lata">
-            <h3>Coca-Cola Lata</h3>
-            <span class="price">R$ 4,50</span>
-            <input type="number" min="1" value="1" class="quantity">
-            <button class="add-cart">Adicionar</button>
+    <!-- CATEGORIA -->
+    <section class="category">
+
+        <!-- BANNER (FUNDO) -->
+        <div class="category-hero category-hero--bebidas" role="img" aria-label="Bebidas">
+            <div class="category-hero-overlay"></div>
+
+            <div class="category-header">
+                <h1>Bebidas</h1>
+                <p>Refrigerantes, sucos e bebidas para o dia a dia.</p>
+            </div>
         </div>
 
-        <div class="product-card" data-id="102" data-name="Guaraná Antártica 600mL" data-price="5.00">
-            <img src="/img bebidas/guaranaa.png" alt="Guaraná Antártica">
-            <h3>Guaraná Antártica 600mL</h3>
-            <span class="price">R$ 5,00</span>
-            <input type="number" min="1" value="1" class="quantity">
-            <button class="add-cart">Adicionar</button>
+        <!-- BUSCA -->
+        <div class="search-wrap">
+            <input class="search-input" placeholder="Pesquise seu produto" type="text">
         </div>
 
-        <div class="product-card" data-id="103" data-name="Fanta Laranja 600ml" data-price="6.50">
-            <img src="/img bebidas/Fantaa.png" alt="Fanta Laranja">
-            <h3>Fanta Laranja 600ml</h3>
-            <span class="price">R$ 6,50</span>
-            <input type="number" min="1" value="1" class="quantity">
-            <button class="add-cart">Adicionar</button>
+
+        <!-- PRODUTOS -->
+        <div class="products">
+
+            <div class="product-card" data-id="101" data-name="Coca-Cola Lata" data-price="4.50">
+                <img src="/img bebidas/coca 3.png" alt="Coca-Cola Lata">
+                <h3>Coca-Cola Lata</h3>
+                <span class="price">R$ 4,50</span>
+                <input type="number" min="1" value="1" class="quantity">
+                <button class="add-cart">Adicionar ao Carrinho</button>
+            </div>
+
+            <div class="product-card" data-id="102" data-name="Guaraná Antártica 600mL" data-price="5.00">
+                <img src="/img bebidas/guaranaa.png" alt="Guaraná Antártica 600mL">
+                <h3>Guaraná Antártica 600mL</h3>
+                <span class="price">R$ 5,00</span>
+                <input type="number" min="1" value="1" class="quantity">
+                <button class="add-cart">Adicionar ao Carrinho</button>
+            </div>
+
+            <div class="product-card" data-id="103" data-name="Fanta Laranja 600ml" data-price="6.50">
+                <img src="/img bebidas/Fantaa.png" alt="Fanta Laranja 600ml">
+                <h3>Fanta Laranja 600ml</h3>
+                <span class="price">R$ 6,50</span>
+                <input type="number" min="1" value="1" class="quantity">
+                <button class="add-cart">Adicionar ao Carrinho</button>
+            </div>
+
+            <div class="product-card" data-id="104" data-name="Suco Natural 1L" data-price="6.50">
+                <img src="/img bebidas/suco laranja.png" alt="Suco Natural 1L">
+                <h3>Suco Natural 1L</h3>
+                <span class="price">R$ 6,50</span>
+                <input type="number" min="1" value="1" class="quantity">
+                <button class="add-cart">Adicionar ao Carrinho</button>
+            </div>
+
+            <div class="product-card" data-id="105" data-name="Água Mineral 500ml" data-price="3.00">
+                <img src="/img bebidas/agua_minerall.png" alt="Água Mineral 500ml">
+                <h3>Água Mineral 500ml</h3>
+                <span class="price">R$ 3,00</span>
+                <input type="number" min="1" value="1" class="quantity">
+                <button class="add-cart">Adicionar ao Carrinho</button>
+            </div>
+
+            <div class="product-card" data-id="106" data-name="Monster ENERGY 473ml" data-price="10.00">
+                <img src="/img bebidas/monsterr.png" alt="Monster ENERGY 473ml">
+                <h3>Monster ENERGY 473ml</h3>
+                <span class="price">R$ 10,00</span>
+                <input type="number" min="1" value="1" class="quantity">
+                <button class="add-cart">Adicionar ao Carrinho</button>
+            </div>
+
+            <div class="product-card" data-id="107" data-name="Chá Matte Leão 500ml" data-price="5.99">
+                <img src="/img bebidas/cha_matte_leao.png" alt="Chá Matte Leão 500ml">
+                <h3>Chá Matte Leão 500ml</h3>
+                <span class="price">R$ 5,99</span>
+                <input type="number" min="1" value="1" class="quantity">
+                <button class="add-cart">Adicionar ao Carrinho</button>
+            </div>
+
+            <div class="product-card" data-id="108" data-name="Kaiser Lata 350ml" data-price="3.99">
+                <img src="/img bebidas/cerveja 5.png" alt="Kaiser Lata 350ml">
+                <h3>Kaiser Lata 350ml</h3>
+                <span class="price">R$ 3,99</span>
+                <input type="number" min="1" value="1" class="quantity">
+                <button class="add-cart">Adicionar ao Carrinho</button>
+            </div>
+
+            <div class="product-card" data-id="109" data-name="Gatorade 500ml" data-price="6.00">
+                <img src="/img bebidas/gatoradee.png" alt="Gatorade 500ml">
+                <h3>Gatorade 500ml</h3>
+                <span class="price">R$ 6,00</span>
+                <input type="number" min="1" value="1" class="quantity">
+                <button class="add-cart">Adicionar ao Carrinho</button>
+            </div>
+
         </div>
+    </section>
+   <a class="btn-back" href="/fifoVirtual.html">← Voltar para a loja</a>
 
-        <div class="product-card" data-id="104" data-name="Suco Natural 1L" data-price="6.50">
-            <img src="/img bebidas/suco laranja.png" alt="Suco Natural">
-            <h3>Suco Natural 1L</h3>
-            <span class="price">R$ 6,50</span>
-            <input type="number" min="1" value="1" class="quantity">
-            <button class="add-cart">Adicionar</button>
-        </div>
+    <footer>
+        <p>© FIFO Glória — Qualidade e economia no lugar certo</p>
+    </footer>
 
-        <div class="product-card" data-id="105" data-name="Água Mineral 500ml" data-price="3.00">
-            <img src="/img bebidas/agua_minerall.png" alt="Água Mineral">
-            <h3>Água Mineral 500ml</h3>
-            <span class="price">R$ 3,00</span>
-            <input type="number" min="1" value="1" class="quantity">
-            <button class="add-cart">Adicionar</button>
-        </div>
-
-        <div class="product-card" data-id="106" data-name="Monster ENERGY 473ml" data-price="10.00">
-            <img src="/img bebidas/monsterr.png" alt="Monster ENERGY">
-            <h3>Monster ENERGY 473ml</h3>
-            <span class="price">R$ 10,00</span>
-            <input type="number" min="1" value="1" class="quantity">
-            <button class="add-cart">Adicionar</button>
-        </div>
-
-        <div class="product-card" data-id="107" data-name="Chá Matte Leao 500ml" data-price="5.99">
-            <img src="/img bebidas/cha_matte_leao.png" alt="Chá Matte Leão">
-            <h3>Chá Matte Leão 500ml</h3>
-            <span class="price">R$ 5,99</span>
-            <input type="number" min="1" value="1" class="quantity">
-            <button class="add-cart">Adicionar</button>
-        </div>
-
-        <div class="product-card" data-id="108" data-name="Kaiser Lata 350ml" data-price="3.99">
-            <img src="/img bebidas/cerveja 5.png" alt="Kaiser Lata">
-            <h3>Kaiser Lata 350ml</h3>
-            <span class="price">R$ 3,99</span>
-            <input type="number" min="1" value="1" class="quantity">
-            <button class="add-cart">Adicionar</button>
-        </div>
-
-        <div class="product-card" data-id="109" data-name="Gatorade 500ml" data-price="6.00">
-            <img src="/img bebidas/gatoradee.png" alt="Gatorade">
-            <h3>Gatorade 500ml</h3>
-            <span class="price">R$ 6,00</span>
-            <input type="number" min="1" value="1" class="quantity">
-            <button class="add-cart">Adicionar</button>
-        </div>
-    </div>
-</section>
-
-<footer class="footer">
-    <div>
-        <h3>Meu FIFO Virtual</h3>
-        <p>Loja virtual de supermercado, oferecendo qualidade e economia.</p>
-    </div>
-    <div>
-        <h3>Links úteis</h3>
-        <a href="index.html">Início</a><br>
-        <a href="bebidas.html">Bebidas</a><br>
-        <a href="carnes.html">Carnes</a><br>
-    </div>
-    <div>
-        <h3>Contato</h3>
-        <p>Email: contato@meufifo.com</p>
-        <p>Tel: (47) 99999-9999</p>
-    </div>
-</footer>
-
+    <script src="js/script.js"></script>
 </body>
+
 </html>

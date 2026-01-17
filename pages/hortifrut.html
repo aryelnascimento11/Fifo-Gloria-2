@@ -1,139 +1,135 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <title>Hortifruti</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- CSS GLOBAL -->
-  <link rel="stylesheet" href="pages.css">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hortifruti | Meu FIFO Virtual</title>
+
+    <!-- CSS (MESMO do Hortifruti) -->
+    <link rel="stylesheet" href="pages.css">
 </head>
+
 <body>
 
-  <!-- HEADER PADRÃO -->
-  <header class="header">
-    <h2>FIFO Glória</h2>
-    <a href="carrinho.html" class="cart-btn">🛒 Carrinho</a>
-  </header>
+    <!-- HEADER PADRÃO (igual Hortifruti) -->
+    <header class="navbar-pro">
+        <div class="header-content">
+            <div class="logo-area">
+                <div class="led-dot"></div>
+                <h1 class="logo-text">MEU <span>FIFO</span> VIRTUAL</h1>
+            </div>
 
-  <!-- CATEGORIA -->
-  <section class="category">
-    <div class="category-header">
-      <h1>Hortifruti</h1>
-      <p>Frutas, legumes e verduras sempre fresquinhos pra você</p>
-    </div>
+            <nav class="nav-minimal">
+                <a href="../index.html">Início</a>
+                <a href="carrinho.html" class="active">Ver Carrinho 🛒</a>
+            </nav>
+        </div>
+    </header>
 
-    <!-- PRODUTOS (3 por linha automático pelo CSS) -->
-    <div class="products">
+    <!-- CATEGORIA -->
+    <section class="category">
 
-      <div class="product-card"
-        data-id="201"
-        data-name="Banana Prata"
-        data-price="4.99">
-        <img src="img/banana.png" alt="Banana Prata">
-        <h3>Banana Prata</h3>
-        <span class="price">R$ 4,99</span>
-        <input type="number" min="1" value="1">
-        <button class="add-cart">Adicionar ao Carrinho</button>
-      </div>
+        <!-- BANNER (FUNDO) -->
+        <div class="category-hero category-hero--hortifruti" role="img" aria-label="Higiene">
+            <div class="category-hero-overlay"></div>
 
-      <div class="product-card"
-        data-id="202"
-        data-name="Maçã Gala"
-        data-price="6.50">
-        <img src="img/maca.png" alt="Maçã Gala">
-        <h3>Maçã Gala</h3>
-        <span class="price">R$ 6,50</span>
-        <input type="number" min="1" value="1">
-        <button class="add-cart">Adicionar ao Carrinho</button>
-      </div>
+            <div class="category-header">
+                <h1>Hortifruti</h1>
+                <p>Frescor e qualidade direto do campo para a sua mesa.</p>
+            </div>
+        </div>
 
-      <div class="product-card"
-        data-id="203"
-        data-name="Tomate"
-        data-price="5.99">
-        <img src="img/tomate.png" alt="Tomate">
-        <h3>Tomate</h3>
-        <span class="price">R$ 5,99</span>
-        <input type="number" min="1" value="1">
-        <button class="add-cart">Adicionar ao Carrinho</button>
-      </div>
+        <!-- BUSCA -->
+        <div class="search-wrap">
+            <input class="search-input" placeholder="Pesquise seu produto" type="text">
+        </div>
 
-      <div class="product-card"
-        data-id="204"
-        data-name="Batata"
-        data-price="4.50">
-        <img src="img/batata.png" alt="Batata">
-        <h3>Batata</h3>
-        <span class="price">R$ 4,50</span>
-        <input type="number" min="1" value="1">
-        <button class="add-cart">Adicionar ao Carrinho</button>
-      </div>
 
-      <div class="product-card"
-        data-id="205"
-        data-name="Cenoura"
-        data-price="3.99">
-        <img src="img/cenoura.png" alt="Cenoura">
-        <h3>Cenoura</h3>
-        <span class="price">R$ 3,99</span>
-        <input type="number" min="1" value="1">
-        <button class="add-cart">Adicionar ao Carrinho</button>
-      </div>
+        <!-- PRODUTOS -->
+        <div class="products">
 
-      <div class="product-card"
-        data-id="206"
-        data-name="Alface"
-        data-price="2.99">
-        <img src="img/alface.png" alt="Alface">
-        <h3>Alface</h3>
-        <span class="price">R$ 2,99</span>
-        <input type="number" min="1" value="1">
-        <button class="add-cart">Adicionar ao Carrinho</button>
-      </div>
+            <div class="product-card" data-id="401" data-name="Shampoo Pantene" data-price="13.50">
+                <img src="/img Higiene/shampoo.png" alt="Shampoo Pantene">
+                <h3>Shampoo Pantene 400ml</h3>
+                <span class="price">R$ 13,50</span>
+                <input type="number" min="1" value="1" class="quantity">
+                <button class="add-cart">Adicionar ao Carrinho</button>
+            </div>
 
-      <div class="product-card"
-        data-id="207"
-        data-name="Laranja"
-        data-price="3.50">
-        <img src="img/laranja.png" alt="Laranja">
-        <h3>Laranja</h3>
-        <span class="price">R$ 3,50</span>
-        <input type="number" min="1" value="1">
-        <button class="add-cart">Adicionar ao Carrinho</button>
-      </div>
+            <div class="product-card" data-id="402" data-name="Sabonete Francis" data-price="3.00">
+                <img src="/img Higiene/sabonete.png" alt="Sabonete Francis">
+                <h3>Sabonete Francis 90g</h3>
+                <span class="price">R$ 3,00</span>
+                <input type="number" min="1" value="1" class="quantity">
+                <button class="add-cart">Adicionar ao Carrinho</button>
+            </div>
 
-      <div class="product-card"
-        data-id="208"
-        data-name="Cebola"
-        data-price="4.20">
-        <img src="img/cebola.png" alt="Cebola">
-        <h3>Cebola</h3>
-        <span class="price">R$ 4,20</span>
-        <input type="number" min="1" value="1">
-        <button class="add-cart">Adicionar ao Carrinho</button>
-      </div>
+            <div class="product-card" data-id="403" data-name="Creme Dental" data-price="2.50">
+                <img src="/img Higiene/pasta colgate.png" alt="Creme Dental">
+                <h3>Creme Dental Colgate 90g</h3>
+                <span class="price">R$ 2,50</span>
+                <input type="number" min="1" value="1" class="quantity">
+                <button class="add-cart">Adicionar ao Carrinho</button>
+            </div>
 
-      <div class="product-card"
-        data-id="209"
-        data-name="Maço de Couve"
-        data-price="3.00">
-        <img src="img/couve.png" alt="Couve">
-        <h3>Maço de Couve</h3>
-        <span class="price">R$ 3,00</span>
-        <input type="number" min="1" value="1">
-        <button class="add-cart">Adicionar ao Carrinho</button>
-      </div>
+            <div class="product-card" data-id="404" data-name="Papel Higienico" data-price="14.00">
+                <img src="/img Higiene/papel higienico.png" alt="Papel Higienico">
+                <h3>Papel Higienico 12 rolos</h3>
+                <span class="price">R$ 14,00</span>
+                <input type="number" min="1" value="1" class="quantity">
+                <button class="add-cart">Adicionar ao Carrinho</button>
+            </div>
 
-    </div>
-  </section>
+            <div class="product-card" data-id="405" data-name="Fio Dental" data-price="9.50">
+                <img src="/img Higiene/fio dentel.png" alt="Fio Dental">
+                <h3>Fio Dental Colgate</h3>
+                <span class="price">R$ 9,50</span>
+                <input type="number" min="1" value="1" class="quantity">
+                <button class="add-cart">Adicionar ao Carrinho</button>
+            </div>
 
-  <!-- FOOTER -->
-  <footer>
-    <p>© FIFO Glória — Qualidade e economia no lugar certo</p>
-  </footer>
+            <div class="product-card" data-id="406" data-name="Escova Dental" data-price="8.00">
+                <img src="/img Higiene/escova.png" alt="Escova Dental">
+                <h3>Escova Dental Colgate </h3>
+                <span class="price">R$ 8,00</span>
+                <input type="number" min="1" value="1" class="quantity">
+                <button class="add-cart">Adicionar ao Carrinho</button>
+            </div>
 
-  <!-- JS GLOBAL -->
-  <script src="js/script.js"></script>
+            <div class="product-card" data-id="407" data-name="Desodorante" data-price="9.99">
+                <img src="/img Higiene/desodorante.png" alt="Desodorante">
+                <h3>Desodorante 150ml(90g)</h3>
+                <span class="price">R$ 9,99</span>
+                <input type="number" min="1" value="1" class="quantity">
+                <button class="add-cart">Adicionar ao Carrinho</button>
+            </div>
+
+            <div class="product-card" data-id="408" data-name="Creme de Cabelo" data-price="10.00">
+                <img src="/img Higiene/creme6.png" alt="Creme de Cabelo">
+                <h3>Creme de Cabelo Skala 800g</h3>
+                <span class="price">R$ 10,00</span>
+                <input type="number" min="1" value="1" class="quantity">
+                <button class="add-cart">Adicionar ao Carrinho</button>
+            </div>
+
+            <div class="product-card" data-id="409" data-name="Creme Facial" data-price="8.50">
+                <img src="/img Higiene/creme facial.png" alt="Creme Facial">
+                <h3>Creme Facial Nivea 56g </h3>
+                <span class="price">R$ 8,50</span>
+                <input type="number" min="1" value="1" class="quantity">
+                <button class="add-cart">Adicionar ao Carrinho</button>
+            </div>
+
+        </div>
+    </section>
+   <a class="btn-back" href="/fifoVirtual.html">← Voltar para a loja</a>
+
+    <footer>
+        <p>© FIFO Glória — Qualidade e economia no lugar certo</p>
+    </footer>
+
+    <script src="js/script.js"></script>
 </body>
+
 </html>

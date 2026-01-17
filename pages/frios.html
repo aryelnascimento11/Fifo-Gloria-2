@@ -1,230 +1,135 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Frios | Meu FIFO Virtual</title>
+
+    <!-- CSS (MESMO do Hortifruti) -->
     <link rel="stylesheet" href="pages.css">
 </head>
+
 <body>
 
-<header class="header">
-    <h1>Meu FIFO Virtual</h1>
-    <a href="carrinho.html" class="cart-icon">🛒 Carrinho <span class="cart-count">0</span></a>
-</header>
+    <!-- HEADER PADRÃO (igual Hortifruti) -->
+    <header class="navbar-pro">
+        <div class="header-content">
+            <div class="logo-area">
+                <div class="led-dot"></div>
+                <h1 class="logo-text">MEU <span>FIFO</span> VIRTUAL</h1>
+            </div>
 
-<section class="category">
-    <h2>Frios</h2>
-    <p>Queijos, presuntos, mortadelas e embutidos de qualidade.</p>
+            <nav class="nav-minimal">
+                <a href="../index.html">Início</a>
+                <a href="carrinho.html" class="active">Ver Carrinho 🛒</a>
+            </nav>
+        </div>
+    </header>
 
-    <div class="products">
-        <div class="product-card" data-id="301" data-name="Queijo Mussarela 500g" data-price="18.50">
-            <img src="/img frios/mussarela.png" alt="Queijo Mussarela">
-            <h3>Queijo Mussarela 500g</h3>
-            <span class="price">R$ 18,50</span>
-            <input type="number" min="1" value="1" class="quantity">
-            <button class="add-cart">Adicionar</button>
+    <!-- CATEGORIA -->
+    <section class="category">
+
+        <!-- BANNER (FUNDO) -->
+        <div class="category-hero category-hero--frios" role="img" aria-label="Bebidas">
+            <div class="category-hero-overlay"></div>
+
+            <div class="category-header">
+                <h1>Frios</h1>
+                <p>Sabor e frescor em cada fatia: o toque especial que faltava no seu café ou petisco.</p>
+            </div>
         </div>
 
-        <div class="product-card" data-id="302" data-name="Presunto Cozido 200g" data-price="10.00">
-            <img src="/img frios/presunto.png" alt="Presunto">
-            <h3>Presunto Cozido 200g</h3>
-            <span class="price">R$ 10,00</span>
-            <input type="number" min="1" value="1" class="quantity">
-            <button class="add-cart">Adicionar</button>
+        <!-- BUSCA -->
+        <div class="search-wrap">
+            <input class="search-input" placeholder="Pesquise seu produto" type="text">
         </div>
 
-        <div class="product-card" data-id="303" data-name="Mortadela 300g" data-price="8.50">
-            <img src="/img frios/mortadela.png" alt="Mortadela">
-            <h3>Mortadela 300g</h3>
-            <span class="price">R$ 8,50</span>
-            <input type="number" min="1" value="1" class="quantity">
-            <button class="add-cart">Adicionar</button>
+
+        <!-- PRODUTOS -->
+        <div class="products">
+
+            <div class="product-card" data-id="301" data-name="Sorvete" data-price="5.50">
+                <img src="/img frios/sorvete.png" alt="Sorvete">
+                <h3>Pote de Sorvete 300g</h3>
+                <span class="price">R$ 5,50</span>
+                <input type="number" min="1" value="1" class="quantity">
+                <button class="add-cart">Adicionar ao Carrinho</button>
+            </div>
+
+            <div class="product-card" data-id="302" data-name="Requeijão" data-price="4.00">
+                <img src="/img frios/requeijao.png" alt="Requeijão">
+                <h3>Requeijão 200g</h3>
+                <span class="price">R$ 4,00</span>
+                <input type="number" min="1" value="1" class="quantity">
+                <button class="add-cart">Adicionar ao Carrinho</button>
+            </div>
+
+            <div class="product-card" data-id="303" data-name="Queijo Ralado" data-price="6.50">
+                <img src="/img frios/queijo ralado.png" alt="Queijo Ralado">
+                <h3>Queijo Ralado 100g</h3>
+                <span class="price">R$ 6,50</span>
+                <input type="number" min="1" value="1" class="quantity">
+                <button class="add-cart">Adicionar ao Carrinho</button>
+            </div>
+
+            <div class="product-card" data-id="304" data-name="Queijo Minas" data-price="110.00">
+                <img src="/img frios/queijo minas.png" alt="Queijo Minas">
+                <h3>Queijo Minas 1Kg</h3>
+                <span class="price">R$ 110,00</span>
+                <input type="number" min="1" value="1" class="quantity">
+                <button class="add-cart">Adicionar ao Carrinho</button>
+            </div>
+
+            <div class="product-card" data-id="305" data-name="Pizza Congelada" data-price="13.00">
+                <img src="/img frios/pizza congelada.png" alt="Pizza Congelada">
+                <h3>Pizza Congelada</h3>
+                <span class="price">R$ 13,00</span>
+                <input type="number" min="1" value="1" class="quantity">
+                <button class="add-cart">Adicionar ao Carrinho</button>
+            </div>
+
+            <div class="product-card" data-id="306" data-name="Mortadela" data-price="6.00">
+                <img src="/img frios/mortadela.png" alt="Mortadela">
+                <h3>Mortadela</h3>
+                <span class="price">R$ 6,00</span>
+                <input type="number" min="1" value="1" class="quantity">
+                <button class="add-cart">Adicionar ao Carrinho</button>
+            </div>
+
+            <div class="product-card" data-id="307" data-name="Margarina" data-price="6.00">
+                <img src="/img frios/margarina.png" alt="Margarina">
+                <h3>Margarina 500g</h3>
+                <span class="price">R$ 6,00</span>
+                <input type="number" min="1" value="1" class="quantity">
+                <button class="add-cart">Adicionar ao Carrinho</button>
+            </div>
+
+            <div class="product-card" data-id="308" data-name="Danoninho" data-price="11.00">
+                <img src="/img frios/danoninho.png" alt="Danoninho">
+                <h3>Bandeja de Danoninho</h3>
+                <span class="price">R$ 11,00</span>
+                <input type="number" min="1" value="1" class="quantity">
+                <button class="add-cart">Adicionar ao Carrinho</button>
+            </div>
+
+            <div class="product-card" data-id="309" data-name="Bandeja de Iogurte " data-price="7.00">
+                <img src="/img frios/bandeja de yorgute.png" alt="Bandeja de Iogurte">
+                <h3>Iogurte </h3>
+                <span class="price">R$ 7,00</span>
+                <input type="number" min="1" value="1" class="quantity">
+                <button class="add-cart">Adicionar ao Carrinho</button>
+            </div>
+
         </div>
+    </section>
+   <a class="btn-back" href="/fifoVirtual.html">← Voltar para a loja</a>
 
-        <div class="product-card" data-id="304" data-name="Queijo Prato 500g" data-price="19.50">
-            <img src="/img frios/queijo_prato.png" alt="Queijo Prato">
-            <h3>Queijo Prato 500g</h3>
-            <span class="price">R$ 19,50</span>
-            <input type="number" min="1" value="1" class="quantity">
-            <button class="add-cart">Adicionar</button>
-        </div>
+    <footer>
+        <p>© FIFO Glória — Qualidade e economia no lugar certo</p>
+    </footer>
 
-        <div class="product-card" data-id="305" data-name="Requeijão 250g" data-price="7.50">
-            <img src="/img frios/requeijao.png" alt="Requeijão">
-            <h3>Requeijão 250g</h3>
-            <span class="price">R$ 7,50</span>
-            <input type="number" min="1" value="1" class="quantity">
-            <button class="add-cart">Adicionar</button>
-        </div>
-
-        <div class="product-card" data-id="306" data-name="Salame 200g" data-price="15.00">
-            <img src="/img frios/salame.png" alt="Salame">
-            <h3>Salame 200g</h3>
-            <span class="price">R$ 15,00</span>
-            <input type="number" min="1" value="1" class="quantity">
-            <button class="add-cart">Adicionar</button>
-        </div>
-
-        <div class="product-card" data-id="307" data-name="Queijo Coalho 400g" data-price="14.00">
-            <img src="/img frios/coalho.png" alt="Queijo Coalho">
-            <h3>Queijo Coalho 400g</h3>
-            <span class="price">R$ 14,00</span>
-            <input type="number" min="1" value="1" class="quantity">
-            <button class="add-cart">Adicionar</button>
-        </div>
-
-        <div class="product-card" data-id="308" data-name="Cream Cheese 200g" data-price="9.50">
-            <img src="/img frios/cream_cheese.png" alt="Cream Cheese">
-            <h3>Cream Cheese 200g</h3>
-            <span class="price">R$ 9,50</span>
-            <input type="number" min="1" value="1" class="quantity">
-            <button class="add-cart">Adicionar</button>
-        </div>
-
-        <div class="product-card" data-id="309" data-name="Queijo Parmesão 300g" data-price="22.00">
-            <img src="/img frios/parmesao.png" alt="Queijo Parmesão">
-            <h3>Queijo Parmesão 300g</h3>
-            <span class="price">R$ 22,00</span>
-            <input type="number" min="1" value="1" class="quantity">
-            <button class="add-cart">Adicionar</button>
-        </div>
-    </div>
-</section>
-
-<footer class="footer">
-    <div>
-        <h3>Meu FIFO Virtual</h3>
-        <p>Loja virtual de supermercado, oferecendo qualidade e economia.</p>
-    </div>
-    <div>
-        <h3>Links úteis</h3>
-        <a href="index.html">Início</a><br>
-        <a href="bebidas.html">Bebidas</a><br>
-        <a href="carnes.html">Carnes</a><br>
-        <a href="frios.html">Frios</a><br>
-    </div>
-    <div>
-        <h3>Contato</h3>
-        <p>Email: contato@meufifo.com</p>
-        <p>Tel: (47) 99999-9999</p>
-    </div>
-</footer>
-
+    <script src="js/script.js"></script>
 </body>
-</html>
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Frios | Meu FIFO Virtual</title>
-    <link rel="stylesheet" href="loja.css">
-</head>
-<body>
 
-<header class="header">
-    <h1>Meu FIFO Virtual</h1>
-    <a href="carrinho.html" class="cart-icon">🛒 Carrinho <span class="cart-count">0</span></a>
-</header>
-
-<section class="category">
-    <h2>Frios</h2>
-    <p>Queijos, presuntos, mortadelas e embutidos de qualidade.</p>
-
-    <div class="products">
-        <div class="product-card" data-id="301" data-name="Queijo Mussarela 500g" data-price="18.50">
-            <img src="/img frios/mussarela.png" alt="Queijo Mussarela">
-            <h3>Queijo Mussarela 500g</h3>
-            <span class="price">R$ 18,50</span>
-            <input type="number" min="1" value="1" class="quantity">
-            <button class="add-cart">Adicionar</button>
-        </div>
-
-        <div class="product-card" data-id="302" data-name="Presunto Cozido 200g" data-price="10.00">
-            <img src="/img frios/presunto.png" alt="Presunto">
-            <h3>Presunto Cozido 200g</h3>
-            <span class="price">R$ 10,00</span>
-            <input type="number" min="1" value="1" class="quantity">
-            <button class="add-cart">Adicionar</button>
-        </div>
-
-        <div class="product-card" data-id="303" data-name="Mortadela 300g" data-price="8.50">
-            <img src="/img frios/mortadela.png" alt="Mortadela">
-            <h3>Mortadela 300g</h3>
-            <span class="price">R$ 8,50</span>
-            <input type="number" min="1" value="1" class="quantity">
-            <button class="add-cart">Adicionar</button>
-        </div>
-
-        <div class="product-card" data-id="304" data-name="Queijo Prato 500g" data-price="19.50">
-            <img src="/img frios/queijo_prato.png" alt="Queijo Prato">
-            <h3>Queijo Prato 500g</h3>
-            <span class="price">R$ 19,50</span>
-            <input type="number" min="1" value="1" class="quantity">
-            <button class="add-cart">Adicionar</button>
-        </div>
-
-        <div class="product-card" data-id="305" data-name="Requeijão 250g" data-price="7.50">
-            <img src="/img frios/requeijao.png" alt="Requeijão">
-            <h3>Requeijão 250g</h3>
-            <span class="price">R$ 7,50</span>
-            <input type="number" min="1" value="1" class="quantity">
-            <button class="add-cart">Adicionar</button>
-        </div>
-
-        <div class="product-card" data-id="306" data-name="Salame 200g" data-price="15.00">
-            <img src="/img frios/salame.png" alt="Salame">
-            <h3>Salame 200g</h3>
-            <span class="price">R$ 15,00</span>
-            <input type="number" min="1" value="1" class="quantity">
-            <button class="add-cart">Adicionar</button>
-        </div>
-
-        <div class="product-card" data-id="307" data-name="Queijo Coalho 400g" data-price="14.00">
-            <img src="/img frios/coalho.png" alt="Queijo Coalho">
-            <h3>Queijo Coalho 400g</h3>
-            <span class="price">R$ 14,00</span>
-            <input type="number" min="1" value="1" class="quantity">
-            <button class="add-cart">Adicionar</button>
-        </div>
-
-        <div class="product-card" data-id="308" data-name="Cream Cheese 200g" data-price="9.50">
-            <img src="/img frios/cream_cheese.png" alt="Cream Cheese">
-            <h3>Cream Cheese 200g</h3>
-            <span class="price">R$ 9,50</span>
-            <input type="number" min="1" value="1" class="quantity">
-            <button class="add-cart">Adicionar</button>
-        </div>
-
-        <div class="product-card" data-id="309" data-name="Queijo Parmesão 300g" data-price="22.00">
-            <img src="/img frios/parmesao.png" alt="Queijo Parmesão">
-            <h3>Queijo Parmesão 300g</h3>
-            <span class="price">R$ 22,00</span>
-            <input type="number" min="1" value="1" class="quantity">
-            <button class="add-cart">Adicionar</button>
-        </div>
-    </div>
-</section>
-
-<footer class="footer">
-    <div>
-        <h3>Meu FIFO Virtual</h3>
-        <p>Loja virtual de supermercado, oferecendo qualidade e economia.</p>
-    </div>
-    <div>
-        <h3>Links úteis</h3>
-        <a href="index.html">Início</a><br>
-        <a href="bebidas.html">Bebidas</a><br>
-        <a href="carnes.html">Carnes</a><br>
-        <a href="frios.html">Frios</a><br>
-    </div>
-    <div>
-        <h3>Contato</h3>
-        <p>Email: contato@meufifo.com</p>
-        <p>Tel: (47) 99999-9999</p>
-    </div>
-</footer>
-
-</body>
 </html>

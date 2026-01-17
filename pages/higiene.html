@@ -1,116 +1,135 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Higiene | Meu FIFO Virtual</title>
+
+    <!-- CSS (MESMO do Hortifruti) -->
     <link rel="stylesheet" href="pages.css">
 </head>
+
 <body>
 
-<header class="header">
-    <h1>Meu FIFO Virtual</h1>
-    <a href="carrinho.html" class="cart-icon">🛒 Carrinho <span class="cart-count">0</span></a>
-</header>
+    <!-- HEADER PADRÃO (igual Hortifruti) -->
+    <header class="navbar-pro">
+        <div class="header-content">
+            <div class="logo-area">
+                <div class="led-dot"></div>
+                <h1 class="logo-text">MEU <span>FIFO</span> VIRTUAL</h1>
+            </div>
 
-<section class="category">
-    <h2>Higiene</h2>
-    <p>Produtos de higiene pessoal de qualidade para toda a família.</p>
+            <nav class="nav-minimal">
+                <a href="../index.html">Início</a>
+                <a href="carrinho.html" class="active">Ver Carrinho 🛒</a>
+            </nav>
+        </div>
+    </header>
 
-    <div class="products">
-        <div class="product-card" data-id="401" data-name="Shampoo 300ml" data-price="12.00">
-            <img src="/img higiene/shampoo.png" alt="Shampoo">
-            <h3>Shampoo 300ml</h3>
-            <span class="price">R$ 12,00</span>
-            <input type="number" min="1" value="1" class="quantity">
-            <button class="add-cart">Adicionar</button>
+    <!-- CATEGORIA -->
+    <section class="category">
+
+        <!-- BANNER (FUNDO) -->
+        <div class="category-hero category-hero--higiene" role="img" aria-label="Higiene">
+            <div class="category-hero-overlay"></div>
+
+            <div class="category-header">
+                <h1>Higiene</h1>
+                <p>Mais cuidado, mais proteção, mais bem-estar para sua rotina.</p>
+            </div>
         </div>
 
-        <div class="product-card" data-id="402" data-name="Condicionador 300ml" data-price="13.50">
-            <img src="/img higiene/condicionador.png" alt="Condicionador">
-            <h3>Condicionador 300ml</h3>
-            <span class="price">R$ 13,50</span>
-            <input type="number" min="1" value="1" class="quantity">
-            <button class="add-cart">Adicionar</button>
+        <!-- BUSCA -->
+        <div class="search-wrap">
+            <input class="search-input" placeholder="Pesquise seu produto" type="text">
         </div>
 
-        <div class="product-card" data-id="403" data-name="Sabonete Líquido 250ml" data-price="8.00">
-            <img src="/img higiene/sabonete.png" alt="Sabonete Líquido">
-            <h3>Sabonete Líquido 250ml</h3>
-            <span class="price">R$ 8,00</span>
-            <input type="number" min="1" value="1" class="quantity">
-            <button class="add-cart">Adicionar</button>
+
+        <!-- PRODUTOS -->
+        <div class="products">
+
+            <div class="product-card" data-id="401" data-name="Shampoo Pantene" data-price="13.50">
+                <img src="/img Higiene/shampoo.png" alt="Shampoo Pantene">
+                <h3>Shampoo Pantene 400ml</h3>
+                <span class="price">R$ 13,50</span>
+                <input type="number" min="1" value="1" class="quantity">
+                <button class="add-cart">Adicionar ao Carrinho</button>
+            </div>
+
+            <div class="product-card" data-id="402" data-name="Sabonete Francis" data-price="3.00">
+                <img src="/img Higiene/sabonete.png" alt="Sabonete Francis">
+                <h3>Sabonete Francis 90g</h3>
+                <span class="price">R$ 3,00</span>
+                <input type="number" min="1" value="1" class="quantity">
+                <button class="add-cart">Adicionar ao Carrinho</button>
+            </div>
+
+            <div class="product-card" data-id="403" data-name="Creme Dental" data-price="2.50">
+                <img src="/img Higiene/pasta colgate.png" alt="Creme Dental">
+                <h3>Creme Dental Colgate 90g</h3>
+                <span class="price">R$ 2,50</span>
+                <input type="number" min="1" value="1" class="quantity">
+                <button class="add-cart">Adicionar ao Carrinho</button>
+            </div>
+
+            <div class="product-card" data-id="404" data-name="Papel Higienico" data-price="14.00">
+                <img src="/img Higiene/papel higienico.png" alt="Papel Higienico">
+                <h3>Papel Higienico 12 rolos</h3>
+                <span class="price">R$ 14,00</span>
+                <input type="number" min="1" value="1" class="quantity">
+                <button class="add-cart">Adicionar ao Carrinho</button>
+            </div>
+
+            <div class="product-card" data-id="405" data-name="Fio Dental" data-price="9.50">
+                <img src="/img Higiene/fio dentel.png" alt="Fio Dental">
+                <h3>Fio Dental Colgate</h3>
+                <span class="price">R$ 9,50</span>
+                <input type="number" min="1" value="1" class="quantity">
+                <button class="add-cart">Adicionar ao Carrinho</button>
+            </div>
+
+            <div class="product-card" data-id="406" data-name="Escova Dental" data-price="8.00">
+                <img src="/img Higiene/escova.png" alt="Escova Dental">
+                <h3>Escova Dental Colgate </h3>
+                <span class="price">R$ 8,00</span>
+                <input type="number" min="1" value="1" class="quantity">
+                <button class="add-cart">Adicionar ao Carrinho</button>
+            </div>
+
+            <div class="product-card" data-id="407" data-name="Desodorante" data-price="9.99">
+                <img src="/img Higiene/desodorante.png" alt="Desodorante">
+                <h3>Desodorante 150ml(90g)</h3>
+                <span class="price">R$ 9,99</span>
+                <input type="number" min="1" value="1" class="quantity">
+                <button class="add-cart">Adicionar ao Carrinho</button>
+            </div>
+
+            <div class="product-card" data-id="408" data-name="Creme de Cabelo" data-price="10.00">
+                <img src="/img Higiene/creme6.png" alt="Creme de Cabelo">
+                <h3>Creme de Cabelo Skala 800g</h3>
+                <span class="price">R$ 10,00</span>
+                <input type="number" min="1" value="1" class="quantity">
+                <button class="add-cart">Adicionar ao Carrinho</button>
+            </div>
+
+            <div class="product-card" data-id="409" data-name="Creme Facial" data-price="8.50">
+                <img src="/img Higiene/creme facial.png" alt="Creme Facial">
+                <h3>Creme Facial Nivea 56g </h3>
+                <span class="price">R$ 8,50</span>
+                <input type="number" min="1" value="1" class="quantity">
+                <button class="add-cart">Adicionar ao Carrinho</button>
+            </div>
+
         </div>
+    </section>
+   <a class="btn-back" href="/fifoVirtual.html">← Voltar para a loja</a>
 
-        <div class="product-card" data-id="404" data-name="Pasta de Dente 90g" data-price="5.50">
-            <img src="/img higiene/pasta_dente.png" alt="Pasta de Dente">
-            <h3>Pasta de Dente 90g</h3>
-            <span class="price">R$ 5,50</span>
-            <input type="number" min="1" value="1" class="quantity">
-            <button class="add-cart">Adicionar</button>
-        </div>
+    <footer>
+        <p>© FIFO Glória — Qualidade e economia no lugar certo</p>
+    </footer>
 
-        <div class="product-card" data-id="405" data-name="Escova de Dente" data-price="6.00">
-            <img src="/img higiene/escova_dente.png" alt="Escova de Dente">
-            <h3>Escova de Dente</h3>
-            <span class="price">R$ 6,00</span>
-            <input type="number" min="1" value="1" class="quantity">
-            <button class="add-cart">Adicionar</button>
-        </div>
-
-        <div class="product-card" data-id="406" data-name="Papel Higiênico 4 Rolos" data-price="10.00">
-            <img src="/img higiene/papel_higienico.png" alt="Papel Higiênico">
-            <h3>Papel Higiênico 4 Rolos</h3>
-            <span class="price">R$ 10,00</span>
-            <input type="number" min="1" value="1" class="quantity">
-            <button class="add-cart">Adicionar</button>
-        </div>
-
-        <div class="product-card" data-id="407" data-name="Desodorante Spray 150ml" data-price="15.00">
-            <img src="/img higiene/desodorante.png" alt="Desodorante">
-            <h3>Desodorante Spray 150ml</h3>
-            <span class="price">R$ 15,00</span>
-            <input type="number" min="1" value="1" class="quantity">
-            <button class="add-cart">Adicionar</button>
-        </div>
-
-        <div class="product-card" data-id="408" data-name="Fio Dental 50m" data-price="7.00">
-            <img src="/img higiene/fio_dental.png" alt="Fio Dental">
-            <h3>Fio Dental 50m</h3>
-            <span class="price">R$ 7,00</span>
-            <input type="number" min="1" value="1" class="quantity">
-            <button class="add-cart">Adicionar</button>
-        </div>
-
-        <div class="product-card" data-id="409" data-name="Sabonete em Barra 90g" data-price="4.00">
-            <img src="/img higiene/sabonete_barra.png" alt="Sabonete em Barra">
-            <h3>Sabonete em Barra 90g</h3>
-            <span class="price">R$ 4,00</span>
-            <input type="number" min="1" value="1" class="quantity">
-            <button class="add-cart">Adicionar</button>
-        </div>
-    </div>
-</section>
-
-<footer class="footer">
-    <div>
-        <h3>Meu FIFO Virtual</h3>
-        <p>Loja virtual de supermercado, oferecendo qualidade e economia.</p>
-    </div>
-    <div>
-        <h3>Links úteis</h3>
-        <a href="index.html">Início</a><br>
-        <a href="bebidas.html">Bebidas</a><br>
-        <a href="carnes.html">Carnes</a><br>
-        <a href="frios.html">Frios</a><br>
-        <a href="higiene.html">Higiene</a><br>
-    </div>
-    <div>
-        <h3>Contato</h3>
-        <p>Email: contato@meufifo.com</p>
-        <p>Tel: (47) 99999-9999</p>
-    </div>
-</footer>
-
+    <script src="js/script.js"></script>
 </body>
+
 </html>

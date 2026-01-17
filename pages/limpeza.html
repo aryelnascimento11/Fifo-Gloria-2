@@ -1,117 +1,104 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Limpeza | Meu FIFO Virtual</title>
+    <title>limpeza | Meu FIFO Virtual</title>
+
     <link rel="stylesheet" href="pages.css">
 </head>
+
 <body>
 
-<header class="header">
-    <h1>Meu FIFO Virtual</h1>
-    <a href="carrinho.html" class="cart-icon">🛒 Carrinho <span class="cart-count">0</span></a>
-</header>
+    <header class="navbar-pro">
+        <div class="header-content">
+            <div class="logo-area">
+                <div class="led-dot"></div>
+                <h1 class="logo-text">MEU <span>FIFO</span> VIRTUAL</h1>
+            </div>
 
-<section class="category">
-    <h2>Limpeza</h2>
-    <p>Produtos de limpeza doméstica para manter sua casa impecável.</p>
+            <nav class="nav-minimal">
+                <a href="../index.html">Início</a>
+                <a href="carrinho.html" class="active">Ver Carrinho 🛒</a>
+            </nav>
+        </div>
+    </header>
 
-    <div class="products">
-        <div class="product-card" data-id="501" data-name="Detergente Líquido 500ml" data-price="4.50">
-            <img src="/img limpeza/detergente.png" alt="Detergente">
-            <h3>Detergente Líquido 500ml</h3>
-            <span class="price">R$ 4,50</span>
-            <input type="number" min="1" value="1" class="quantity">
-            <button class="add-cart">Adicionar</button>
+    <section class="category">
+
+        <div class="category-hero category-hero--higiene" role="img" aria-label="Produtos de Higiene">
+            <div class="category-hero-overlay"></div>
+
+            <div class="category-header">
+                <h1>Limpeza</h1>
+                <p>Cuidados pessoais e bem-estar para sua família.</p>
+            </div>
         </div>
 
-        <div class="product-card" data-id="502" data-name="Sabão em Pó 1kg" data-price="12.00">
-            <img src="/img limpeza/sabao_po.png" alt="Sabão em Pó">
-            <h3>Sabão em Pó 1kg</h3>
-            <span class="price">R$ 12,00</span>
-            <input type="number" min="1" value="1" class="quantity">
-            <button class="add-cart">Adicionar</button>
+        <div class="search-wrap">
+            <input class="search-input" placeholder="Pesquise seu produto" type="text">
         </div>
 
-        <div class="product-card" data-id="503" data-name="Água Sanitária 1L" data-price="6.00">
-            <img src="/img limpeza/agua_sanitaria.png" alt="Água Sanitária">
-            <h3>Água Sanitária 1L</h3>
-            <span class="price">R$ 6,00</span>
-            <input type="number" min="1" value="1" class="quantity">
-            <button class="add-cart">Adicionar</button>
+
+        <div class="products">
+
+            <div class="product-card" data-id="201" data-name="Papel Higiênico (4 rolos)" data-price="8.90">
+                <img src="/img/higiene/papel_higienico.png" alt="Papel Higiênico">
+                <h3>Papel Higiênico 4un</h3>
+                <span class="price">R$ 8,90</span>
+                <input type="number" min="1" value="1" class="quantity">
+                <button class="add-cart">Adicionar ao Carrinho</button>
+            </div>
+
+            <div class="product-card" data-id="202" data-name="Creme Dental 90g" data-price="4.50">
+                <img src="/img/higiene/pasta_dente.png" alt="Creme Dental">
+                <h3>Creme Dental 90g</h3>
+                <span class="price">R$ 4,50</span>
+                <input type="number" min="1" value="1" class="quantity">
+                <button class="add-cart">Adicionar ao Carrinho</button>
+            </div>
+
+            <div class="product-card" data-id="203" data-name="Sabonete em Barra" data-price="2.50">
+                <img src="/img/higiene/sabonete.png" alt="Sabonete">
+                <h3>Sabonete em Barra</h3>
+                <span class="price">R$ 2,50</span>
+                <input type="number" min="1" value="1" class="quantity">
+                <button class="add-cart">Adicionar ao Carrinho</button>
+            </div>
+
+            <div class="product-card" data-id="204" data-name="Shampoo 400ml" data-price="15.90">
+                <img src="/img/higiene/shampoo.png" alt="Shampoo">
+                <h3>Shampoo 400ml</h3>
+                <span class="price">R$ 15,90</span>
+                <input type="number" min="1" value="1" class="quantity">
+                <button class="add-cart">Adicionar ao Carrinho</button>
+            </div>
+
+            <div class="product-card" data-id="205" data-name="Desodorante Aerosol" data-price="12.00">
+                <img src="/img/higiene/desodorante.png" alt="Desodorante">
+                <h3>Desodorante Aerosol</h3>
+                <span class="price">R$ 12,00</span>
+                <input type="number" min="1" value="1" class="quantity">
+                <button class="add-cart">Adicionar ao Carrinho</button>
+            </div>
+
+            <div class="product-card" data-id="206" data-name="Escova de Dentes" data-price="7.00">
+                <img src="/img/higiene/escova_dente.png" alt="Escova de Dentes">
+                <h3>Escova de Dentes</h3>
+                <span class="price">R$ 7,00</span>
+                <input type="number" min="1" value="1" class="quantity">
+                <button class="add-cart">Adicionar ao Carrinho</button>
+            </div>
+
         </div>
+    </section>
 
-        <div class="product-card" data-id="504" data-name="Desinfetante 500ml" data-price="5.50">
-            <img src="/img limpeza/desinfetante.png" alt="Desinfetante">
-            <h3>Desinfetante 500ml</h3>
-            <span class="price">R$ 5,50</span>
-            <input type="number" min="1" value="1" class="quantity">
-            <button class="add-cart">Adicionar</button>
-        </div>
+    <footer>
+        <p>© FIFO Glória — Qualidade e economia no lugar certo</p>
+    </footer>
 
-        <div class="product-card" data-id="505" data-name="Esponja Multiuso" data-price="3.50">
-            <img src="/img limpeza/esponja.png" alt="Esponja">
-            <h3>Esponja Multiuso</h3>
-            <span class="price">R$ 3,50</span>
-            <input type="number" min="1" value="1" class="quantity">
-            <button class="add-cart">Adicionar</button>
-        </div>
-
-        <div class="product-card" data-id="506" data-name="Lustra Móveis 250ml" data-price="14.00">
-            <img src="/img limpeza/lustra_moveis.png" alt="Lustra Móveis">
-            <h3>Lustra Móveis 250ml</h3>
-            <span class="price">R$ 14,00</span>
-            <input type="number" min="1" value="1" class="quantity">
-            <button class="add-cart">Adicionar</button>
-        </div>
-
-        <div class="product-card" data-id="507" data-name="Pano de Chão" data-price="7.00">
-            <img src="/img limpeza/pano_chao.png" alt="Pano de Chão">
-            <h3>Pano de Chão</h3>
-            <span class="price">R$ 7,00</span>
-            <input type="number" min="1" value="1" class="quantity">
-            <button class="add-cart">Adicionar</button>
-        </div>
-
-        <div class="product-card" data-id="508" data-name="Vassoura" data-price="25.00">
-            <img src="/img limpeza/vassoura.png" alt="Vassoura">
-            <h3>Vassoura</h3>
-            <span class="price">R$ 25,00</span>
-            <input type="number" min="1" value="1" class="quantity">
-            <button class="add-cart">Adicionar</button>
-        </div>
-
-        <div class="product-card" data-id="509" data-name="Rodo" data-price="12.00">
-            <img src="/img limpeza/rodo.png" alt="Rodo">
-            <h3>Rodo</h3>
-            <span class="price">R$ 12,00</span>
-            <input type="number" min="1" value="1" class="quantity">
-            <button class="add-cart">Adicionar</button>
-        </div>
-    </div>
-</section>
-
-<footer class="footer">
-    <div>
-        <h3>Meu FIFO Virtual</h3>
-        <p>Loja virtual de supermercado, oferecendo qualidade e economia.</p>
-    </div>
-    <div>
-        <h3>Links úteis</h3>
-        <a href="index.html">Início</a><br>
-        <a href="bebidas.html">Bebidas</a><br>
-        <a href="carnes.html">Carnes</a><br>
-        <a href="frios.html">Frios</a><br>
-        <a href="higiene.html">Higiene</a><br>
-        <a href="limpeza.html">Limpeza</a><br>
-    </div>
-    <div>
-        <h3>Contato</h3>
-        <p>Email: contato@meufifo.com</p>
-        <p>Tel: (47) 99999-9999</p>
-    </div>
-</footer>
-
+    <script src="js/script.js"></script>
 </body>
+
 </html>

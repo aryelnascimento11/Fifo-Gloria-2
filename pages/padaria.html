@@ -1,79 +1,104 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Padaria | Meu FIFO Virtual</title>
+    <title>limpeza | Meu FIFO Virtual</title>
+
     <link rel="stylesheet" href="pages.css">
 </head>
+
 <body>
 
-<header class="header">
-    <h1>Meu FIFO Virtual</h1>
-    <a href="carrinho.html" class="cart-icon">🛒 Carrinho <span class="cart-count">0</span></a>
-</header>
+    <header class="navbar-pro">
+        <div class="header-content">
+            <div class="logo-area">
+                <div class="led-dot"></div>
+                <h1 class="logo-text">MEU <span>FIFO</span> VIRTUAL</h1>
+            </div>
 
-<section class="category">
-    <h2>Padaria</h2>
-    <p>Pães, bolos e doces fresquinhos todos os dias.</p>
+            <nav class="nav-minimal">
+                <a href="../index.html">Início</a>
+                <a href="carrinho.html" class="active">Ver Carrinho 🛒</a>
+            </nav>
+        </div>
+    </header>
 
-    <div class="products">
-        <div class="product-card" data-id="601" data-name="Pão Francês 500g" data-price="8.50">
-            <img src="/img padaria/pao_frances.png" alt="Pão Francês">
-            <h3>Pão Francês 500g</h3>
-            <span class="price">R$ 8,50</span>
-            <input type="number" min="1" value="1" class="quantity">
-            <button class="add-cart">Adicionar</button>
+    <section class="category">
+
+        <div class="category-hero category-hero--higiene" role="img" aria-label="Produtos de Higiene">
+            <div class="category-hero-overlay"></div>
+
+            <div class="category-header">
+                <h1>Limpeza</h1>
+                <p>Cuidados pessoais e bem-estar para sua família.</p>
+            </div>
         </div>
 
-        <div class="product-card" data-id="602" data-name="Bolo de Chocolate 1kg" data-price="28.00">
-            <img src="/img padaria/bolo_chocolate.png" alt="Bolo de Chocolate">
-            <h3>Bolo de Chocolate 1kg</h3>
-            <span class="price">R$ 28,00</span>
-            <input type="number" min="1" value="1" class="quantity">
-            <button class="add-cart">Adicionar</button>
+        <div class="search-wrap">
+            <input class="search-input" placeholder="Pesquise seu produto" type="text">
         </div>
 
-        <div class="product-card" data-id="603" data-name="Croissant 100g" data-price="6.00">
-            <img src="/img padaria/croissant.png" alt="Croissant">
-            <h3>Croissant 100g</h3>
-            <span class="price">R$ 6,00</span>
-            <input type="number" min="1" value="1" class="quantity">
-            <button class="add-cart">Adicionar</button>
-        </div>
 
-        <div class="product-card" data-id="604" data-name="Pão de Forma 500g" data-price="10.50">
-            <img src="/img padaria/pao_forma.png" alt="Pão de Forma">
-            <h3>Pão de Forma 500g</h3>
-            <span class="price">R$ 10,50</span>
-            <input type="number" min="1" value="1" class="quantity">
-            <button class="add-cart">Adicionar</button>
-        </div>
+        <div class="products">
 
-        <div class="product-card" data-id="605" data-name="Bolo de Fubá 1kg" data-price="25.00">
-            <img src="/img padaria/bolo_fuba.png" alt="Bolo de Fubá">
-            <h3>Bolo de Fubá 1kg</h3>
-            <span class="price">R$ 25,00</span>
-            <input type="number" min="1" value="1" class="quantity">
-            <button class="add-cart">Adicionar</button>
-        </div>
+            <div class="product-card" data-id="201" data-name="Papel Higiênico (4 rolos)" data-price="8.90">
+                <img src="/img/higiene/papel_higienico.png" alt="Papel Higiênico">
+                <h3>Papel Higiênico 4un</h3>
+                <span class="price">R$ 8,90</span>
+                <input type="number" min="1" value="1" class="quantity">
+                <button class="add-cart">Adicionar ao Carrinho</button>
+            </div>
 
-        <div class="product-card" data-id="606" data-name="Pão de Queijo 300g" data-price="15.00">
-            <img src="/img padaria/pao_queijo.png" alt="Pão de Queijo">
-            <h3>Pão de Queijo 300g</h3>
-            <span class="price">R$ 15,00</span>
-            <input type="number" min="1" value="1" class="quantity">
-            <button class="add-cart">Adicionar</button>
-        </div>
+            <div class="product-card" data-id="202" data-name="Creme Dental 90g" data-price="4.50">
+                <img src="/img/higiene/pasta_dente.png" alt="Creme Dental">
+                <h3>Creme Dental 90g</h3>
+                <span class="price">R$ 4,50</span>
+                <input type="number" min="1" value="1" class="quantity">
+                <button class="add-cart">Adicionar ao Carrinho</button>
+            </div>
 
-        <div class="product-card" data-id="607" data-name="Rosquinha Doce 100g" data-price="4.50">
-            <img src="/img padaria/rosquinha.png" alt="Rosquinha Doce">
-            <h3>Rosquinha Doce 100g</h3>
-            <span class="price">R$ 4,50</span>
-            <input type="number" min="1" value="1" class="quantity">
-            <button class="add-cart">Adicionar</button>
-        </div>
+            <div class="product-card" data-id="203" data-name="Sabonete em Barra" data-price="2.50">
+                <img src="/img/higiene/sabonete.png" alt="Sabonete">
+                <h3>Sabonete em Barra</h3>
+                <span class="price">R$ 2,50</span>
+                <input type="number" min="1" value="1" class="quantity">
+                <button class="add-cart">Adicionar ao Carrinho</button>
+            </div>
 
-        <div class="product-card" data-id="608" data-name="Baguete 300g" data-price="7.50">
-            <img src="/img padaria/baguete.png" alt="Baguete">
-            <h3
+            <div class="product-card" data-id="204" data-name="Shampoo 400ml" data-price="15.90">
+                <img src="/img/higiene/shampoo.png" alt="Shampoo">
+                <h3>Shampoo 400ml</h3>
+                <span class="price">R$ 15,90</span>
+                <input type="number" min="1" value="1" class="quantity">
+                <button class="add-cart">Adicionar ao Carrinho</button>
+            </div>
+
+            <div class="product-card" data-id="205" data-name="Desodorante Aerosol" data-price="12.00">
+                <img src="/img/higiene/desodorante.png" alt="Desodorante">
+                <h3>Desodorante Aerosol</h3>
+                <span class="price">R$ 12,00</span>
+                <input type="number" min="1" value="1" class="quantity">
+                <button class="add-cart">Adicionar ao Carrinho</button>
+            </div>
+
+            <div class="product-card" data-id="206" data-name="Escova de Dentes" data-price="7.00">
+                <img src="/img/higiene/escova_dente.png" alt="Escova de Dentes">
+                <h3>Escova de Dentes</h3>
+                <span class="price">R$ 7,00</span>
+                <input type="number" min="1" value="1" class="quantity">
+                <button class="add-cart">Adicionar ao Carrinho</button>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <p>© FIFO Glória — Qualidade e economia no lugar certo</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
