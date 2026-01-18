@@ -5,10 +5,9 @@
     <meta charset="UTF-8">
     <title>Meu FIFO Virtual</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <link rel="shortcut icon" href="/img/logo fifo.png" type="image/x-icon">
     <!-- CSS -->
     <link rel="stylesheet" href="loja.css">
-
     <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
@@ -21,7 +20,11 @@
             <h1>Meu FIFO Virtual</h1>
 
             <div class="search-cart">
-                <input type="text" placeholder="O que você procura?">
+                <input type="text" class="search-input" placeholder="O que você procura?">
+                <a href="../index.html" class="btn-voltar">
+                    ←
+                </a>
+
                 <a href="pages/carrinho.html" class="cart-btn">
                     <i class="fa-solid fa-cart-shopping"></i>
                     <span class="cart-count">0</span>
@@ -46,7 +49,7 @@
             <div class="offers-container" id="offersContainer">
 
                 <!-- PRODUTO -->
-                <div class="product-card">
+                <div class="product-card" data-id="oferta-1" data-name="Produto 1" data-price="9.50">
                     <img src="./img/pao 1.png">
                     <h3>Produto 1</h3>
 
@@ -62,7 +65,7 @@
                 </div>
 
                 <!-- DUPLICA OS PRODUTOS -->
-                <div class="product-card">
+                <div class="product-card" data-id="oferta-2" data-name="Produto 2" data-price="7.90">
                     <img src="./img/pao 1.png">
                     <h3>Produto 2</h3>
                     <div class="prices">
@@ -74,13 +77,14 @@
                         <button class="add-cart">Adicionar</button>
                     </div>
                 </div>
-                <div class="product-card">
+
+                <div class="product-card" data-id="oferta-3" data-name="Produto 3" data-price="9.00">
                     <img src="./img/pao 1.png">
-                    <h3>Produto 1</h3>
+                    <h3>Produto 3</h3>
 
                     <div class="prices">
                         <span class="old">R$ 13,00</span>
-                        <span class="new">R$ 9,50</span>
+                        <span class="new">R$ 9,00</span>
                     </div>
 
                     <div class="product-actions">
@@ -88,13 +92,14 @@
                         <button class="add-cart">Adicionar</button>
                     </div>
                 </div>
-                <div class="product-card">
+
+                <div class="product-card" data-id="oferta-4" data-name="Produto 4" data-price="8.00">
                     <img src="./img/pao 1.png">
-                    <h3>Produto 1</h3>
+                    <h3>Produto 4</h3>
 
                     <div class="prices">
                         <span class="old">R$ 13,00</span>
-                        <span class="new">R$ 9,50</span>
+                        <span class="new">R$ 8,00</span>
                     </div>
 
                     <div class="product-actions">
@@ -102,13 +107,14 @@
                         <button class="add-cart">Adicionar</button>
                     </div>
                 </div>
-                <div class="product-card">
+
+                <div class="product-card" data-id="oferta-5" data-name="Produto 5" data-price="7.50">
                     <img src="./img/pao 1.png">
-                    <h3>Produto 1</h3>
+                    <h3>Produto 5</h3>
 
                     <div class="prices">
                         <span class="old">R$ 13,00</span>
-                        <span class="new">R$ 9,50</span>
+                        <span class="new">R$ 7,50</span>
                     </div>
 
                     <div class="product-actions">
@@ -116,13 +122,14 @@
                         <button class="add-cart">Adicionar</button>
                     </div>
                 </div>
-                <div class="product-card">
+
+                <div class="product-card" data-id="oferta-6" data-name="Produto 6" data-price="10.50">
                     <img src="./img/pao 1.png">
-                    <h3>Produto 1</h3>
+                    <h3>Produto 6</h3>
 
                     <div class="prices">
                         <span class="old">R$ 13,00</span>
-                        <span class="new">R$ 9,50</span>
+                        <span class="new">R$ 10,50</span>
                     </div>
 
                     <div class="product-actions">
@@ -143,11 +150,12 @@
                 <button class="arrow right" onclick="passaProlado(1)">❯</button>
             </div>
         </div>
+
         <div class="offers-container" id="CaixaOfertas">
 
-            <div class="product-card">
+            <div class="product-card" data-id="oferta-7" data-name="Produto 7" data-price="9.50">
                 <img src="./img/pao 1.png">
-                <h3>Produto 1</h3>
+                <h3>Produto 7</h3>
 
                 <div class="prices">
                     <span class="old">R$ 13,00</span>
@@ -160,9 +168,9 @@
                 </div>
             </div>
 
-            <div class="product-card">
+            <div class="product-card" data-id="oferta-8" data-name="Produto 8" data-price="7.90">
                 <img src="./img/pao 1.png">
-                <h3>Produto 2</h3>
+                <h3>Produto 8</h3>
                 <div class="prices">
                     <span class="old">R$ 10,00</span>
                     <span class="new">R$ 7,90</span>
@@ -172,9 +180,10 @@
                     <button class="add-cart">Adicionar</button>
                 </div>
             </div>
-            <div class="product-card">
+
+            <div class="product-card" data-id="oferta-9" data-name="Produto 9" data-price="9.50">
                 <img src="./img/pao 1.png">
-                <h3>Produto 1</h3>
+                <h3>Produto 9</h3>
 
                 <div class="prices">
                     <span class="old">R$ 13,00</span>
@@ -186,9 +195,10 @@
                     <button class="add-cart">Adicionar</button>
                 </div>
             </div>
-            <div class="product-card">
+
+            <div class="product-card" data-id="oferta-10" data-name="Produto 10" data-price="9.50">
                 <img src="./img/pao 1.png">
-                <h3>Produto 1</h3>
+                <h3>Produto 10</h3>
 
                 <div class="prices">
                     <span class="old">R$ 13,00</span>
@@ -200,9 +210,10 @@
                     <button class="add-cart">Adicionar</button>
                 </div>
             </div>
-            <div class="product-card">
+
+            <div class="product-card" data-id="oferta-11" data-name="Produto 11" data-price="9.50">
                 <img src="./img/pao 1.png">
-                <h3>Produto 1</h3>
+                <h3>Produto 11</h3>
 
                 <div class="prices">
                     <span class="old">R$ 13,00</span>
@@ -214,9 +225,10 @@
                     <button class="add-cart">Adicionar</button>
                 </div>
             </div>
-            <div class="product-card">
+
+            <div class="product-card" data-id="oferta-12" data-name="Produto 12" data-price="9.50">
                 <img src="./img/pao 1.png">
-                <h3>Produto 1</h3>
+                <h3>Produto 12</h3>
 
                 <div class="prices">
                     <span class="old">R$ 13,00</span>
@@ -267,8 +279,9 @@
             <a href="#"><i class="fa-solid fa-location-dot"></i></a>
         </div>
     </footer>
+    <script src="script.js"></script>
 
-    <!-- JS -->
+    <!-- JS (setas) -->
     <script>
         function scrollOffers(direction) {
             const container = document.getElementById("offersContainer");
@@ -286,6 +299,8 @@
         }
     </script>
 
+    <!-- JS do carrinho / busca / add -->
+    <script src="script.js"></script>
 </body>
 
 </html>

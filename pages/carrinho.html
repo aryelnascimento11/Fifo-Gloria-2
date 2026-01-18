@@ -5,10 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Checkout Pro | Meu FIFO Virtual</title>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="carrinho.css">
+    <link rel="shortcut icon" href="/img/logo fifo.png" type="image/x-icon">
 </head>
 
 <body>
@@ -48,22 +48,22 @@
 
                     <div class="price-display">
                         <span class="label">Total a pagar</span>
-                        <h2 id="total">R$ 0,00</h2>
+                        <h2 id="total">R$</h2>
                     </div>
 
                     <div class="input-group">
                         <label><i class="fa-solid fa-wallet"></i> Forma de Pagamento</label>
                         <div class="payment-grid">
                             <label class="pay-option">
-                                <input type="radio" name="pagamento" checked>
+                                <input type="radio" name="pagamento" value="Pix" checked>
                                 <div class="pay-card">Pix</div>
                             </label>
                             <label class="pay-option">
-                                <input type="radio" name="pagamento">
+                                <input type="radio" name="pagamento" value="Cartão">
                                 <div class="pay-card">Cartão</div>
                             </label>
                             <label class="pay-option">
-                                <input type="radio" name="pagamento">
+                                <input type="radio" name="pagamento" value="Dinheiro">
                                 <div class="pay-card">Dinheiro</div>
                             </label>
                         </div>
@@ -71,15 +71,15 @@
 
                     <div class="input-group">
                         <label><i class="fa-solid fa-map-location-dot"></i> Local de Entrega</label>
-                        <textarea placeholder="Digite seu endereço completo..."></textarea>
+                        <textarea id="endereco" placeholder="Digite seu endereço completo..."></textarea>
                     </div>
 
                     <div class="action-area">
-                        <button class="btn-main">
+                        <button class="btn-main" id="finalizar-whats">
                             <span>Finalizar via WhatsApp</span>
                             <i class="fa-brands fa-whatsapp"></i>
                         </button>
-                        <button class="btn-secondary">Esvaziar Carrinho</button>
+                        <button class="btn-secondary" id="esvaziar-carrinho">Esvaziar Carrinho</button>
                     </div>
                 </div>
             </aside>
@@ -89,6 +89,9 @@
     <footer class="footer-simple">
         <p>Tecnologia <span>FIFO</span> &copy; 2026</p>
     </footer>
+
+    <!-- JS (na raiz, então volta 1 pasta) -->
+    <script src="../script.js"></script>
 
 </body>
 
