@@ -447,7 +447,7 @@ body {
 }
 
 .back-btn-neon:hover {
-    background: #9effc8;
+    background: #0a110d;
     color: #0f5132;
     transform: scale(1.05);
     /* Neon forte no hover */
@@ -474,11 +474,7 @@ body {
 }
 
 .feedback-section {
-
     padding: 80px 20px;
-
-    background: #0f172a;
-
 }
 
 .titulo-feedback {
@@ -490,23 +486,23 @@ body {
     font-size: 45px;
     font-weight: 900;
     font-style: italic;
-    color: white;
+    color: #2f3e34;
     letter-spacing: -2px;
 }
 
 .titulo-feedback span {
-    color: #0f5132;
+    color: #178653;
 }
 
 .titulo-feedback p {
-    color: #94a3b8;
+    color: #6b7280;
     margin-top: 15px;
 }
 
 .linha {
     width: 80px;
     height: 5px;
-    background: #0f5132;
+    background: #178653;
     margin: 20px auto;
     border-radius: 20px;
 }
@@ -515,21 +511,24 @@ body {
     max-width: 650px;
     margin: auto;
     padding: 45px;
-    background: #111827;
+    background: #f8faf9;
     border-radius: 35px;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    box-shadow: 0 20px 50px rgba(0, 0, 0, .4);
+    border: 1px solid rgba(23, 134, 83, 0.12);
+    box-shadow: 0 20px 50px rgba(23, 134, 83, 0.18);
 }
 
 .avaliacao-texto {
     display: block;
     text-align: center;
-    color: #64748b;
+    color: #374151;
     font-size: 12px;
     font-weight: 900;
     letter-spacing: 4px;
     margin-bottom: 20px;
 }
+
+
+/* ESTRELAS - MANTIDAS IGUAIS */
 
 .estrelas {
     display: flex;
@@ -559,15 +558,16 @@ body {
     0 0 20px #ff7a00;
 }
 
+
 .campo input,
 .campo textarea {
     width: 100%;
     padding: 18px;
     margin-bottom: 20px;
-    background: #020617;
-    border: 1px solid rgba(255, 255, 255, .08);
+    background: #ffffff;
+    border: 1px solid #d1d5db;
     border-radius: 18px;
-    color: white;
+    color: #1f2937;
     font-size: 14px;
     outline: none;
     transition: .3s;
@@ -580,8 +580,8 @@ body {
 
 .campo input:focus,
 .campo textarea:focus {
-    border-color: #ff7a00;
-    box-shadow: 0 0 10px rgba(255, 122, 0, .3);
+    border-color: #178653;
+    box-shadow: 0 0 10px rgba(23, 134, 83, .25);
 }
 
 .btn-feedback {
@@ -589,7 +589,7 @@ body {
     padding: 18px;
     border: none;
     border-radius: 18px;
-    background: #0f5132;
+    background: #178653;
     color: white;
     font-weight: 900;
     letter-spacing: 2px;
@@ -598,7 +598,7 @@ body {
 }
 
 .btn-feedback:hover {
-    background: #fbfffd;
+    background: #0f6b42;
     transform: scale(.98);
 }
 
