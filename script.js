@@ -3,7 +3,16 @@
    Carrinho + Busca + WhatsApp
    (1 arquivo para todas as páginas)
    ========================= */
+async function testarConexao() {
+  const { data, error } = await window.db
+    .from("avaliacoes")
+    .select("*");
 
+  console.log(data);
+  console.log(error);
+}
+
+testarConexao();
 (function () {
   "use strict";
 

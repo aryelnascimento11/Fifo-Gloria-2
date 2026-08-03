@@ -14,6 +14,10 @@
 </head>
 
 <body>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="supabase.js"></script>
+    <script src="script.js"></script>
+    <script src="feedback.js"></script>
 
     <header class="header">
         <h1 class="logo">FIFO <span>GLORIA</span></h1>
@@ -83,54 +87,58 @@
 
         <div class="feedback-card">
 
-            <span class="avaliacao-texto">
-                SUA AVALIAÇÃO
-            </span>
+    <span class="avaliacao-texto">
+        SUA AVALIAÇÃO
+    </span>
 
+    <div class="estrelas">
 
-            <div class="estrelas">
+        <input type="radio" id="star5" name="nota" value="5">
+        <label for="star5">★</label>
 
-                <input type="radio" id="star5" name="nota" value="5">
-                <label for="star5">★</label>
+        <input type="radio" id="star4" name="nota" value="4">
+        <label for="star4">★</label>
 
-                <input type="radio" id="star4" name="nota" value="4">
-                <label for="star4">★</label>
+        <input type="radio" id="star3" name="nota" value="3">
+        <label for="star3">★</label>
 
-                <input type="radio" id="star3" name="nota" value="3">
-                <label for="star3">★</label>
+        <input type="radio" id="star2" name="nota" value="2">
+        <label for="star2">★</label>
 
-                <input type="radio" id="star2" name="nota" value="2">
-                <label for="star2">★</label>
+        <input type="radio" id="star1" name="nota" value="1">
+        <label for="star1">★</label>
 
-                <input type="radio" id="star1" name="nota" value="1">
-                <label for="star1">★</label>
+    </div>
 
-            </div>
+    <div class="campo">
 
+        <input
+            id="nome"
+            type="text"
+            placeholder="SEU NOME"
+            maxlength="50"
+            required>
 
+    </div>
 
-            <div class="campo">
+    <div class="campo">
 
-                <input type="text" placeholder="SEU NOME" required>
+        <textarea
+            id="mensagem"
+            placeholder="SEU FEEDBACK (MÁX. 300 CARACTERES)"
+            maxlength="300"
+            required></textarea>
 
-            </div>
+    </div>
 
+    <button
+         id="btnFeedback" class="btn-feedback">
 
+        ENVIAR COMENTÁRIO
 
-            <div class="campo">
+    </button>
 
-                <textarea placeholder="SEU FEEDBACK (MÁX. 300 CARACTERES)" maxlength="300" required></textarea>
-
-            </div>
-
-
-
-            <button class="btn-feedback">
-                ENVIAR COMENTÁRIO
-            </button>
-
-
-        </div>
+</div>
 
 
     </section>
