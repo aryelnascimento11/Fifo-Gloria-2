@@ -1,44 +1,45 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-    // const btnFeedback = document.getElementById("btnFeedback");
+    const list = [];
 
-    // console.log(btnFeedback);
+    const estrelinha = document.getElementById("estrelas");
+    const botaoENV = document.getElementById("btn-feedback");
+    const user = document.getElementById("nomes");
+    const comment = document.getElementById("textos");
+    const feedList = document.getElementById("listasTX");
 
-    // btnFeedback.addEventListener("click", () => {
-    //     console.log("Botão clicado");
-    // });
+    botaoENV.addEventListener("click", () => {
+        const usuario = user.value.trim();
+        const comentario = comment.value.trim();
+        const inputss = document.querySelector('input[name="nota"]:checked');
+        const  sol =  inputss ? inputss.value : "";
 
-    // const btnEnviar = document.getElementById("btnEnviar");
+        if (usuario === "" || comentario === "" || sol === "") return;
 
-     const lista = []
+        list.push({
+            user: usuario,
+            comment: comentario,
+            estrelinha: sol
+        });
 
-     const name = document.getElementById("nomes");
-     const feedback = document.getElementById("textos");
-     const botaoEnv = document.getElementById("btn-feedback");
-     const listaHT = document.getElementById("listasTX");
-
-    botaoEnv.addEventListener("click", () => {
-        const nomes = name.value.trim();
-        const textos = feedback.value.trim();
-        if(nomes === "" || textos === "") return;
+        user.value = "";
+        comment.value = "";
         
-        lista.push({
-            nome: nomes,
-            feedback: textos
-        })
+        
+        if(inputss){
+            inputss.checked = false;
+        }
 
-        name.value = ""; 
-        feedback.value = "";
+        mostrarFeed();
+    });
 
-        mostrarFeedbacks();
-    })
-
-    function mostrarFeedbacks(){
-        listaHT.innerHTML = "";
-        lista.forEach((item) => {
-            const li = document.createElement("li")
-            li.textContent = `${item.nome}: ${item.feedback}`
-            listaHT.appendChild(li)
-        })
+    function mostrarFeed() {
+        feedList.innerHTML = "";
+        list.forEach((item) => {
+            const li = document.createElement("li");
+            li.textContent = `${item.estrelinha} - ${item.user}: ${item.comment}`;
+            feedList.appendChild(li);
+        });
     }
+
 });
