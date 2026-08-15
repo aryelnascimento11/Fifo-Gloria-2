@@ -87,61 +87,56 @@
 
         <div class="feedback-card">
 
-    <span class="avaliacao-texto">
-        SUA AVALIAÇÃO
-    </span>
+            <span class="avaliacao-texto">
+                SUA AVALIAÇÃO
+            </span>
 
-    <div class="estrelas">
+            <div class="estrelas">
 
-        <input type="radio" id="star5" name="nota" value="5">
-        <label for="star5">★</label>
+                <input type="radio" id="star5" name="nota" value="5">
+                <label for="star5">★</label>
 
-        <input type="radio" id="star4" name="nota" value="4">
-        <label for="star4">★</label>
+                <input type="radio" id="star4" name="nota" value="4">
+                <label for="star4">★</label>
 
-        <input type="radio" id="star3" name="nota" value="3">
-        <label for="star3">★</label>
+                <input type="radio" id="star3" name="nota" value="3">
+                <label for="star3">★</label>
 
-        <input type="radio" id="star2" name="nota" value="2">
-        <label for="star2">★</label>
+                <input type="radio" id="star2" name="nota" value="2">
+                <label for="star2">★</label>
 
-        <input type="radio" id="star1" name="nota" value="1">
-        <label for="star1">★</label>
+                <input type="radio" id="star1" name="nota" value="1">
+                <label for="star1">★</label>
 
-    </div>
+            </div>
 
-    <div class="campo">
+            <div class="campo">
 
-        <input
-            id="nome"
-            type="text"
-            placeholder="SEU NOME"
-            maxlength="50"
-            required>
+                <input id="nomes" type="text" placeholder="SEU NOME" maxlength="50" required>
+                
+            </div>
 
-    </div>
+            <div class="campo">
 
-    <div class="campo">
+                <textarea id="textos" placeholder="SEU FEEDBACK (MÁX. 300 CARACTERES)" maxlength="300"
+                    required></textarea>
 
-        <textarea
-            id="mensagem"
-            placeholder="SEU FEEDBACK (MÁX. 300 CARACTERES)"
-            maxlength="300"
-            required></textarea>
+            </div>
 
-    </div>
+            <button id="btn-feedback" class="btn-feedback">
+ 
+                ENVIAR COMENTÁRIO
 
-    <button
-         id="btnFeedback" class="btn-feedback">
+            </button>
 
-        ENVIAR COMENTÁRIO
-
-    </button>
-
-</div>
+        </div>
 
 
     </section>
+    <div>
+        <ul  id="listasTX"></ul>
+            
+    </div>
     <footer class="footer">
         <div class="footer-icons">
             <a href="#"><i class="fa-brands fa-instagram"></i></a>
