@@ -37,7 +37,16 @@ document.addEventListener("DOMContentLoaded", () => {
         feedList.innerHTML = "";
         list.forEach((item) => {
             const li = document.createElement("li");
-            li.textContent = `${item.estrelinha} - ${item.user}: ${item.comment}`;
+            li.classList.add("feedback-item");
+            li.innerHTML = `
+            <span class="banana">${item.estrelinha}</span>
+            <div class="dereto"> 
+                <span>${item.user}:</span>
+                <p>${item.comment}</p >
+            
+            </div>
+            `
+            
             feedList.appendChild(li);
         });
     }
