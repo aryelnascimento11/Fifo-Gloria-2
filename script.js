@@ -322,7 +322,7 @@
       });
     }
 
-    // Finalizar WhatsApp
+  // Finalizar WhatsApp
     const btnWhats = $("#finalizar-whats");
     if (btnWhats) {
       btnWhats.addEventListener("click", () => {
@@ -334,10 +334,29 @@
         }
 
         const pagamento = getSelectedPayment();
-        const endereco = $("#endereco")?.value?.trim() || "";
+        
+        // Captura os dados do dropdown e dos campos numéricos/texto
+        const bairroSelect = $('select[name="bairro"]') || $("#bairro");
+        const bairro = bairroSelect?.value?.trim() || "";
+        const rua = $("#endereco")?.value?.trim() || "";
+        const numero = $("#Residencia")?.value?.trim() || "";
 
-        if (!endereco) {
-          alert("Por favor, digite o endereço completo para entrega.");
+        // Validações
+        if (!bairro) {
+          alert("Por favor, selecione seu bairro.");
+          bairroSelect?.focus();
+          return;
+        }
+
+        if (!rua) {
+          alert("Por favor, digite o nome da sua rua.");
+          $("#endereco")?.focus();
+          return;
+        }
+
+        if (!numero) {
+          alert("Por favor, digite o número da residência.");
+          $("#Residencia")?.focus();
           return;
         }
 
@@ -354,7 +373,7 @@
         lines.push("");
         lines.push(`Total: ${centsToBRL(total)}`);
         lines.push(`Pagamento: ${pagamento}`);
-        lines.push(`Endereço: ${endereco}`);
+        lines.push(`Endereço: ${rua}, nº ${numero} - Bairro ${bairro}`);
 
         const msg = lines.join("\n");
         const url = `https://wa.me/${WHATS_NUMBER}?text=${encodeURIComponent(msg)}`;

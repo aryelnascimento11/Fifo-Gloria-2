@@ -458,3 +458,137 @@ input:focus{
 
   .payment-grid{grid-template-columns: 1fr;}
 }
+
+/* Container do endereço */
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+
+    width: 100%;
+    max-width: 480px;
+
+    margin: 20px auto;
+    padding: 24px;
+
+    background: #ffffff;
+
+    border: 1px solid #e5e7eb;
+    border-radius: 18px;
+
+    box-shadow: 0 8px 25px rgba(15, 81, 50, 0.08);
+
+    box-sizing: border-box;
+}
+
+
+/* Label */
+.input-group label {
+    font-size: 14px;
+    font-weight: 600;
+
+    color: #374151;
+
+    margin-bottom: 2px;
+}
+
+
+/* Select e Inputs */
+.input-group select,
+.input-group input {
+    width: 100%;
+    height: 48px;
+
+    padding: 0 15px;
+
+    font-family: inherit;
+    font-size: 14px;
+
+    color: #1f2937;
+    background: #f9fafb;
+
+    border: 1px solid #d1d5db;
+    border-radius: 12px;
+
+    outline: none;
+
+    box-sizing: border-box;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+
+/* Placeholder */
+.input-group input::placeholder {
+    color: #9ca3af;
+}
+
+
+/* Opções do select */
+.input-group select option {
+    background: #ffffff;
+    color: #1f2937;
+}
+
+
+/* Linha Rua + Número */
+.endereco-linha {
+    display: flex;
+    gap: 12px;
+
+    width: 100%;
+}
+
+
+/* Rua */
+.endereco-linha #endereco {
+    flex: 1;
+}
+
+
+/* Número */
+.endereco-linha #Residencia {
+    width: 90px;
+
+    text-align: center;
+}
+
+
+/* Foco */
+.input-group select:focus,
+.input-group input:focus {
+    background: #ffffff;
+
+    border-color: #0f5132;
+
+    box-shadow: 0 0 0 3px rgba(15, 81, 50, 0.10);
+}
+
+
+/* Hover */
+.input-group select:hover,
+.input-group input:hover {
+    border-color: #a7b8ae;
+}
+
+
+/* Mobile */
+@media (max-width: 500px) {
+
+    .input-group {
+        padding: 20px;
+        border-radius: 16px;
+    }
+
+    .endereco-linha {
+        gap: 8px;
+    }
+
+    .endereco-linha #Residencia {
+        width: 75px;
+    }
+
+}
