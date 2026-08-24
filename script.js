@@ -6,7 +6,7 @@
 
   // WhatsApp do mercado (DDD + número, só dígitos)
   // Número: 55 47 9103-3447 => 554791033447
-  const WHATS_NUMBER = "5547992472537";
+  const WHATS_NUMBER = "5547992779029";
 
   // ===== HELPERS =====
   const $ = (sel, root = document) => root.querySelector(sel);
