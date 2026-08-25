@@ -6,18 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fifo Gloria</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="shortcut icon" href="/img/logo fifo.png" type="image/x-icon">
-
+    <link rel="shortcut icon" href="img/logo fifo.png" type="image/x-icon">
 </head>
 
 <body>
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-    <script src="supabase.js"></script>
-    <script src="script.js"></script>
-    <script src="feedback.js"></script>
 
     <header class="header">
         <h1 class="logo">FIFO <span>GLORIA</span></h1>
@@ -41,40 +35,16 @@
     </section>
 
     <section class="offers">
-        <h2>Ofertas da Semana</h2>
-        <div class="offers-grid">
-            <div class="offer-card">
-                <img src="./img/pao 1.png" alt="">
-                <h3>Produto 1</h3>
-                <div class="prices">
-                    <span class="old-price">R$ 13,00</span>
-                    <span class="new-price">R$ 9,50</span>
-                </div>
-            </div>
-            <div class="offer-card">
-                <img src="./img/creme6.png" alt="">
-                <h3>Produto 2</h3>
-                <div class="prices">
-                    <span class="old-price">R$ 15,00</span>
-                    <span class="new-price">R$ 9,99</span>
-                </div>
-            </div>
-            <div class="offer-card">
-                <img src="./img/cafe 2.png" alt="">
-                <h3>Produto 3</h3>
-                <div class="prices">
-                    <span class="old-price">R$ 30,00</span>
-                    <span class="new-price">R$ 19,90</span>
-                </div>
-            </div>
-        </div>
+        <h2>Ofertas Relâmpago</h2>
+        <!-- O container fica vazio para receber exclusivamente os dados cadastrados via Painel -->
+        <div id="offers-grid" class="offers-grid"></div>
         <a href="fifoVirtual.html" class="btn-more">Ver nossa loja</a>
     </section>
-    <section class="feedback-section">
 
+    <section class="feedback-section">
         <div class="titulo-feedback">
             <h2>
-                DE SEU <span>FEEDBACK</span>
+                DÊ SEU <span>FEEDBACK</span>
             </h2>
 
             <div class="linha"></div>
@@ -84,59 +54,46 @@
             </p>
         </div>
 
-
         <div class="feedback-card">
-
             <span class="avaliacao-texto">
                 SUA AVALIAÇÃO
             </span>
 
             <div id="estrelas" class="estrelas">
-
                 <input type="radio" id="star5" name="result" value="5">
-                <label id="star5" for="star5">★</label>
+                <label for="star5">★</label>
 
                 <input type="radio" id="star4" name="result" value="4">
-                <label id="star4" for="star4">★</label>
+                <label for="star4">★</label>
 
                 <input type="radio" id="star3" name="result" value="3">
-                <label id="star3"   for="star3">★</label>
+                <label for="star3">★</label>
 
                 <input type="radio" id="star2" name="result" value="2">
-                <label id="star2" for="star2">★</label>
+                <label for="star2">★</label>
 
                 <input type="radio" id="star1" name="result" value="1">
-                <label id="star1" for="star1">★</label>
-
+                <label for="star1">★</label>
             </div>
 
             <div class="campo">
-
                 <input id="nomes" type="text" placeholder="SEU NOME" maxlength="50" required>
-                
             </div>
 
             <div class="campo">
-
-                <textarea id="textos" placeholder="SEU FEEDBACK (MÁX. 100 CARACTERES)" maxlength="100"
-                    required></textarea>
-
+                <textarea id="textos" placeholder="SEU FEEDBACK (MÁX. 100 CARACTERES)" maxlength="100" required></textarea>
             </div>
 
             <button id="btn-feedback" class="btn-feedback">
- 
                 ENVIAR COMENTÁRIO
-
             </button>
-
         </div>
-
-
     </section>
+
     <div>
-        <ul class="listasTX"  id="listasTX"></ul>
-            
+        <ul class="listasTX" id="listasTX"></ul>
     </div>
+
     <footer class="footer">
         <div class="footer-icons">
             <a href="#"><i class="fa-brands fa-instagram"></i></a>
@@ -145,6 +102,12 @@
         </div>
         <p>© 2026 Fifo Gloria — Todos os direitos reservados</p>
     </footer>
+
+    <!-- SCRIPTS CARREGADOS NO FINAL DO BODY -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="supabase.js"></script>
+    <script src="script.js"></script>
+    <script src="feedback.js"></script>
 
 </body>
 

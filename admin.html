@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel Admin - Fifo Gloria</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="shortcut icon" href="img/logo fifo.png" type="image/x-icon">
+</head>
+
+<body style="background: #f4f6f8; display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0; padding: 20px; box-sizing: border-box;">
+
+    <!-- TELA 1: LOGIN DO ADMINISTRADOR (Exibida por padrão se não estiver logado) -->
+    <div id="login-screen" class="offer-card" style="background: #fff; padding: 30px; border-radius: 16px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); width: 100%; max-width: 420px; text-align: center;">
+        <h2 style="color: #1b4332; margin-bottom: 20px;">🔒 Acesso Restrito</h2>
+        
+        <form onsubmit="fazerLogin(event)" style="display: flex; flex-direction: column; gap: 15px;">
+            <div style="text-align: left;">
+                <label style="font-size: 14px; font-weight: 600; color: #333;">E-mail do Admin</label>
+                <input type="email" id="admin-email" placeholder="admin@fifogloria.com" required style="width: 100%; padding: 12px; margin-top: 5px; border-radius: 8px; border: 1px solid #ccc; box-sizing: border-box;">
+            </div>
+
+            <div style="text-align: left;">
+                <label style="font-size: 14px; font-weight: 600; color: #333;">Senha</label>
+                <input type="password" id="admin-senha" placeholder="••••••••" required style="width: 100%; padding: 12px; margin-top: 5px; border-radius: 8px; border: 1px solid #ccc; box-sizing: border-box;">
+            </div>
+
+            <button type="submit" style="background: #28a745; color: white; padding: 12px; border: none; border-radius: 8px; font-weight: 600; font-size: 16px; cursor: pointer; margin-top: 10px;">
+                Entrar no Painel
+            </button>
+        </form>
+    </div>
+
+    <!-- TELA 2: FORMULÁRIO DE OFERTAS (Exibida somente após o login correto) -->
+    <div id="admin-content" class="offer-card" style="display: none; background: #fff; padding: 30px; border-radius: 16px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); width: 100%; max-width: 480px;">
+        
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+            <h2 style="color: #1b4332; margin: 0; font-size: 20px;">⚡ Nova Oferta Relâmpago</h2>
+            <button onclick="fazerLogout()" style="background: #dc3545; color: white; border: none; padding: 6px 12px; border-radius: 6px; cursor: pointer; font-size: 13px; font-weight: 600;">Sair</button>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 14px;">
+            <div>
+                <label style="font-size: 13px; font-weight: 600; color: #555;">Nome do Produto</label>
+                <input type="text" id="prod-nome" placeholder="Ex: Arroz 5kg" style="width: 100%; padding: 10px; border-radius: 6px; border: 1px solid #ccc; box-sizing: border-box;">
+            </div>
+
+            <div>
+                <label style="font-size: 13px; font-weight: 600; color: #555;">Preço Antigo (R$)</label>
+                <input type="text" id="prod-preco-antigo" placeholder="Ex: 25,00" style="width: 100%; padding: 10px; border-radius: 6px; border: 1px solid #ccc; box-sizing: border-box;">
+            </div>
+
+            <div>
+                <label style="font-size: 13px; font-weight: 600; color: #555;">Preço da Oferta (R$)</label>
+                <input type="text" id="prod-preco-novo" placeholder="Ex: 18,90" style="width: 100%; padding: 10px; border-radius: 6px; border: 1px solid #ccc; box-sizing: border-box;">
+            </div>
+
+            <div>
+                <label style="font-size: 13px; font-weight: 600; color: #555;">Foto do Produto</label>
+                <input type="file" id="prod-foto" accept="image/*" style="width: 100%; padding: 8px; border-radius: 6px; border: 1px solid #ccc; box-sizing: border-box;">
+            </div>
+
+            <button onclick="publicarOferta()" style="background: #1b4332; color: white; padding: 14px; border: none; border-radius: 8px; font-weight: 600; font-size: 16px; cursor: pointer; margin-top: 10px;">
+                Publicar Oferta
+            </button>
+        </div>
+    </div>
+
+    <!-- SCRIPTS -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="supabase.js"></script>
+    <script src="admin.js"></script>
+
+</body>
+
+</html>

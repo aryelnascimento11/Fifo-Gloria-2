@@ -5,7 +5,6 @@
   const STORAGE_KEY = "fifo_cart_v1";
 
   // WhatsApp do mercado (DDD + número, só dígitos)
-  // Número: 55 47 9103-3447 => 554791033447
   const WHATS_NUMBER = "5547992779029";
 
   // ===== HELPERS =====
@@ -20,15 +19,7 @@
   }
 
   function toCents(value) {
-    // aceita:
-    // "3.00" (ponto decimal)
-    // "3,00" (vírgula decimal)
-    // "R$ 3,00"
-    // "1.234,56" (BR)
-    // "1,234.56" (US) -> tenta se virar
     let s = String(value);
-
-    // mantém só números, vírgula, ponto e sinal
     s = s.replace(/[^\d.,-]/g, "").trim();
 
     if (!s) return 0;
@@ -37,28 +28,22 @@
     const hasDot = s.includes(".");
 
     if (hasComma && hasDot) {
-      // Se tem os dois, decide qual é o decimal pelo último separador
       const lastComma = s.lastIndexOf(",");
       const lastDot = s.lastIndexOf(".");
       if (lastComma > lastDot) {
-        // "1.234,56" => remove pontos (milhar), troca vírgula por ponto
         s = s.replace(/\./g, "").replace(",", ".");
       } else {
-        // "1,234.56" => remove vírgulas (milhar), mantém ponto decimal
         s = s.replace(/,/g, "");
       }
     } else if (hasComma && !hasDot) {
-      // "3,00" => vírgula decimal
       s = s.replace(",", ".");
     } else if (!hasComma && hasDot) {
-      // "3.00" => ponto decimal (ok)
-      // se tiver mais de um ponto, remove todos menos o último (milhar doido)
       const parts = s.split(".");
       if (parts.length > 2) {
         const dec = parts.pop();
         s = parts.join("") + "." + dec;
       }
-    } // else: só dígitos
+    }
 
     const num = Number.parseFloat(s);
     if (Number.isNaN(num)) return 0;
@@ -139,25 +124,73 @@
     return cart.reduce((sum, i) => sum + i.priceCents * i.qty, 0);
   }
 
+  // ===== CARREGAR OFERTAS DO SUPABASE =====
+  async function carregarOfertasRelampago() {
+    const container = $("#offers-grid");
+    if (!container) return;
+
+    const db = window.supabaseClient || window.db || window.supabase;
+    if (!db || typeof db.from !== "function") return;
+
+    try {
+      const { data: ofertas, error } = await db
+        .from("ofertas_relampago")
+        .select("*")
+        .order("created_at", { ascending: false });
+
+      if (error) return;
+
+      if (ofertas && ofertas.length > 0) {
+        container.innerHTML = ofertas
+          .map(
+            (item) => `
+            <div class="offer-card product-card" 
+                 data-id="oferta-${item.id}" 
+                 data-name="${escapeHtml(item.nome)}" 
+                 data-price="${item.preco_novo}">
+              <img src="${escapeHtml(item.imagem_url)}" alt="${escapeHtml(item.nome)}">
+              <h3>${escapeHtml(item.nome)}</h3>
+              <div class="prices">
+                ${
+                  item.preco_antigo
+                    ? `<span class="old-price">R$ ${escapeHtml(item.preco_antigo)}</span>`
+                    : ""
+                }
+                <span class="new-price">R$ ${escapeHtml(item.preco_novo)}</span>
+              </div>
+              <div class="actions" style="margin-top:10px; display:flex; gap:8px; align-items:center; justify-content:center;">
+                <input type="number" class="quantity" value="1" min="1" style="width:50px; text-align:center; padding:5px; border-radius:6px; border:1px solid #ccc;">
+                <button class="add-cart" style="cursor:pointer; padding:6px 12px; border-radius:6px; border:none; background:#28a745; color:#fff; font-weight:600;">Adicionar</button>
+              </div>
+            </div>
+          `
+          )
+          .join("");
+
+        // Registra os botões adicionados dinamicamente
+        setupAddButtons();
+      }
+    } catch (err) {
+      console.error("Erro ao carregar ofertas:", err);
+    }
+  }
+
   // ===== ADD TO CART (todas páginas) =====
   function setupAddButtons() {
-    // padroniza inputs e dados
     $$(".product-card").forEach((card, index) => {
-      // garante .quantity
       const qtyInput = $(".quantity", card) || $('input[type="number"]', card);
       if (qtyInput && !qtyInput.classList.contains("quantity")) {
         qtyInput.classList.add("quantity");
       }
 
-      // data-name fallback (serve pra ofertas)
       if (!card.dataset.name) {
         const name = $("h3", card)?.textContent?.trim();
         if (name) card.dataset.name = name;
       }
 
-      // data-price fallback (serve pra ofertas)
       if (!card.dataset.price) {
         const priceText =
+          $(".new-price", card)?.textContent?.trim() ||
           $(".new", card)?.textContent?.trim() ||
           $(".price", card)?.textContent?.trim();
         if (priceText) {
@@ -166,7 +199,6 @@
         }
       }
 
-      // data-id fallback
       if (!card.dataset.id) {
         const base = normalizeText(card.dataset.name || `produto-${index + 1}`).replace(/\s+/g, "-");
         card.dataset.id = `auto-${base}-${index}`;
@@ -174,6 +206,9 @@
     });
 
     $$(".add-cart").forEach((btn) => {
+      if (btn.dataset.hasListener) return;
+      btn.dataset.hasListener = "true";
+
       btn.addEventListener("click", (e) => {
         const card = e.currentTarget.closest(".product-card");
         if (!card) return;
@@ -181,9 +216,9 @@
         const id = String(card.dataset.id || "").trim();
         const name = String(card.dataset.name || $("h3", card)?.textContent || "Produto").trim();
 
-        // preço: prioridade pro data-price
         const priceRaw =
           card.dataset.price ||
+          $(".new-price", card)?.textContent ||
           $(".new", card)?.textContent ||
           $(".price", card)?.textContent ||
           "0";
@@ -313,7 +348,6 @@
       });
     }
 
-    // Esvaziar
     const btnClear = $("#esvaziar-carrinho");
     if (btnClear) {
       btnClear.addEventListener("click", () => {
@@ -322,7 +356,6 @@
       });
     }
 
-  // Finalizar WhatsApp
     const btnWhats = $("#finalizar-whats");
     if (btnWhats) {
       btnWhats.addEventListener("click", () => {
@@ -334,14 +367,11 @@
         }
 
         const pagamento = getSelectedPayment();
-        
-        // Captura os dados do dropdown e dos campos numéricos/texto
         const bairroSelect = $('select[name="bairro"]') || $("#bairro");
         const bairro = bairroSelect?.value?.trim() || "";
         const rua = $("#endereco")?.value?.trim() || "";
         const numero = $("#Residencia")?.value?.trim() || "";
 
-        // Validações
         if (!bairro) {
           alert("Por favor, selecione seu bairro.");
           bairroSelect?.focus();
@@ -390,5 +420,6 @@
     setupAddButtons();
     setupSearch();
     setupCartPage();
+    carregarOfertasRelampago();
   });
 })();
