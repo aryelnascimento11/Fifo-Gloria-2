@@ -5,8 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Checkout Pro | Meu FIFO Virtual</title>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="carrinho.css">
     <link rel="shortcut icon" href="/img/logo fifo.png" type="image/x-icon">
@@ -24,7 +23,6 @@
                 <a href="../index.html">Início</a>
                 <a href="/fifoVirtual.html" target="_blank">Catálogo</a>
             </nav>
-
         </div>
     </header>
 
@@ -50,9 +48,52 @@
 
                     <div class="price-display">
                         <span class="label">Total a pagar</span>
-                        <h2 id="total">R$</h2>
+                        <h2 id="total">R$ 0,00</h2>
                     </div>
 
+                    <!-- Dados Pessoais (Comuns para ambos os tipos de entrega) -->
+                    <div class="input-group">
+                        <label for="cliente-nome"><i class="fa-solid fa-user"></i> Nome Completo:</label>
+                        <input id="cliente-nome" type="text" placeholder="Digite seu nome completo" required>
+
+                        <label for="cliente-cpf" style="margin-top: 10px;"><i class="fa-solid fa-id-card"></i> CPF:</label>
+                        <input id="cliente-cpf" type="text" placeholder="000.000.000-00" maxlength="14" oninput="mascaraCPF(this)" required>
+                    </div>
+
+                    <!-- Tipo de Entrega -->
+                    <div class="input-group">
+                        <label><i class="fa-solid fa-truck-ramp-box"></i> Tipo de Entrega</label>
+                        <div class="payment-grid">
+                            <label class="pay-option">
+                                <input type="radio" name="tipo-entrega" value="entrega" checked onchange="alternarTipoEntrega()">
+                                <div class="pay-card">Entrega</div>
+                            </label>
+                            <label class="pay-option">
+                                <input type="radio" name="tipo-entrega" value="retirada" onchange="alternarTipoEntrega()">
+                                <div class="pay-card">Retirar no Local</div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Campos exclusivos de Entrega a Domicílio -->
+                    <div id="campos-entrega" class="input-group">
+                        <label for="bairro">Selecione seu bairro:</label>
+                        <select id="bairro" name="bairro">
+                            <option value="" disabled selected>-- Selecione seu bairro --</option>
+                            <option value="Garcia">Garcia</option>
+                            <option value="Gaspar Alto">Gaspar Alto</option>
+                            <option value="Progresso">Progresso</option>
+                            <option value="Zendron">Zendron</option>
+                        </select>
+
+                        <div class="endereco-linha" style="margin-top: 10px;">
+                            <input id="endereco" type="text" placeholder="Digite sua rua / avenida...">
+                            <input id="Residencia" type="text" inputmode="numeric" maxlength="4"
+                                oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0, 4)" placeholder="Nº">
+                        </div>
+                    </div>
+
+                    <!-- Forma de Pagamento -->
                     <div class="input-group">
                         <label><i class="fa-solid fa-wallet"></i> Forma de Pagamento</label>
                         <div class="payment-grid">
@@ -71,35 +112,15 @@
                         </div>
                     </div>
 
-                    <div class="input-group">
-                        <label for="bairro">Selecione seu bairro:</label>
-                        <select id="bairro" name="bairro" required>
-                            <option value="" disabled selected>-- Selecione seu bairro --</option>
-                            <option value="Garcia">Garcia</option>
-                            <option value="Gaspar Alto">Gaspar Alto</option>
-                            <option value="Progresso">Progresso</option>
-                            <option value="Zendron">Zendron</option>
-                        </select>
-
-                        <!-- Rua e Número lado a lado -->
-                        <div class="endereco-linha">
-                            <input id="endereco" type="text" placeholder="Digite sua rua / avenida...">
-                            <input id="Residencia" type="text" inputmode="numeric" maxlength="4"
-                                oninput="this.value = this.value.replace(/[^0-9]/g, '').slice(0, 4)" placeholder="Nº">
-                        </div>
-
-                        <script src="./carrinho.js" defer></script>
+                    <div class="action-area">
+                        <button class="btn-main" id="finalizar-whats">
+                            <span>Finalizar via WhatsApp</span>
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </button>
+                        <button class="btn-secondary" id="esvaziar-carrinho">Esvaziar Carrinho</button>
                     </div>
                 </div>
-                <div class="action-area">
-                    <button class="btn-main" id="finalizar-whats">
-                        <span>Finalizar via WhatsApp</span>
-                        <i class="fa-brands fa-whatsapp"></i>
-                    </button>
-                    <button class="btn-secondary" id="esvaziar-carrinho">Esvaziar Carrinho</button>
-                </div>
-        </div>
-        </aside>
+            </aside>
         </div>
     </main>
 
@@ -107,7 +128,7 @@
         <p>Tecnologia <span>FIFO</span> &copy; 2026</p>
     </footer>
 
-    <!-- JS (na raiz, então volta 1 pasta) -->
+    <script src="carrinho.js" defer></script>
     <script src="../script.js"></script>
 
 </body>

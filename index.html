@@ -18,60 +18,48 @@
 
         <nav>
             <ul class="menu">
-                <li><a href="#">Início</a></li>
-                <li><a href="./sobre.html">Sobre</a></li>
+                <li><a href="#" id="menu-inicio">Início</a></li>
+                <li><a href="./sobre.html" id="menu-sobre">Sobre</a></li>
             </ul>
         </nav>
 
-        <button class="lang-btn">PT / EN</button>
+        <!-- Adicionado ID e texto padrão -->
+        <button class="lang-btn" id="lang-btn">PT / EN</button>
     </header>
 
     <section class="hero">
         <img src="./img/banner bonito.png" alt="Banner do mercado">
         <div class="hero-text">
             <h2>Fifo Gloria</h2>
-            <p>Preço justo, qualidade garantida</p>
+            <p id="hero-subtitle">Preço justo, qualidade garantida</p>
         </div>
     </section>
 
     <section class="offers">
-        <h2>Ofertas Relâmpago</h2>
-        <!-- O container fica vazio para receber exclusivamente os dados cadastrados via Painel -->
+        <h2 id="offers-title">Ofertas Relâmpago</h2>
         <div id="offers-grid" class="offers-grid"></div>
-        <a href="fifoVirtual.html" class="btn-more">Ver nossa loja</a>
+        <a href="fifoVirtual.html" class="btn-more" id="btn-more">Ver nossa loja</a>
     </section>
 
     <section class="feedback-section">
         <div class="titulo-feedback">
-            <h2>
-                DÊ SEU <span>FEEDBACK</span>
-            </h2>
-
+            <h2 id="feedback-title">DÊ SEU <span>FEEDBACK</span></h2>
             <div class="linha"></div>
-
-            <p>
-                Conte sua experiência com a FIFO
-            </p>
+            <p id="feedback-subtitle">Conte sua experiência com a FIFO</p>
         </div>
 
         <div class="feedback-card">
-            <span class="avaliacao-texto">
-                SUA AVALIAÇÃO
-            </span>
+            <span class="avaliacao-texto" id="lbl-avaliacao">SUA AVALIAÇÃO</span>
 
             <div id="estrelas" class="estrelas">
                 <input type="radio" id="star5" name="result" value="5">
                 <label for="star5">★</label>
-
                 <input type="radio" id="star4" name="result" value="4">
                 <label for="star4">★</label>
-
                 <input type="radio" id="star3" name="result" value="3">
                 <label for="star3">★</label>
-
                 <input type="radio" id="star2" name="result" value="2">
                 <label for="star2">★</label>
-
                 <input type="radio" id="star1" name="result" value="1">
                 <label for="star1">★</label>
             </div>
@@ -84,9 +72,7 @@
                 <textarea id="textos" placeholder="SEU FEEDBACK (MÁX. 100 CARACTERES)" maxlength="100" required></textarea>
             </div>
 
-            <button id="btn-feedback" class="btn-feedback">
-                ENVIAR COMENTÁRIO
-            </button>
+            <button id="btn-feedback" class="btn-feedback">ENVIAR COMENTÁRIO</button>
         </div>
     </section>
 
@@ -100,14 +86,14 @@
             <a href="#"><i class="fa-brands fa-facebook"></i></a>
             <a href="#"><i class="fa-solid fa-location-dot"></i></a>
         </div>
-        <p>© 2026 Fifo Gloria — Todos os direitos reservados</p>
+        <p id="footer-copy">© 2026 Fifo Gloria — Todos os direitos reservados</p>
     </footer>
 
-    <!-- SCRIPTS CARREGADOS NO FINAL DO BODY -->
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script src="supabase.js"></script>
     <script src="script.js"></script>
     <script src="feedback.js"></script>
+    <script src="idioma.js"></script>
 
 </body>
 
