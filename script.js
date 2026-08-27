@@ -1,31 +1,46 @@
 (function () {
   "use strict";
 
+  // ===== CONFIGURAÇÕES =====
   const STORAGE_KEY = "fifo_cart_v1";
   const WHATS_NUMBER = "5547992779029";
 
+  // ===== HELPERS =====
   const $ = (sel, root = document) => root.querySelector(sel);
   const $$ = (sel, root = document) => Array.from(root.querySelectorAll(sel));
 
-  function loadCart() {
-    try {
-      const raw = localStorage.getItem(STORAGE_KEY);
-      return raw ? JSON.parse(raw) : [];
-    } catch {
-      return [];
-    }
+  function normalizeText(s) {
+    return String(s)
+      .toLowerCase()
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "");
   }
 
-  function saveCart(cart) {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(cart));
+  function toCents(value) {
+    let s = String(value).replace(/[^\d.,-]/g, "").trim();
+    if (!s) return 0;
+
+    const hasComma = s.includes(",");
+    const hasDot = s.includes(".");
+
+    if (hasComma && hasDot) {
+      const lastComma = s.lastIndexOf(",");
+      const lastDot = s.lastIndexOf(".");
+      if (lastComma > lastDot) s = s.replace(/\./g, "").replace(",", ".");
+      else s = s.replace(/,/g, "");
+    } else if (hasComma && !hasDot) {
+      s = s.replace(",", ".");
+    } else if (!hasComma && hasDot) {
+      const parts = s.split(".");
+      if (parts.length > 2) s = parts.join("") + "." + parts.pop();
+    }
+
+    const num = Number.parseFloat(s);
+    return Number.isNaN(num) ? 0 : Math.round(num * 100);
   }
 
   function centsToBRL(cents) {
     return `R$ ${(cents / 100).toFixed(2).replace(".", ",")}`;
-  }
-
-  function calcTotal(cart = loadCart()) {
-    return cart.reduce((sum, i) => sum + (i.priceCents || 0) * (i.qty || 0), 0);
   }
 
   function escapeHtml(str) {
@@ -37,7 +52,51 @@
       .replaceAll("'", "&#039;");
   }
 
-  // ===== FUNÇÕES GLOBAIS (USADAS PELO INLINE DO HTML) =====
+  // ===== LOCALSTORAGE =====
+  function loadCart() {
+    try {
+      const raw = localStorage.getItem(STORAGE_KEY);
+      return raw ? JSON.parse(raw) : [];
+    } catch {
+      return [];
+    }
+  }
+
+  function saveCart(cart) {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(cart));
+    updateCartCount();
+  }
+
+  function getCartCount(cart = loadCart()) {
+    return cart.reduce((acc, item) => acc + (item.qty || 0), 0);
+  }
+
+  function updateCartCount() {
+    const countEl = $(".cart-count");
+    if (countEl) {
+      countEl.textContent = String(getCartCount());
+    }
+  }
+
+  function upsertItem({ id, name, priceCents, qty }) {
+    const cart = loadCart();
+    const idx = cart.findIndex((i) => i.id === id);
+
+    if (idx >= 0) {
+      cart[idx].qty += qty;
+    } else {
+      cart.push({ id, name, priceCents, qty });
+    }
+
+    const cleaned = cart.filter((i) => (i.qty || 0) > 0);
+    saveCart(cleaned);
+  }
+
+  function calcTotal(cart = loadCart()) {
+    return cart.reduce((sum, i) => sum + (i.priceCents || 0) * (i.qty || 0), 0);
+  }
+
+  // ===== FUNÇÕES GLOBAIS =====
   window.alternarTipoEntrega = function () {
     const radio = $('input[name="tipo-entrega"]:checked');
     const camposEntrega = $("#campos-entrega");
@@ -57,6 +116,115 @@
     v = v.replace(/(\d{3})(\d{1,2})$/, "$1-$2");
     input.value = v;
   };
+
+  // ===== ADICIONAR AO CARRINHO (LOJA/CATÁLOGO) =====
+  function setupAddButtons() {
+    // Procura por botões comuns de adicionar ao carrinho
+    const btnList = $$(".add-cart, .btn-add, button[data-action='add']");
+
+    btnList.forEach((btn, index) => {
+      if (btn.dataset.hasListener) return;
+      btn.dataset.hasListener = "true";
+
+      btn.addEventListener("click", (e) => {
+        const targetBtn = e.currentTarget;
+        
+        // Tenta achar o card do produto mais próximo
+        const card = targetBtn.closest(".product-card, .offer-card, .card-produto, .produto, .item") || targetBtn.parentElement;
+
+        if (!card) return;
+
+        // Captura o nome
+        const name = 
+          card.dataset.name || 
+          $("h3", card)?.textContent || 
+          $("h2", card)?.textContent || 
+          $(".nome-produto", card)?.textContent || 
+          "Produto";
+
+        // Captura o preço
+        const priceRaw =
+          card.dataset.price ||
+          $(".new-price", card)?.textContent ||
+          $(".price", card)?.textContent ||
+          $(".preco", card)?.textContent ||
+          "0";
+
+        // Gerador de ID único se não houver no dataset
+        const id = card.dataset.id || `item-${normalizeText(name).replace(/\s+/g, "-")}-${index}`;
+
+        const priceCents = toCents(priceRaw);
+
+        // Captura a quantidade
+        const qtyInput = $("input[type='number']", card) || $(".quantity", card);
+        let qty = qtyInput ? Number(qtyInput.value) : 1;
+        if (!Number.isFinite(qty) || qty <= 0) qty = 1;
+
+        // Salva no LocalStorage
+        upsertItem({ id: String(id).trim(), name: String(name).trim(), priceCents, qty });
+
+        // Feedback visual no botão
+        const oldText = targetBtn.textContent;
+        targetBtn.textContent = "Adicionado ✓";
+        targetBtn.disabled = true;
+        
+        setTimeout(() => {
+          targetBtn.textContent = oldText;
+          targetBtn.disabled = false;
+        }, 800);
+      });
+    });
+  }
+
+  // ===== OFERTAS DO SUPABASE =====
+  async function carregarOfertasRelampago() {
+    const container = $("#offers-grid");
+    if (!container) return;
+
+    const db = window.supabaseClient || window.db || window.supabase;
+    if (!db || typeof db.from !== "function") return;
+
+    try {
+      const { data: ofertas, error } = await db
+        .from("ofertas_relampago")
+        .select("*")
+        .order("created_at", { ascending: false });
+
+      if (error) return;
+
+      if (ofertas && ofertas.length > 0) {
+        container.innerHTML = ofertas
+          .map(
+            (item) => `
+            <div class="offer-card product-card" 
+                 data-id="oferta-${item.id}" 
+                 data-name="${escapeHtml(item.nome)}" 
+                 data-price="${item.preco_novo}">
+              <img src="${escapeHtml(item.imagem_url)}" alt="${escapeHtml(item.nome)}">
+              <h3>${escapeHtml(item.nome)}</h3>
+              <div class="prices">
+                ${
+                  item.preco_antigo
+                    ? `<span class="old-price">R$ ${escapeHtml(item.preco_antigo)}</span>`
+                    : ""
+                }
+                <span class="new-price">R$ ${escapeHtml(item.preco_novo)}</span>
+              </div>
+              <div class="actions" style="margin-top:10px; display:flex; gap:8px; align-items:center; justify-content:center;">
+                <input type="number" class="quantity" value="1" min="1" style="width:50px; text-align:center; padding:5px; border-radius:6px; border:1px solid #ccc;">
+                <button class="add-cart" style="cursor:pointer; padding:6px 12px; border-radius:6px; border:none; background:#28a745; color:#fff; font-weight:600;">Adicionar</button>
+              </div>
+            </div>
+          `
+          )
+          .join("");
+
+        setupAddButtons();
+      }
+    } catch (err) {
+      console.error("Erro ao carregar ofertas:", err);
+    }
+  }
 
   // ===== RENDER DO CARRINHO =====
   function renderCart() {
@@ -134,7 +302,7 @@
     });
   }
 
-  // ===== DISPARO PARA O WHATSAPP =====
+  // ===== CHECKOUT =====
   function setupCheckout() {
     const btnWhats = $("#finalizar-whats");
     const btnClear = $("#esvaziar-carrinho");
@@ -156,7 +324,6 @@
         return;
       }
 
-      // Captura direta dos elementos exatamente pelos IDs do seu HTML
       const elNome = $("#cliente-nome");
       const elCpf = $("#cliente-cpf");
 
@@ -183,13 +350,11 @@
 
       const total = calcTotal(cart);
 
-      // Monta os itens do carrinho
       let textoItens = "";
       cart.forEach((i) => {
         textoItens += `• ${i.qty}x ${i.name} — ${centsToBRL(i.priceCents * i.qty)}\n`;
       });
 
-      // Monta as linhas da mensagem garantindo a ordem
       let linhas = [];
       linhas.push("🛒 *NOVO PEDIDO - FIFO VIRTUAL*");
       linhas.push("");
@@ -244,6 +409,9 @@
 
   // ===== INICIALIZAÇÃO =====
   document.addEventListener("DOMContentLoaded", () => {
+    updateCartCount();
+    setupAddButtons();
+    carregarOfertasRelampago();
     renderCart();
     setupCheckout();
     window.alternarTipoEntrega();
